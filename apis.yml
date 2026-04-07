@@ -9,11 +9,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Entity Resolution
-  - Data Matching
-  - Machine Learning
-  - Data Integration
   - AWS
+  - Data Integration
+  - Data Matching
+  - Entity Resolution
+  - Machine Learning
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -29,9 +29,9 @@ apis:
     humanURL: https://aws.amazon.com/entity-resolution/
     baseURL: https://entityresolution.amazonaws.com
     tags:
-      - Entity Resolution
-      - Data Matching
       - Data Integration
+      - Data Matching
+      - Entity Resolution
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/entityresolution/latest/apireference/Welcome.html
