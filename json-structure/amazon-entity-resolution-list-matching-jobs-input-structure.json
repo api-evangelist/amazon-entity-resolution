@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-list-matching-jobs-input-structure.json",
+  "name": "ListMatchingJobsInput",
+  "description": "ListMatchingJobsInput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {}
+}

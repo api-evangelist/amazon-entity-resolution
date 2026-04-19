@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-exceeds-limit-exception-structure.json",
+  "name": "ExceedsLimitException",
+  "description": "ExceedsLimitException schema from AWS EntityResolution"
+}

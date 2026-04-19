@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-list-matching-jobs-input-max-results-integer-schema.json",
+  "title": "ListMatchingJobsInputMaxResultsInteger",
+  "description": "ListMatchingJobsInputMaxResultsInteger schema from AWS EntityResolution",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 25
+}

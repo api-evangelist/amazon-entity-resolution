@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-output-source-output-list-structure.json",
+  "name": "OutputSourceOutputList",
+  "description": "OutputSourceOutputList schema from AWS EntityResolution",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/OutputAttribute"
+  },
+  "minItems": 0,
+  "maxItems": 750
+}

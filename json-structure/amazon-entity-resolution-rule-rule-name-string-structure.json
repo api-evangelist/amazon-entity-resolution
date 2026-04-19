@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-rule-rule-name-string-structure.json",
+  "name": "RuleRuleNameString",
+  "description": "RuleRuleNameString schema from AWS EntityResolution",
+  "type": "string",
+  "pattern": "^[a-zA-Z_0-9- \\t]*$",
+  "minLength": 0,
+  "maxLength": 255
+}

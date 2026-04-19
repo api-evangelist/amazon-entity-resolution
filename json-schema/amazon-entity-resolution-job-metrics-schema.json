@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-job-metrics-schema.json",
+  "title": "JobMetrics",
+  "description": "An object containing <code>InputRecords</code>, <code>TotalRecordsProcessed</code>, <code>MatchIDs</code>, and <code>RecordsNotProcessed</code>.",
+  "type": "object",
+  "properties": {
+    "inputRecords": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The total number of input records."
+        }
+      ]
+    },
+    "matchIDs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The total number of <code>matchID</code>s generated."
+        }
+      ]
+    },
+    "recordsNotProcessed": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The total number of records that did not get processed,"
+        }
+      ]
+    },
+    "totalRecordsProcessed": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The total number of records processed."
+        }
+      ]
+    }
+  }
+}

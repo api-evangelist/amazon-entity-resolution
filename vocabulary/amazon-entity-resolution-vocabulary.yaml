@@ -1,0 +1,108 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon Entity Resolution
+  description: Unified vocabulary and taxonomy for Amazon Entity Resolution APIs and capabilities
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: AWS EntityResolution
+    namespace: entity_resolution
+    version: '2018-05-10'
+    baseUrl: 'http://entityresolution.{region}.amazonaws.com'
+    status: active
+  resources: []
+  actions:
+  - verb: list
+    httpMethod: GET
+    pattern: read
+  - verb: create
+    httpMethod: POST
+    pattern: write
+  - verb: get
+    httpMethod: GET
+    pattern: read
+  - verb: update
+    httpMethod: PUT
+    pattern: write
+  - verb: delete
+    httpMethod: DELETE
+    pattern: destructive
+  - verb: start
+    httpMethod: POST
+    pattern: write
+  - verb: tagres
+    httpMethod: POST
+    pattern: write
+  - verb: untagr
+    httpMethod: DELETE
+    pattern: destructive
+  schemas:
+    core:
+    - name: CreateMatchingWorkflowOutput
+      description: CreateMatchingWorkflowOutput object
+    - name: InputSource
+      description: 'An object containing <code>InputSourceARN</code>, <code>SchemaName</code>, and <code>ApplyNormalization</code>.'
+    - name: OutputSource
+      description: 'A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether
+        the values of the column should be hashed.'
+    - name: RuleBasedProperties
+      description: 'An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.'
+  parameters:
+    pagination:
+    - name: MaxResults
+      description: Maximum number of results to return
+    - name: NextToken
+      description: Pagination token for next page of results
+    identifiers:
+    - name: Id
+      description: Resource identifier
+    - name: Arn
+      description: Amazon Resource Name
+  enums:
+    types:
+    - IMMEDIATE
+    - RULE_MATCHING
+    - ML_MATCHING
+    - ONE_TO_ONE
+    - MANY_TO_MANY
+    - NAME
+    - NAME_FIRST
+    - NAME_MIDDLE
+    - NAME_LAST
+    - ADDRESS
+    states:
+    - RUNNING
+    - SUCCEEDED
+    - FAILED
+    - QUEUED
+  authentication:
+  - name: hmac
+    type: apiKey
+capability:
+  workflows:
+  - name: Amazon Entity Resolution Management
+    file: capabilities/amazon-entity-resolution-capability.yaml
+    description: Unified capability for managing Amazon Entity Resolution resources. Combines Amazon Entity Resolution APIs for Data Analyst workflows in Data Quality.
+    toolCount: 16
+  personas:
+  - id: developer
+    name: Application Developer
+    description: Developers building applications using Amazon Entity Resolution
+  - id: operator
+    name: Cloud Operator
+    description: Operations teams managing Amazon Entity Resolution infrastructure
+  domains:
+  - name: Amazon Entity Resolution
+    description: Machine learning service for matching and linking related records
+  namespaces:
+  - type: consumed
+    namespace: entity_resolution
+  - type: rest
+    namespace: amazon-entity-resolution-api
+  - type: mcp
+    namespace: amazon-entity-resolution-mcp
+  binds:
+  - AWS_API_KEY
+  - AWS_REGION
+crossReference: []

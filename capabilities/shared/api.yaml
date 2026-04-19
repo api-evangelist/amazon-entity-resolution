@@ -1,0 +1,523 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Entity Resolution
+  description: Match and link related records across data sources
+  tags:
+  - Amazon Web Services
+  - Data Integration
+  - Machine Learning
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_API_KEY: AWS_API_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - type: http
+    namespace: api
+    baseUri: 'http://entityresolution.{region}.amazonaws.com'
+    description: Match and link related records across data sources
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_API_KEY}}'
+      placement: header
+    resources:
+    - name: Default
+      path: /default
+      description: Default resources
+      operations:
+      - name: ListMatchingWorkflows
+        method: GET
+        description: Amazon Entity Resolution ListMatchingWorkflows
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of objects returned per page.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: CreateMatchingWorkflow
+        method: POST
+        description: Amazon Entity Resolution CreateMatchingWorkflow
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: ListSchemaMappings
+        method: GET
+        description: Amazon Entity Resolution ListSchemaMappings
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of objects returned per page.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: CreateSchemaMapping
+        method: POST
+        description: Amazon Entity Resolution CreateSchemaMapping
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: GetMatchingWorkflow
+        method: GET
+        description: Amazon Entity Resolution GetMatchingWorkflow
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: UpdateMatchingWorkflow
+        method: PUT
+        description: Amazon Entity Resolution UpdateMatchingWorkflow
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the workflow to be retrieved.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: DeleteMatchingWorkflow
+        method: DELETE
+        description: Amazon Entity Resolution DeleteMatchingWorkflow
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the workflow to be retrieved.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: GetSchemaMapping
+        method: GET
+        description: Amazon Entity Resolution GetSchemaMapping
+        inputParameters:
+        - name: schemaName
+          in: path
+          type: string
+          required: true
+          description: The name of the schema to be retrieved.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: DeleteSchemaMapping
+        method: DELETE
+        description: Amazon Entity Resolution DeleteSchemaMapping
+        inputParameters:
+        - name: schemaName
+          in: path
+          type: string
+          required: true
+          description: The name of the schema to delete.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: GetMatchId
+        method: POST
+        description: Amazon Entity Resolution GetMatchId
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: GetMatchingJob
+        method: GET
+        description: Amazon Entity Resolution GetMatchingJob
+        inputParameters:
+        - name: jobId
+          in: path
+          type: string
+          required: true
+          description: The ID of the job.
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the workflow.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: ListMatchingJobs
+        method: GET
+        description: Amazon Entity Resolution ListMatchingJobs
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of objects returned per page.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the workflow to be retrieved.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: StartMatchingJob
+        method: POST
+        description: Amazon Entity Resolution StartMatchingJob
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          required: true
+          description: The name of the matching job to be retrieved.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: ListTagsForResource
+        method: GET
+        description: Amazon Entity Resolution ListTagsForResource
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the resource for which you want to view tags.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: TagResource
+        method: POST
+        description: Amazon Entity Resolution TagResource
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the resource for which you want to view tags.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: UntagResource
+        method: DELETE
+        description: Amazon Entity Resolution UntagResource
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the resource for which you want to untag.
+        - name: tagKeys
+          in: query
+          type: array
+          required: true
+          description: The list of tag keys to remove from the resource.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8090
+    namespace: api-api
+    resources:
+    - path: /v1/ListMatchingWorkflows
+      name: ListMatchingWorkflows
+      description: Amazon Entity Resolution ListMatchingWorkflows
+      operations:
+      - method: GET
+        name: ListMatchingWorkflows
+        description: Amazon Entity Resolution ListMatchingWorkflows
+        call: api.ListMatchingWorkflows
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/CreateMatchingWorkflow
+      name: CreateMatchingWorkflow
+      description: Amazon Entity Resolution CreateMatchingWorkflow
+      operations:
+      - method: POST
+        name: CreateMatchingWorkflow
+        description: Amazon Entity Resolution CreateMatchingWorkflow
+        call: api.CreateMatchingWorkflow
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ListSchemaMappings
+      name: ListSchemaMappings
+      description: Amazon Entity Resolution ListSchemaMappings
+      operations:
+      - method: GET
+        name: ListSchemaMappings
+        description: Amazon Entity Resolution ListSchemaMappings
+        call: api.ListSchemaMappings
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/CreateSchemaMapping
+      name: CreateSchemaMapping
+      description: Amazon Entity Resolution CreateSchemaMapping
+      operations:
+      - method: POST
+        name: CreateSchemaMapping
+        description: Amazon Entity Resolution CreateSchemaMapping
+        call: api.CreateSchemaMapping
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/GetMatchingWorkflow
+      name: GetMatchingWorkflow
+      description: Amazon Entity Resolution GetMatchingWorkflow
+      operations:
+      - method: GET
+        name: GetMatchingWorkflow
+        description: Amazon Entity Resolution GetMatchingWorkflow
+        call: api.GetMatchingWorkflow
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/UpdateMatchingWorkflow
+      name: UpdateMatchingWorkflow
+      description: Amazon Entity Resolution UpdateMatchingWorkflow
+      operations:
+      - method: PUT
+        name: UpdateMatchingWorkflow
+        description: Amazon Entity Resolution UpdateMatchingWorkflow
+        call: api.UpdateMatchingWorkflow
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/DeleteMatchingWorkflow
+      name: DeleteMatchingWorkflow
+      description: Amazon Entity Resolution DeleteMatchingWorkflow
+      operations:
+      - method: DELETE
+        name: DeleteMatchingWorkflow
+        description: Amazon Entity Resolution DeleteMatchingWorkflow
+        call: api.DeleteMatchingWorkflow
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/GetSchemaMapping
+      name: GetSchemaMapping
+      description: Amazon Entity Resolution GetSchemaMapping
+      operations:
+      - method: GET
+        name: GetSchemaMapping
+        description: Amazon Entity Resolution GetSchemaMapping
+        call: api.GetSchemaMapping
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/DeleteSchemaMapping
+      name: DeleteSchemaMapping
+      description: Amazon Entity Resolution DeleteSchemaMapping
+      operations:
+      - method: DELETE
+        name: DeleteSchemaMapping
+        description: Amazon Entity Resolution DeleteSchemaMapping
+        call: api.DeleteSchemaMapping
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/GetMatchId
+      name: GetMatchId
+      description: Amazon Entity Resolution GetMatchId
+      operations:
+      - method: POST
+        name: GetMatchId
+        description: Amazon Entity Resolution GetMatchId
+        call: api.GetMatchId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9100
+    namespace: api-mcp
+    transport: http
+    tools:
+    - name: ListMatchingWorkflows
+      description: Amazon Entity Resolution ListMatchingWorkflows
+      hints:
+        readOnly: true
+      call: api.ListMatchingWorkflows
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: CreateMatchingWorkflow
+      description: Amazon Entity Resolution CreateMatchingWorkflow
+      hints:
+        readOnly: false
+      call: api.CreateMatchingWorkflow
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ListSchemaMappings
+      description: Amazon Entity Resolution ListSchemaMappings
+      hints:
+        readOnly: true
+      call: api.ListSchemaMappings
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: CreateSchemaMapping
+      description: Amazon Entity Resolution CreateSchemaMapping
+      hints:
+        readOnly: false
+      call: api.CreateSchemaMapping
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: GetMatchingWorkflow
+      description: Amazon Entity Resolution GetMatchingWorkflow
+      hints:
+        readOnly: true
+      call: api.GetMatchingWorkflow
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: UpdateMatchingWorkflow
+      description: Amazon Entity Resolution UpdateMatchingWorkflow
+      hints:
+        readOnly: false
+      call: api.UpdateMatchingWorkflow
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: DeleteMatchingWorkflow
+      description: Amazon Entity Resolution DeleteMatchingWorkflow
+      hints:
+        readOnly: false
+      call: api.DeleteMatchingWorkflow
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: GetSchemaMapping
+      description: Amazon Entity Resolution GetSchemaMapping
+      hints:
+        readOnly: true
+      call: api.GetSchemaMapping
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: DeleteSchemaMapping
+      description: Amazon Entity Resolution DeleteSchemaMapping
+      hints:
+        readOnly: false
+      call: api.DeleteSchemaMapping
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: GetMatchId
+      description: Amazon Entity Resolution GetMatchId
+      hints:
+        readOnly: false
+      call: api.GetMatchId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: GetMatchingJob
+      description: Amazon Entity Resolution GetMatchingJob
+      hints:
+        readOnly: true
+      call: api.GetMatchingJob
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ListMatchingJobs
+      description: Amazon Entity Resolution ListMatchingJobs
+      hints:
+        readOnly: true
+      call: api.ListMatchingJobs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: StartMatchingJob
+      description: Amazon Entity Resolution StartMatchingJob
+      hints:
+        readOnly: false
+      call: api.StartMatchingJob
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ListTagsForResource
+      description: Amazon Entity Resolution ListTagsForResource
+      hints:
+        readOnly: true
+      call: api.ListTagsForResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: TagResource
+      description: Amazon Entity Resolution TagResource
+      hints:
+        readOnly: false
+      call: api.TagResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: UntagResource
+      description: Amazon Entity Resolution UntagResource
+      hints:
+        readOnly: false
+      call: api.UntagResource
+      outputParameters:
+      - type: object
+        mapping: $.

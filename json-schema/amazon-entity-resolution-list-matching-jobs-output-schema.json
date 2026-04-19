@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-list-matching-jobs-output-schema.json",
+  "title": "ListMatchingJobsOutput",
+  "description": "ListMatchingJobsOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobList"
+        },
+        {
+          "description": "A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call."
+        }
+      ]
+    }
+  }
+}

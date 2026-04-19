@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-get-schema-mapping-output-structure.json",
+  "name": "GetSchemaMappingOutput",
+  "description": "GetSchemaMappingOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The timestamp of when the <code>SchemaMapping</code> was created."
+        }
+      ]
+    },
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "A description of the schema."
+        }
+      ]
+    },
+    "mappedInputFields": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaInputAttributes"
+        },
+        {
+          "description": "A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching."
+        }
+      ]
+    },
+    "schemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaMappingArn"
+        },
+        {
+          "description": "The ARN (Amazon Resource Name) that Entity Resolution generated for the SchemaMapping."
+        }
+      ]
+    },
+    "schemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityName"
+        },
+        {
+          "description": "The name of the schema."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags used to organize, track, or control access for this resource."
+        }
+      ]
+    },
+    "updatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The timestamp of when the <code>SchemaMapping</code> was last updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "createdAt",
+    "mappedInputFields",
+    "schemaArn",
+    "schemaName",
+    "updatedAt"
+  ]
+}

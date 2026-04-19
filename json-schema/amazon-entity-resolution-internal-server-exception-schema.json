@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-internal-server-exception-schema.json",
+  "title": "InternalServerException",
+  "description": "InternalServerException schema from AWS EntityResolution"
+}

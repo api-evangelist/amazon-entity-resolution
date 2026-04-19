@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-matching-workflow-summary-structure.json",
+  "name": "MatchingWorkflowSummary",
+  "description": "A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The timestamp of when the workflow was created."
+        }
+      ]
+    },
+    "updatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The timestamp of when the workflow was last updated."
+        }
+      ]
+    },
+    "workflowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchingWorkflowArn"
+        },
+        {
+          "description": "The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>."
+        }
+      ]
+    },
+    "workflowName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityName"
+        },
+        {
+          "description": "The name of the workflow."
+        }
+      ]
+    }
+  },
+  "required": [
+    "createdAt",
+    "updatedAt",
+    "workflowArn",
+    "workflowName"
+  ]
+}

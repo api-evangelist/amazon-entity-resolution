@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-output-source-config-schema.json",
+  "title": "OutputSourceConfig",
+  "description": "OutputSourceConfig schema from AWS EntityResolution",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/OutputSource"
+  },
+  "minItems": 1,
+  "maxItems": 1
+}

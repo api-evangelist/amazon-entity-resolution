@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-venice-global-arn-structure.json",
+  "name": "VeniceGlobalArn",
+  "description": "VeniceGlobalArn schema from AWS EntityResolution",
+  "type": "string",
+  "pattern": "^arn:(aws|aws-us-gov|aws-cn):(entityresolution):.*:[0-9]+:((schemamapping|matchingworkflow)/[a-zA-Z0-9_-]+)$"
+}

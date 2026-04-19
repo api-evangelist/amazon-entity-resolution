@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-list-matching-workflows-output-structure.json",
+  "name": "ListMatchingWorkflowsOutput",
+  "description": "ListMatchingWorkflowsOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call."
+        }
+      ]
+    },
+    "workflowSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchingWorkflowList"
+        },
+        {
+          "description": "A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>."
+        }
+      ]
+    }
+  }
+}

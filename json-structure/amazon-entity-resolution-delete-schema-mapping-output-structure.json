@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-delete-schema-mapping-output-structure.json",
+  "name": "DeleteSchemaMappingOutput",
+  "description": "DeleteSchemaMappingOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "A successful operation message."
+        }
+      ]
+    }
+  },
+  "required": [
+    "message"
+  ]
+}

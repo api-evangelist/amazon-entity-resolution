@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-tag-resource-input-structure.json",
+  "name": "TagResourceInput",
+  "description": "TagResourceInput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags used to organize, track, or control access for this resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}

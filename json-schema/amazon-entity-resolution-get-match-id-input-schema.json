@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-get-match-id-input-schema.json",
+  "title": "GetMatchIdInput",
+  "description": "GetMatchIdInput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "record": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordAttributeMap"
+        },
+        {
+          "description": "The record to fetch the Match ID for."
+        }
+      ]
+    }
+  },
+  "required": [
+    "record"
+  ]
+}

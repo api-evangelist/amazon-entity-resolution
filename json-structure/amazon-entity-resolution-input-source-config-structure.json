@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-input-source-config-structure.json",
+  "name": "InputSourceConfig",
+  "description": "InputSourceConfig schema from AWS EntityResolution",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/InputSource"
+  },
+  "minItems": 1,
+  "maxItems": 20
+}

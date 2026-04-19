@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-rule-structure.json",
+  "name": "Rule",
+  "description": "An object containing <code>RuleName</code>, and <code>MatchingKeys</code>.",
+  "type": "object",
+  "properties": {
+    "matchingKeys": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleMatchingKeysList"
+        },
+        {
+          "description": "A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match."
+        }
+      ]
+    },
+    "ruleName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleRuleNameString"
+        },
+        {
+          "description": "A name for the matching rule."
+        }
+      ]
+    }
+  },
+  "required": [
+    "matchingKeys",
+    "ruleName"
+  ]
+}

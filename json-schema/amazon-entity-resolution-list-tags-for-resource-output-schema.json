@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-list-tags-for-resource-output-schema.json",
+  "title": "ListTagsForResourceOutput",
+  "description": "ListTagsForResourceOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags used to organize, track, or control access for this resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-job-status-schema.json",
+  "title": "JobStatus",
+  "description": "JobStatus schema from AWS EntityResolution",
+  "type": "string",
+  "enum": [
+    "RUNNING",
+    "SUCCEEDED",
+    "FAILED",
+    "QUEUED"
+  ]
+}

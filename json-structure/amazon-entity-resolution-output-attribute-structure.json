@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-output-attribute-structure.json",
+  "name": "OutputAttribute",
+  "description": "A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.",
+  "type": "object",
+  "properties": {
+    "hashed": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Enables the ability to hash the column values in the output."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttributeName"
+        },
+        {
+          "description": "A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-kms-arn-structure.json",
+  "name": "KMSArn",
+  "description": "KMSArn schema from AWS EntityResolution",
+  "type": "string",
+  "pattern": "^arn:aws:kms:.*:[0-9]+:.*$"
+}

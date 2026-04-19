@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-create-matching-workflow-output-structure.json",
+  "name": "CreateMatchingWorkflowOutput",
+  "description": "CreateMatchingWorkflowOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "A description of the workflow."
+        }
+      ]
+    },
+    "incrementalRunConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncrementalRunConfig"
+        },
+        {
+          "description": "An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field."
+        }
+      ]
+    },
+    "inputSourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InputSourceConfig"
+        },
+        {
+          "description": "A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>."
+        }
+      ]
+    },
+    "outputSourceConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputSourceConfig"
+        },
+        {
+          "description": "A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>."
+        }
+      ]
+    },
+    "resolutionTechniques": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResolutionTechniques"
+        },
+        {
+          "description": "An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> "
+        }
+      ]
+    },
+    "roleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution."
+        }
+      ]
+    },
+    "workflowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchingWorkflowArn"
+        },
+        {
+          "description": "The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>."
+        }
+      ]
+    },
+    "workflowName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityName"
+        },
+        {
+          "description": "The name of the workflow."
+        }
+      ]
+    }
+  },
+  "required": [
+    "inputSourceConfig",
+    "outputSourceConfig",
+    "resolutionTechniques",
+    "roleArn",
+    "workflowArn",
+    "workflowName"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-get-schema-mapping-input-structure.json",
+  "name": "GetSchemaMappingInput",
+  "description": "GetSchemaMappingInput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {}
+}

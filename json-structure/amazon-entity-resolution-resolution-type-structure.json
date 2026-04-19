@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-resolution-type-structure.json",
+  "name": "ResolutionType",
+  "description": "ResolutionType schema from AWS EntityResolution",
+  "type": "string",
+  "enum": [
+    "RULE_MATCHING",
+    "ML_MATCHING"
+  ]
+}

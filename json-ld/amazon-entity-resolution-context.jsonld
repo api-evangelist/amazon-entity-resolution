@@ -1,0 +1,250 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "CreateMatchingWorkflowInput": "aws:CreateMatchingWorkflowInput",
+    "description": "schema:description",
+    "incrementalRunConfig": {
+      "@id": "aws:incrementalRunConfig",
+      "@type": "xsd:string"
+    },
+    "inputSourceConfig": {
+      "@id": "aws:inputSourceConfig",
+      "@type": "xsd:string"
+    },
+    "outputSourceConfig": {
+      "@id": "aws:outputSourceConfig",
+      "@type": "xsd:string"
+    },
+    "resolutionTechniques": {
+      "@id": "aws:resolutionTechniques",
+      "@type": "xsd:string"
+    },
+    "roleArn": {
+      "@id": "aws:roleArn",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "aws:tags",
+      "@type": "xsd:string"
+    },
+    "workflowName": {
+      "@id": "aws:workflowName",
+      "@type": "xsd:string"
+    },
+    "CreateMatchingWorkflowOutput": "aws:CreateMatchingWorkflowOutput",
+    "workflowArn": {
+      "@id": "aws:workflowArn",
+      "@type": "xsd:string"
+    },
+    "CreateSchemaMappingInput": "aws:CreateSchemaMappingInput",
+    "mappedInputFields": {
+      "@id": "aws:mappedInputFields",
+      "@type": "xsd:string"
+    },
+    "schemaName": {
+      "@id": "aws:schemaName",
+      "@type": "xsd:string"
+    },
+    "CreateSchemaMappingOutput": "aws:CreateSchemaMappingOutput",
+    "schemaArn": {
+      "@id": "aws:schemaArn",
+      "@type": "xsd:string"
+    },
+    "DeleteMatchingWorkflowInput": "aws:DeleteMatchingWorkflowInput",
+    "DeleteMatchingWorkflowOutput": "aws:DeleteMatchingWorkflowOutput",
+    "message": {
+      "@id": "aws:message",
+      "@type": "xsd:string"
+    },
+    "DeleteSchemaMappingInput": "aws:DeleteSchemaMappingInput",
+    "DeleteSchemaMappingOutput": "aws:DeleteSchemaMappingOutput",
+    "ErrorDetails": "aws:ErrorDetails",
+    "errorMessage": {
+      "@id": "aws:errorMessage",
+      "@type": "xsd:string"
+    },
+    "GetMatchIdInput": "aws:GetMatchIdInput",
+    "record": {
+      "@id": "aws:record",
+      "@type": "xsd:string"
+    },
+    "GetMatchIdOutput": "aws:GetMatchIdOutput",
+    "matchId": {
+      "@id": "aws:matchId",
+      "@type": "xsd:string"
+    },
+    "GetMatchingJobInput": "aws:GetMatchingJobInput",
+    "GetMatchingJobOutput": "aws:GetMatchingJobOutput",
+    "endTime": {
+      "@id": "aws:endTime",
+      "@type": "xsd:string"
+    },
+    "errorDetails": {
+      "@id": "aws:errorDetails",
+      "@type": "xsd:string"
+    },
+    "jobId": {
+      "@id": "aws:jobId",
+      "@type": "xsd:string"
+    },
+    "metrics": {
+      "@id": "aws:metrics",
+      "@type": "xsd:string"
+    },
+    "startTime": {
+      "@id": "aws:startTime",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "aws:status",
+      "@type": "xsd:string"
+    },
+    "GetMatchingWorkflowInput": "aws:GetMatchingWorkflowInput",
+    "GetMatchingWorkflowOutput": "aws:GetMatchingWorkflowOutput",
+    "createdAt": {
+      "@id": "aws:createdAt",
+      "@type": "xsd:string"
+    },
+    "updatedAt": {
+      "@id": "aws:updatedAt",
+      "@type": "xsd:string"
+    },
+    "GetSchemaMappingInput": "aws:GetSchemaMappingInput",
+    "GetSchemaMappingOutput": "aws:GetSchemaMappingOutput",
+    "IncrementalRunConfig": "aws:IncrementalRunConfig",
+    "incrementalRunType": {
+      "@id": "aws:incrementalRunType",
+      "@type": "xsd:string"
+    },
+    "InputSource": "aws:InputSource",
+    "applyNormalization": {
+      "@id": "aws:applyNormalization",
+      "@type": "xsd:string"
+    },
+    "inputSourceARN": {
+      "@id": "aws:inputSourceARN",
+      "@type": "xsd:string"
+    },
+    "JobMetrics": "aws:JobMetrics",
+    "inputRecords": {
+      "@id": "aws:inputRecords",
+      "@type": "xsd:string"
+    },
+    "matchIDs": {
+      "@id": "aws:matchIDs",
+      "@type": "xsd:string"
+    },
+    "recordsNotProcessed": {
+      "@id": "aws:recordsNotProcessed",
+      "@type": "xsd:string"
+    },
+    "totalRecordsProcessed": {
+      "@id": "aws:totalRecordsProcessed",
+      "@type": "xsd:string"
+    },
+    "JobSummary": "aws:JobSummary",
+    "ListMatchingJobsInput": "aws:ListMatchingJobsInput",
+    "ListMatchingJobsOutput": "aws:ListMatchingJobsOutput",
+    "jobs": {
+      "@id": "aws:jobs",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "aws:nextToken",
+      "@type": "xsd:string"
+    },
+    "ListMatchingWorkflowsInput": "aws:ListMatchingWorkflowsInput",
+    "ListMatchingWorkflowsOutput": "aws:ListMatchingWorkflowsOutput",
+    "workflowSummaries": {
+      "@id": "aws:workflowSummaries",
+      "@type": "xsd:string"
+    },
+    "ListSchemaMappingsInput": "aws:ListSchemaMappingsInput",
+    "ListSchemaMappingsOutput": "aws:ListSchemaMappingsOutput",
+    "schemaList": {
+      "@id": "aws:schemaList",
+      "@type": "xsd:string"
+    },
+    "ListTagsForResourceInput": "aws:ListTagsForResourceInput",
+    "ListTagsForResourceOutput": "aws:ListTagsForResourceOutput",
+    "MatchingWorkflowSummary": "aws:MatchingWorkflowSummary",
+    "OutputAttribute": "aws:OutputAttribute",
+    "hashed": {
+      "@id": "aws:hashed",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "OutputSource": "aws:OutputSource",
+    "KMSArn": {
+      "@id": "aws:KMSArn",
+      "@type": "xsd:string"
+    },
+    "output": {
+      "@id": "aws:output",
+      "@type": "xsd:string"
+    },
+    "outputS3Path": {
+      "@id": "aws:outputS3Path",
+      "@type": "xsd:string"
+    },
+    "RecordAttributeMap": "aws:RecordAttributeMap",
+    "ResolutionTechniques": "aws:ResolutionTechniques",
+    "resolutionType": {
+      "@id": "aws:resolutionType",
+      "@type": "xsd:string"
+    },
+    "ruleBasedProperties": {
+      "@id": "aws:ruleBasedProperties",
+      "@type": "xsd:string"
+    },
+    "RuleBasedProperties": "aws:RuleBasedProperties",
+    "attributeMatchingModel": {
+      "@id": "aws:attributeMatchingModel",
+      "@type": "xsd:string"
+    },
+    "rules": {
+      "@id": "aws:rules",
+      "@type": "xsd:string"
+    },
+    "Rule": "aws:Rule",
+    "matchingKeys": {
+      "@id": "aws:matchingKeys",
+      "@type": "xsd:string"
+    },
+    "ruleName": {
+      "@id": "aws:ruleName",
+      "@type": "xsd:string"
+    },
+    "SchemaInputAttribute": "aws:SchemaInputAttribute",
+    "fieldName": {
+      "@id": "aws:fieldName",
+      "@type": "xsd:string"
+    },
+    "groupName": {
+      "@id": "aws:groupName",
+      "@type": "xsd:string"
+    },
+    "matchKey": {
+      "@id": "aws:matchKey",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "aws:type",
+      "@type": "xsd:string"
+    },
+    "SchemaMappingSummary": "aws:SchemaMappingSummary",
+    "StartMatchingJobInput": "aws:StartMatchingJobInput",
+    "StartMatchingJobOutput": "aws:StartMatchingJobOutput",
+    "TagMap": "aws:TagMap",
+    "TagResourceInput": "aws:TagResourceInput",
+    "TagResourceOutput": "aws:TagResourceOutput",
+    "UntagResourceInput": "aws:UntagResourceInput",
+    "UntagResourceOutput": "aws:UntagResourceOutput",
+    "UpdateMatchingWorkflowInput": "aws:UpdateMatchingWorkflowInput",
+    "UpdateMatchingWorkflowOutput": "aws:UpdateMatchingWorkflowOutput"
+  }
+}

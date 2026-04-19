@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-record-attribute-map-structure.json",
+  "name": "RecordAttributeMap",
+  "description": "RecordAttributeMap schema from AWS EntityResolution",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/RecordAttributeMapValueString"
+  }
+}

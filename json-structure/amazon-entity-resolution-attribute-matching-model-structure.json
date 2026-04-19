@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-attribute-matching-model-structure.json",
+  "name": "AttributeMatchingModel",
+  "description": "AttributeMatchingModel schema from AWS EntityResolution",
+  "type": "string",
+  "enum": [
+    "ONE_TO_ONE",
+    "MANY_TO_MANY"
+  ]
+}

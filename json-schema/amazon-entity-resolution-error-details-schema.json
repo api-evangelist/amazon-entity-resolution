@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-error-details-schema.json",
+  "title": "ErrorDetails",
+  "description": "An object containing an error message, if there was an error.",
+  "type": "object",
+  "properties": {
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "The error message from the job, if there is one."
+        }
+      ]
+    }
+  }
+}

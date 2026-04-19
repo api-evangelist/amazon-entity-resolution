@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-record-attribute-map-value-string-schema.json",
+  "title": "RecordAttributeMapValueString",
+  "description": "RecordAttributeMapValueString schema from AWS EntityResolution",
+  "type": "string",
+  "pattern": "^[a-zA-Z_0-9-.@ ()+\\t]*$",
+  "minLength": 0,
+  "maxLength": 255
+}

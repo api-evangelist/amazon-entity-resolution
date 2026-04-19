@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-schema-mapping-summary-structure.json",
+  "name": "SchemaMappingSummary",
+  "description": "An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The timestamp of when the <code>SchemaMapping</code> was created."
+        }
+      ]
+    },
+    "schemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaMappingArn"
+        },
+        {
+          "description": "The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>."
+        }
+      ]
+    },
+    "schemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityName"
+        },
+        {
+          "description": "The name of the schema."
+        }
+      ]
+    },
+    "updatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The timestamp of when the <code>SchemaMapping</code> was last updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "createdAt",
+    "schemaArn",
+    "schemaName",
+    "updatedAt"
+  ]
+}

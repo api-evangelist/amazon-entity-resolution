@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-tag-key-list-schema.json",
+  "title": "TagKeyList",
+  "description": "TagKeyList schema from AWS EntityResolution",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/TagKey"
+  },
+  "minItems": 0,
+  "maxItems": 200
+}

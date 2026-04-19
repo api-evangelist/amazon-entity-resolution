@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-list-schema-mappings-input-schema.json",
+  "title": "ListSchemaMappingsInput",
+  "description": "ListSchemaMappingsInput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {}
+}

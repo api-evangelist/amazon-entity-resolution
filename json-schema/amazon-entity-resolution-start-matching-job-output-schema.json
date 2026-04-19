@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-start-matching-job-output-schema.json",
+  "title": "StartMatchingJobOutput",
+  "description": "StartMatchingJobOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobId"
+        },
+        {
+          "description": "The ID of the job."
+        }
+      ]
+    }
+  },
+  "required": [
+    "jobId"
+  ]
+}

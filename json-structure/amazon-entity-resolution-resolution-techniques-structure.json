@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-resolution-techniques-structure.json",
+  "name": "ResolutionTechniques",
+  "description": "An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> ",
+  "type": "object",
+  "properties": {
+    "resolutionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResolutionType"
+        },
+        {
+          "description": "There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code> "
+        }
+      ]
+    },
+    "ruleBasedProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleBasedProperties"
+        },
+        {
+          "description": "An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects."
+        }
+      ]
+    }
+  }
+}

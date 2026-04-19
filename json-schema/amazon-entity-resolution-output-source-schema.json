@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-output-source-schema.json",
+  "title": "OutputSource",
+  "description": "A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.",
+  "type": "object",
+  "properties": {
+    "KMSArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KMSArn"
+        },
+        {
+          "description": "Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key."
+        }
+      ]
+    },
+    "applyNormalization": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890."
+        }
+      ]
+    },
+    "output": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputSourceOutputList"
+        },
+        {
+          "description": "A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed."
+        }
+      ]
+    },
+    "outputS3Path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputSourceOutputS3PathString"
+        },
+        {
+          "description": "The S3 path to which Entity Resolution will write the output table."
+        }
+      ]
+    }
+  },
+  "required": [
+    "output",
+    "outputS3Path"
+  ]
+}

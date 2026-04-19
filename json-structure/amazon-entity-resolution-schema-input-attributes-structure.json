@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-schema-input-attributes-structure.json",
+  "name": "SchemaInputAttributes",
+  "description": "SchemaInputAttributes schema from AWS EntityResolution",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/SchemaInputAttribute"
+  },
+  "minItems": 2,
+  "maxItems": 25
+}

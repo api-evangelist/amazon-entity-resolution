@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-schema/amazon-entity-resolution-create-schema-mapping-output-schema.json",
+  "title": "CreateSchemaMappingOutput",
+  "description": "CreateSchemaMappingOutput schema from AWS EntityResolution",
+  "type": "object",
+  "properties": {
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "A description of the schema."
+        }
+      ]
+    },
+    "mappedInputFields": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaInputAttributes"
+        },
+        {
+          "description": "A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching."
+        }
+      ]
+    },
+    "schemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaMappingArn"
+        },
+        {
+          "description": "The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>."
+        }
+      ]
+    },
+    "schemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityName"
+        },
+        {
+          "description": "The name of the schema."
+        }
+      ]
+    }
+  },
+  "required": [
+    "description",
+    "mappedInputFields",
+    "schemaArn",
+    "schemaName"
+  ]
+}

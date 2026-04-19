@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-entity-resolution/refs/heads/main/json-structure/amazon-entity-resolution-input-source-input-source-arn-string-structure.json",
+  "name": "InputSourceInputSourceARNString",
+  "description": "InputSourceInputSourceARNString schema from AWS EntityResolution",
+  "type": "string",
+  "pattern": "^arn:aws:.*:.*:[0-9]+:.*$"
+}
