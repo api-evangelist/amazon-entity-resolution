@@ -1,0 +1,13 @@
+{
+  "repo": "amazon-entity-resolution",
+  "feeds": [
+    {
+      "source": "https://aws.amazon.com/blogs/",
+      "feed_url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+      "saved": 10,
+      "title": "Recent Announcements"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:21:31Z"
+}

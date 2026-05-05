@@ -1,0 +1,8 @@
+---
+title: "Amazon Bedrock AgentCore is now available in the South America (São Paulo) Region"
+url: "https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/"
+date: "Fri, 01 May 2026 22:00:00 GMT"
+author: "aws@amazon.com"
+feed_url: "https://aws.amazon.com/about-aws/whats-new/recent/feed/"
+---
+<p>Amazon Bedrock AgentCore is now available in the AWS South America (São Paulo) Region. Amazon Bedrock AgentCore is the platform to build, connect, and optimize agents. It helps engineers ship agents fast with any framework and any model, connect them to enterprise systems and tools, and optimize them continuously, with security enforced at the infrastructure layer that agents can't bypass.<br /> <br /> With this expansion, customers in South America can deploy and operate agents closer to their end users, reducing latency and helping meet data residency requirements. AgentCore capabilities including agent runtime, identity, gateway, policy, observability, code interpreter, and browser tools are available in the São Paulo Region at launch.<br /> <br /> For more information on AgentCore, visit the <a href="https://aws.amazon.com/bedrock/agentcore/">AgentCore product page</a> or the <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html">AgentCore Developer Guide</a>. To learn about pricing, visit <a href="https://aws.amazon.com/bedrock/agentcore/pricing/">AgentCore pricing</a>. For region availability, visit <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agentcore-regions.html">Supported AWS Regions</a>.</p>
