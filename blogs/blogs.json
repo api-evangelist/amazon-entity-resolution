@@ -3,11 +3,11 @@
   "feeds": [
     {
       "source": "https://aws.amazon.com/blogs/",
-      "feed_url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
-      "saved": 10,
-      "title": "Recent Announcements"
+      "feed_url": "https://aws.amazon.com/rss/",
+      "title": "Recent Announcements",
+      "saved": 50
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-05-03T23:21:31Z"
+  "post_count": 60,
+  "fetched": "2026-05-09T20:17:51Z"
 }
