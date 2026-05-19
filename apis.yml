@@ -1,10 +1,11 @@
 name: Amazon Entity Resolution
-description: Amazon Entity Resolution is a service that helps you match and link related records across multiple applications, channels, and data stores using machine learning and configurable 
-  matching techniques to identify and consolidate records that refer to the same entity.
+description: Amazon Entity Resolution is a service that helps you match and link related records across multiple applications,
+  channels, and data stores using machine learning and configurable matching techniques to identify and consolidate records
+  that refer to the same entity.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/entity-resolution/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 tags:
 - Amazon Web Services
@@ -15,7 +16,8 @@ tags:
 - Machine Learning
 apis:
 - name: Amazon Entity Resolution API
-  description: API for creating and managing matching workflows, schema mappings, and ID mapping tables for matching and linking related records across data sources.
+  description: API for creating and managing matching workflows, schema mappings, and ID mapping tables for matching and linking
+    related records across data sources.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -44,6 +46,8 @@ apis:
     url: json-schema/amazon-entity-resolution-attribute-name-schema.json
   - type: JSONLD
     url: json-ld/amazon-entity-resolution-context.jsonld
+  - type: NaftikoCapability
+    url: capabilities/amazon-entity-resolution.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -85,10 +89,6 @@ common:
   url: https://aws.amazon.com/contact-us/
 - type: SpectralRules
   url: rules/amazon-entity-resolution-spectral-rules.yml
-- type: NaftikoCapability
-  url: capabilities/amazon-entity-resolution-capability.yaml
-- type: NaftikoCapability
-  url: capabilities/shared/api.yaml
 - type: Vocabulary
   url: vocabulary/amazon-entity-resolution-vocabulary.yaml
 - type: Features
@@ -126,15 +126,15 @@ common:
 - type: Integrations
   url: https://aws.amazon.com/marketplace
 integrations:
-  - name: Sign in
-  - name: Agent Mode
-  - name: 'Why AWS Marketplace?'
-  - name: Get started in AWS Marketplace
-  - name: Industry
-  - name: Resources
-  - name: Become a Channel Partner
-  - name: Sell in AWS Marketplace
-  - name: Manage Your Account
+- name: Sign in
+- name: Agent Mode
+- name: Why AWS Marketplace?
+- name: Get started in AWS Marketplace
+- name: Industry
+- name: Resources
+- name: Become a Channel Partner
+- name: Sell in AWS Marketplace
+- name: Manage Your Account
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -1,0 +1,720 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS EntityResolution
+  description: 'AWS EntityResolution. 16 operations. Lead operation: Amazon Entity Resolution CreateMatchingWorkflow. Self-contained
+    Naftiko capability covering one Amazon Entity Resolution business surface.'
+  tags:
+  - Amazon Entity Resolution
+  - AWS EntityResolution
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_ENTITY_RESOLUTION_API_KEY: AMAZON_ENTITY_RESOLUTION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-entity-resolution
+    baseUri: http://entityresolution.{region}.amazonaws.com
+    description: AWS EntityResolution business capability. Self-contained, no shared references.
+    resources:
+    - name: matchingworkflows
+      path: /matchingworkflows
+      operations:
+      - name: creatematchingworkflow
+        method: POST
+        description: Amazon Entity Resolution CreateMatchingWorkflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listmatchingworkflows
+        method: GET
+        description: Amazon Entity Resolution ListMatchingWorkflows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of objects returned per page.
+        - name: nextToken
+          in: query
+          type: string
+          description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+    - name: matchingworkflows-workflowName
+      path: /matchingworkflows/{workflowName}
+      operations:
+      - name: deletematchingworkflow
+        method: DELETE
+        description: Amazon Entity Resolution DeleteMatchingWorkflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the workflow to be retrieved.
+          required: true
+      - name: getmatchingworkflow
+        method: GET
+        description: Amazon Entity Resolution GetMatchingWorkflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the workflow.
+          required: true
+      - name: updatematchingworkflow
+        method: PUT
+        description: Amazon Entity Resolution UpdateMatchingWorkflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the workflow to be retrieved.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: matchingworkflows-workflowName-jobs
+      path: /matchingworkflows/{workflowName}/jobs
+      operations:
+      - name: listmatchingjobs
+        method: GET
+        description: Amazon Entity Resolution ListMatchingJobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of objects returned per page.
+        - name: nextToken
+          in: query
+          type: string
+          description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the workflow to be retrieved.
+          required: true
+      - name: startmatchingjob
+        method: POST
+        description: Amazon Entity Resolution StartMatchingJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the matching job to be retrieved.
+          required: true
+    - name: matchingworkflows-workflowName-jobs-jobId
+      path: /matchingworkflows/{workflowName}/jobs/{jobId}
+      operations:
+      - name: getmatchingjob
+        method: GET
+        description: Amazon Entity Resolution GetMatchingJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobId
+          in: path
+          type: string
+          description: The ID of the job.
+          required: true
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the workflow.
+          required: true
+    - name: matchingworkflows-workflowName-matches
+      path: /matchingworkflows/{workflowName}/matches
+      operations:
+      - name: getmatchid
+        method: POST
+        description: Amazon Entity Resolution GetMatchId
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: workflowName
+          in: path
+          type: string
+          description: The name of the workflow.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: schemas
+      path: /schemas
+      operations:
+      - name: createschemamapping
+        method: POST
+        description: Amazon Entity Resolution CreateSchemaMapping
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listschemamappings
+        method: GET
+        description: Amazon Entity Resolution ListSchemaMappings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of objects returned per page.
+        - name: nextToken
+          in: query
+          type: string
+          description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+    - name: schemas-schemaName
+      path: /schemas/{schemaName}
+      operations:
+      - name: deleteschemamapping
+        method: DELETE
+        description: Amazon Entity Resolution DeleteSchemaMapping
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: schemaName
+          in: path
+          type: string
+          description: The name of the schema to delete.
+          required: true
+      - name: getschemamapping
+        method: GET
+        description: Amazon Entity Resolution GetSchemaMapping
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: schemaName
+          in: path
+          type: string
+          description: The name of the schema to be retrieved.
+          required: true
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon Entity Resolution ListTagsForResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource for which you want to view tags.
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon Entity Resolution TagResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource for which you want to view tags.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn}#tagKeys
+      path: /tags/{resourceArn}#tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon Entity Resolution UntagResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource for which you want to untag.
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: The list of tag keys to remove from the resource.
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_ENTITY_RESOLUTION_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-entity-resolution-rest
+    port: 8080
+    description: REST adapter for AWS EntityResolution. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/matchingworkflows
+      name: matchingworkflows
+      description: REST surface for matchingworkflows.
+      operations:
+      - method: POST
+        name: creatematchingworkflow
+        description: Amazon Entity Resolution CreateMatchingWorkflow
+        call: amazon-entity-resolution.creatematchingworkflow
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listmatchingworkflows
+        description: Amazon Entity Resolution ListMatchingWorkflows
+        call: amazon-entity-resolution.listmatchingworkflows
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/matchingworkflows/{workflowname}
+      name: matchingworkflows-workflowname
+      description: REST surface for matchingworkflows-workflowName.
+      operations:
+      - method: DELETE
+        name: deletematchingworkflow
+        description: Amazon Entity Resolution DeleteMatchingWorkflow
+        call: amazon-entity-resolution.deletematchingworkflow
+        with:
+          workflowName: rest.workflowName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getmatchingworkflow
+        description: Amazon Entity Resolution GetMatchingWorkflow
+        call: amazon-entity-resolution.getmatchingworkflow
+        with:
+          workflowName: rest.workflowName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatematchingworkflow
+        description: Amazon Entity Resolution UpdateMatchingWorkflow
+        call: amazon-entity-resolution.updatematchingworkflow
+        with:
+          workflowName: rest.workflowName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/matchingworkflows/{workflowname}/jobs
+      name: matchingworkflows-workflowname-jobs
+      description: REST surface for matchingworkflows-workflowName-jobs.
+      operations:
+      - method: GET
+        name: listmatchingjobs
+        description: Amazon Entity Resolution ListMatchingJobs
+        call: amazon-entity-resolution.listmatchingjobs
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          workflowName: rest.workflowName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: startmatchingjob
+        description: Amazon Entity Resolution StartMatchingJob
+        call: amazon-entity-resolution.startmatchingjob
+        with:
+          workflowName: rest.workflowName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/matchingworkflows/{workflowname}/jobs/{jobid}
+      name: matchingworkflows-workflowname-jobs-jobid
+      description: REST surface for matchingworkflows-workflowName-jobs-jobId.
+      operations:
+      - method: GET
+        name: getmatchingjob
+        description: Amazon Entity Resolution GetMatchingJob
+        call: amazon-entity-resolution.getmatchingjob
+        with:
+          jobId: rest.jobId
+          workflowName: rest.workflowName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/matchingworkflows/{workflowname}/matches
+      name: matchingworkflows-workflowname-matches
+      description: REST surface for matchingworkflows-workflowName-matches.
+      operations:
+      - method: POST
+        name: getmatchid
+        description: Amazon Entity Resolution GetMatchId
+        call: amazon-entity-resolution.getmatchid
+        with:
+          workflowName: rest.workflowName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/schemas
+      name: schemas
+      description: REST surface for schemas.
+      operations:
+      - method: POST
+        name: createschemamapping
+        description: Amazon Entity Resolution CreateSchemaMapping
+        call: amazon-entity-resolution.createschemamapping
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listschemamappings
+        description: Amazon Entity Resolution ListSchemaMappings
+        call: amazon-entity-resolution.listschemamappings
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/schemas/{schemaname}
+      name: schemas-schemaname
+      description: REST surface for schemas-schemaName.
+      operations:
+      - method: DELETE
+        name: deleteschemamapping
+        description: Amazon Entity Resolution DeleteSchemaMapping
+        call: amazon-entity-resolution.deleteschemamapping
+        with:
+          schemaName: rest.schemaName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getschemamapping
+        description: Amazon Entity Resolution GetSchemaMapping
+        call: amazon-entity-resolution.getschemamapping
+        with:
+          schemaName: rest.schemaName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon Entity Resolution ListTagsForResource
+        call: amazon-entity-resolution.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon Entity Resolution TagResource
+        call: amazon-entity-resolution.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags-resourceArn}#tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon Entity Resolution UntagResource
+        call: amazon-entity-resolution.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-entity-resolution-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS EntityResolution. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-entity-resolution-creatematchingworkflow
+      description: Amazon Entity Resolution CreateMatchingWorkflow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-entity-resolution.creatematchingworkflow
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-listmatchingworkflows
+      description: Amazon Entity Resolution ListMatchingWorkflows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.listmatchingworkflows
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-deletematchingworkflow
+      description: Amazon Entity Resolution DeleteMatchingWorkflow
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-entity-resolution.deletematchingworkflow
+      with:
+        workflowName: tools.workflowName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-getmatchingworkflow
+      description: Amazon Entity Resolution GetMatchingWorkflow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.getmatchingworkflow
+      with:
+        workflowName: tools.workflowName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-updatematchingworkflow
+      description: Amazon Entity Resolution UpdateMatchingWorkflow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.updatematchingworkflow
+      with:
+        workflowName: tools.workflowName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-listmatchingjobs
+      description: Amazon Entity Resolution ListMatchingJobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.listmatchingjobs
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        workflowName: tools.workflowName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-startmatchingjob
+      description: Amazon Entity Resolution StartMatchingJob
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-entity-resolution.startmatchingjob
+      with:
+        workflowName: tools.workflowName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-getmatchingjob
+      description: Amazon Entity Resolution GetMatchingJob
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.getmatchingjob
+      with:
+        jobId: tools.jobId
+        workflowName: tools.workflowName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-getmatchid
+      description: Amazon Entity Resolution GetMatchId
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-entity-resolution.getmatchid
+      with:
+        workflowName: tools.workflowName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-createschemamapping
+      description: Amazon Entity Resolution CreateSchemaMapping
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-entity-resolution.createschemamapping
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-listschemamappings
+      description: Amazon Entity Resolution ListSchemaMappings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.listschemamappings
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-deleteschemamapping
+      description: Amazon Entity Resolution DeleteSchemaMapping
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-entity-resolution.deleteschemamapping
+      with:
+        schemaName: tools.schemaName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-getschemamapping
+      description: Amazon Entity Resolution GetSchemaMapping
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.getschemamapping
+      with:
+        schemaName: tools.schemaName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-listtagsforresource
+      description: Amazon Entity Resolution ListTagsForResource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-entity-resolution.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-tagresource
+      description: Amazon Entity Resolution TagResource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-entity-resolution.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-entity-resolution-untagresource
+      description: Amazon Entity Resolution UntagResource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-entity-resolution.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
