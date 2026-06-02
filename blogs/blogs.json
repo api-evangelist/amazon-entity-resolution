@@ -2,12 +2,17 @@
   "repo": "amazon-entity-resolution",
   "feeds": [
     {
-      "source": "https://aws.amazon.com/blogs/",
+      "source": "https://aws.amazon.com/rss/",
       "feed_url": "https://aws.amazon.com/rss/",
-      "title": "Recent Announcements",
-      "saved": 49
+      "title": "",
+      "saved": 4,
+      "method": "feed"
+    },
+    {
+      "source": "https://docs.aws.amazon.com/entity-resolution/",
+      "error": "HTTPError"
     }
   ],
-  "post_count": 109,
-  "fetched": "2026-05-17T20:20:35Z"
+  "post_count": 159,
+  "fetched": "2026-06-01T23:35:02Z"
 }
