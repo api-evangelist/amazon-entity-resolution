@@ -1,0 +1,118 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Entity Resolution Start And Await Matching Job
+  summary: Start a matching job on an existing workflow and poll until it reaches a terminal status.
+  description: >-
+    Runs a matching job against a workflow that already exists and waits for it
+    to finish. The workflow confirms the matching workflow is present, starts a
+    new matching job, and then polls GetMatchingJob in a loop, branching on the
+    job status so it ends on SUCCEEDED, routes to a failure capture step on
+    FAILED, and loops again while RUNNING or QUEUED. Every step spells out its
+    request inline so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: entityResolutionApi
+  url: ../openapi/amazon-entity-resolution-openapi.yml
+  type: openapi
+workflows:
+- workflowId: start-and-await-job
+  summary: Start a job for an existing matching workflow and poll it to completion.
+  description: >-
+    Verifies the workflow exists, starts a matching job, and polls the job
+    status until it is SUCCEEDED or FAILED.
+  inputs:
+    type: object
+    required:
+    - workflowName
+    properties:
+      workflowName:
+        type: string
+        description: The name of the existing matching workflow to run a job for.
+  steps:
+  - stepId: confirmWorkflow
+    description: >-
+      Confirm the matching workflow exists and capture its configuration before
+      starting a job.
+    operationId: GetMatchingWorkflow
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workflowName: $response.body#/workflowName
+      workflowArn: $response.body#/workflowArn
+  - stepId: startJob
+    description: >-
+      Start a matching job for the confirmed workflow and capture the job id.
+    operationId: StartMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.confirmWorkflow.outputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobId: $response.body#/jobId
+  - stepId: pollJob
+    description: >-
+      Poll the job status. Finish on SUCCEEDED, route to capture on FAILED, and
+      loop back while the job is still RUNNING or QUEUED.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.startJob.outputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      metrics: $response.body#/metrics
+      startTime: $response.body#/startTime
+      endTime: $response.body#/endTime
+    onSuccess:
+    - name: succeeded
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.status == "SUCCEEDED"
+        type: jsonpath
+    - name: failed
+      type: goto
+      stepId: captureFailure
+      criteria:
+      - context: $response.body
+        condition: $.status == "FAILED"
+        type: jsonpath
+    - name: pending
+      type: goto
+      stepId: pollJob
+      criteria:
+      - context: $response.body
+        condition: $.status == "RUNNING" || $.status == "QUEUED"
+        type: jsonpath
+  - stepId: captureFailure
+    description: >-
+      Re-read the failed job to record its error details for diagnosis.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.startJob.outputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      errorDetails: $response.body#/errorDetails
+  outputs:
+    jobId: $steps.startJob.outputs.jobId
+    finalStatus: $steps.pollJob.outputs.status
+    metrics: $steps.pollJob.outputs.metrics

@@ -1,0 +1,100 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Entity Resolution Audit Latest Matching Job
+  summary: List the jobs for a workflow and pull the full status and metrics of the most recent one.
+  description: >-
+    Inspects the run history of a matching workflow. The workflow confirms the
+    matching workflow exists, lists its jobs newest first, and then reads the
+    most recent job in full to surface its status, metrics, and any error
+    details. Every step spells out its request inline so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: entityResolutionApi
+  url: ../openapi/amazon-entity-resolution-openapi.yml
+  type: openapi
+workflows:
+- workflowId: audit-latest-job
+  summary: List a workflow's jobs and fetch the most recent job's detail.
+  description: >-
+    Confirms the workflow exists, lists its matching jobs, and reads the first
+    (most recent) job for its full status, metrics, and error details.
+  inputs:
+    type: object
+    required:
+    - workflowName
+    properties:
+      workflowName:
+        type: string
+        description: The name of the matching workflow whose jobs to audit.
+      maxResults:
+        type: integer
+        description: Maximum number of jobs to return per page (1-25).
+  steps:
+  - stepId: confirmWorkflow
+    description: >-
+      Confirm the matching workflow exists before listing its jobs.
+    operationId: GetMatchingWorkflow
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workflowName: $response.body#/workflowName
+  - stepId: listJobs
+    description: >-
+      List the matching jobs for the workflow and capture the id of the most
+      recent job.
+    operationId: ListMatchingJobs
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.confirmWorkflow.outputs.workflowName
+    - name: maxResults
+      in: query
+      value: $inputs.maxResults
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      latestJobId: $response.body#/jobs/0/jobId
+      nextToken: $response.body#/nextToken
+    onSuccess:
+    - name: hasJobs
+      type: goto
+      stepId: getJobDetail
+      criteria:
+      - context: $response.body
+        condition: $.jobs.length > 0
+        type: jsonpath
+    - name: noJobs
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.jobs.length == 0
+        type: jsonpath
+  - stepId: getJobDetail
+    description: >-
+      Read the most recent job in full to capture its status, metrics, and any
+      error details.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.listJobs.outputs.latestJobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      metrics: $response.body#/metrics
+      startTime: $response.body#/startTime
+      endTime: $response.body#/endTime
+      errorDetails: $response.body#/errorDetails
+  outputs:
+    latestJobId: $steps.listJobs.outputs.latestJobId
+    status: $steps.getJobDetail.outputs.status
+    metrics: $steps.getJobDetail.outputs.metrics

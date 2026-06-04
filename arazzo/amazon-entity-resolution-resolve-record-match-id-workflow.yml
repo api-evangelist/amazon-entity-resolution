@@ -1,0 +1,70 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Entity Resolution Resolve Record Match ID
+  summary: Confirm a processed workflow exists, then look up the Match ID for a single customer record.
+  description: >-
+    Adapts the id-mapping theme to the operations this API actually exposes:
+    AWS Entity Resolution has no dedicated id-namespace or id-mapping-workflow
+    surface, but GetMatchId returns the unified Match ID for a customer record
+    that a matching workflow has already processed. The workflow confirms the
+    target matching workflow exists, then submits the record attributes to
+    resolve its Match ID. Every step spells out its request inline so the flow
+    can be read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: entityResolutionApi
+  url: ../openapi/amazon-entity-resolution-openapi.yml
+  type: openapi
+workflows:
+- workflowId: resolve-record-match-id
+  summary: Verify the matching workflow exists and resolve a record to its Match ID.
+  description: >-
+    Reads the matching workflow to confirm it is present, then calls GetMatchId
+    with the record's attribute map to retrieve the unified Match ID.
+  inputs:
+    type: object
+    required:
+    - workflowName
+    - record
+    properties:
+      workflowName:
+        type: string
+        description: The name of the matching workflow that processed the records.
+      record:
+        type: object
+        description: Map of attribute name to value for the record to resolve (RecordAttributeMapValueString values).
+        additionalProperties:
+          type: string
+  steps:
+  - stepId: confirmWorkflow
+    description: >-
+      Confirm the matching workflow exists before attempting to resolve a record
+      against it.
+    operationId: GetMatchingWorkflow
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workflowName: $response.body#/workflowName
+  - stepId: getMatchId
+    description: >-
+      Submit the record's attribute map to retrieve the unified Match ID
+      assigned to the group of matched records.
+    operationId: GetMatchId
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.confirmWorkflow.outputs.workflowName
+    requestBody:
+      contentType: application/json
+      payload:
+        record: $inputs.record
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      matchId: $response.body#/matchId
+  outputs:
+    matchId: $steps.getMatchId.outputs.matchId

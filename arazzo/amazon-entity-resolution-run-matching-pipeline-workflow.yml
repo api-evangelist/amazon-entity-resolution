@@ -1,0 +1,189 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Entity Resolution Run Matching Pipeline
+  summary: Stand up a schema mapping and matching workflow, start a job, and poll it to completion.
+  description: >-
+    The end-to-end record matching pipeline for AWS Entity Resolution. The
+    workflow first registers a schema mapping that describes the input customer
+    records table, then creates a matching workflow that wires that schema to an
+    input source, an output destination, and a resolution technique. It starts a
+    matching job for the new workflow and polls the job status until it reaches a
+    terminal state, branching on SUCCEEDED versus FAILED. Every step spells out
+    its request inline so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: entityResolutionApi
+  url: ../openapi/amazon-entity-resolution-openapi.yml
+  type: openapi
+workflows:
+- workflowId: run-matching-pipeline
+  summary: Create a schema mapping and matching workflow, run a job, and wait for it to finish.
+  description: >-
+    Registers a schema mapping, creates a matching workflow referencing it,
+    starts a matching job, and polls GetMatchingJob until the job status is
+    SUCCEEDED, FAILED, or QUEUED no longer applies.
+  inputs:
+    type: object
+    required:
+    - schemaName
+    - workflowName
+    - inputSourceARN
+    - outputS3Path
+    - roleArn
+    properties:
+      schemaName:
+        type: string
+        description: The name of the schema mapping to create (pattern ^[a-zA-Z_0-9-]*$).
+      workflowName:
+        type: string
+        description: The name of the matching workflow to create (pattern ^[a-zA-Z_0-9-]*$).
+      description:
+        type: string
+        description: Optional description applied to the schema mapping and workflow.
+      mappedInputFields:
+        type: array
+        description: List of SchemaInputAttribute objects (fieldName, type, optional matchKey/groupName), minimum 2.
+        items:
+          type: object
+      inputSourceARN:
+        type: string
+        description: The Glue table ARN for the input source table.
+      outputS3Path:
+        type: string
+        description: The S3 path to which Entity Resolution writes the output table.
+      output:
+        type: array
+        description: List of OutputAttribute objects selecting columns for the output table.
+        items:
+          type: object
+      attributeMatchingModel:
+        type: string
+        description: Either ONE_TO_ONE or MANY_TO_MANY for rule-based matching.
+      rules:
+        type: array
+        description: List of Rule objects (ruleName, matchingKeys) for RULE_MATCHING.
+        items:
+          type: object
+      roleArn:
+        type: string
+        description: The ARN of the IAM role Entity Resolution assumes to run the workflow.
+  steps:
+  - stepId: createSchemaMapping
+    description: >-
+      Register the schema mapping that defines the columns of the input customer
+      records table and which columns to match on.
+    operationId: CreateSchemaMapping
+    requestBody:
+      contentType: application/json
+      payload:
+        schemaName: $inputs.schemaName
+        description: $inputs.description
+        mappedInputFields: $inputs.mappedInputFields
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      schemaArn: $response.body#/schemaArn
+      schemaName: $response.body#/schemaName
+  - stepId: createMatchingWorkflow
+    description: >-
+      Create the matching workflow that binds the new schema mapping to its
+      input source, output destination, and rule-based resolution technique.
+    operationId: CreateMatchingWorkflow
+    requestBody:
+      contentType: application/json
+      payload:
+        workflowName: $inputs.workflowName
+        description: $inputs.description
+        inputSourceConfig:
+        - inputSourceARN: $inputs.inputSourceARN
+          schemaName: $steps.createSchemaMapping.outputs.schemaName
+        outputSourceConfig:
+        - outputS3Path: $inputs.outputS3Path
+          output: $inputs.output
+        resolutionTechniques:
+          resolutionType: RULE_MATCHING
+          ruleBasedProperties:
+            attributeMatchingModel: $inputs.attributeMatchingModel
+            rules: $inputs.rules
+        roleArn: $inputs.roleArn
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workflowName: $response.body#/workflowName
+      workflowArn: $response.body#/workflowArn
+  - stepId: startMatchingJob
+    description: >-
+      Start a matching job for the newly created workflow and capture the
+      returned job id for polling.
+    operationId: StartMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.createMatchingWorkflow.outputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobId: $response.body#/jobId
+  - stepId: pollJob
+    description: >-
+      Poll the job status. While the job is RUNNING or QUEUED, loop back and
+      check again; on SUCCEEDED finish, on FAILED route to the failure step.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.createMatchingWorkflow.outputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.startMatchingJob.outputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      metrics: $response.body#/metrics
+      errorDetails: $response.body#/errorDetails
+    onSuccess:
+    - name: jobSucceeded
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.status == "SUCCEEDED"
+        type: jsonpath
+    - name: jobFailed
+      type: goto
+      stepId: reportFailure
+      criteria:
+      - context: $response.body
+        condition: $.status == "FAILED"
+        type: jsonpath
+    - name: stillRunning
+      type: goto
+      stepId: pollJob
+      criteria:
+      - context: $response.body
+        condition: $.status == "RUNNING" || $.status == "QUEUED"
+        type: jsonpath
+  - stepId: reportFailure
+    description: >-
+      Re-read the failed job so its error details are captured in the workflow
+      outputs for diagnosis.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.createMatchingWorkflow.outputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.startMatchingJob.outputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      errorDetails: $response.body#/errorDetails
+  outputs:
+    schemaArn: $steps.createSchemaMapping.outputs.schemaArn
+    workflowArn: $steps.createMatchingWorkflow.outputs.workflowArn
+    jobId: $steps.startMatchingJob.outputs.jobId
+    finalStatus: $steps.pollJob.outputs.status
+    metrics: $steps.pollJob.outputs.metrics

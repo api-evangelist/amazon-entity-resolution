@@ -1,0 +1,174 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Entity Resolution Update And Rerun Matching Workflow
+  summary: Update an existing matching workflow's configuration, then start a fresh job and poll it.
+  description: >-
+    Revises the configuration of a matching workflow that already exists and
+    immediately runs it again. The workflow confirms the workflow is present,
+    applies an UpdateMatchingWorkflow with new input, output, and resolution
+    settings, starts a new matching job, and polls GetMatchingJob until it
+    reaches a terminal status, branching on SUCCEEDED versus FAILED. Every step
+    spells out its request inline so the flow can be read and executed without
+    opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: entityResolutionApi
+  url: ../openapi/amazon-entity-resolution-openapi.yml
+  type: openapi
+workflows:
+- workflowId: update-and-rerun-workflow
+  summary: Update a matching workflow's config, then start and await a new job.
+  description: >-
+    Confirms the workflow exists, updates its configuration, starts a matching
+    job, and polls until the job is SUCCEEDED or FAILED.
+  inputs:
+    type: object
+    required:
+    - workflowName
+    - inputSourceARN
+    - schemaName
+    - outputS3Path
+    - roleArn
+    properties:
+      workflowName:
+        type: string
+        description: The name of the existing matching workflow to update and rerun.
+      description:
+        type: string
+        description: Optional updated description for the workflow.
+      inputSourceARN:
+        type: string
+        description: The Glue table ARN for the input source table.
+      schemaName:
+        type: string
+        description: The name of the schema mapping referenced by the input source.
+      outputS3Path:
+        type: string
+        description: The S3 path to which Entity Resolution writes the output table.
+      output:
+        type: array
+        description: List of OutputAttribute objects for the output table.
+        items:
+          type: object
+      attributeMatchingModel:
+        type: string
+        description: Either ONE_TO_ONE or MANY_TO_MANY.
+      rules:
+        type: array
+        description: List of Rule objects for RULE_MATCHING.
+        items:
+          type: object
+      roleArn:
+        type: string
+        description: The ARN of the IAM role Entity Resolution assumes.
+  steps:
+  - stepId: confirmWorkflow
+    description: >-
+      Confirm the workflow exists before updating it.
+    operationId: GetMatchingWorkflow
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workflowName: $response.body#/workflowName
+  - stepId: updateWorkflow
+    description: >-
+      Apply the new configuration to the existing matching workflow.
+    operationId: UpdateMatchingWorkflow
+    parameters:
+    - name: workflowName
+      in: path
+      value: $steps.confirmWorkflow.outputs.workflowName
+    requestBody:
+      contentType: application/json
+      payload:
+        description: $inputs.description
+        inputSourceConfig:
+        - inputSourceARN: $inputs.inputSourceARN
+          schemaName: $inputs.schemaName
+        outputSourceConfig:
+        - outputS3Path: $inputs.outputS3Path
+          output: $inputs.output
+        resolutionTechniques:
+          resolutionType: RULE_MATCHING
+          ruleBasedProperties:
+            attributeMatchingModel: $inputs.attributeMatchingModel
+            rules: $inputs.rules
+        roleArn: $inputs.roleArn
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      resolutionTechniques: $response.body#/resolutionTechniques
+  - stepId: startJob
+    description: >-
+      Start a fresh matching job against the updated workflow.
+    operationId: StartMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobId: $response.body#/jobId
+  - stepId: pollJob
+    description: >-
+      Poll the job status. Finish on SUCCEEDED, route to capture on FAILED, and
+      loop while RUNNING or QUEUED.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.startJob.outputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      metrics: $response.body#/metrics
+    onSuccess:
+    - name: succeeded
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.status == "SUCCEEDED"
+        type: jsonpath
+    - name: failed
+      type: goto
+      stepId: captureFailure
+      criteria:
+      - context: $response.body
+        condition: $.status == "FAILED"
+        type: jsonpath
+    - name: pending
+      type: goto
+      stepId: pollJob
+      criteria:
+      - context: $response.body
+        condition: $.status == "RUNNING" || $.status == "QUEUED"
+        type: jsonpath
+  - stepId: captureFailure
+    description: >-
+      Re-read the failed job to record its error details.
+    operationId: GetMatchingJob
+    parameters:
+    - name: workflowName
+      in: path
+      value: $inputs.workflowName
+    - name: jobId
+      in: path
+      value: $steps.startJob.outputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+      errorDetails: $response.body#/errorDetails
+  outputs:
+    jobId: $steps.startJob.outputs.jobId
+    finalStatus: $steps.pollJob.outputs.status
+    metrics: $steps.pollJob.outputs.metrics
