@@ -1,0 +1,842 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS EntityResolution",
+    "version": "2018-05-10"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Amazon Entity Resolution ListMatchingWorkflows",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query",
+            "description": "The maximum number of objects returned per page."
+          },
+          {
+            "name": "nextToken",
+            "value": "",
+            "type": "query",
+            "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call."
+          }
+        ]
+      },
+      "docs": "Returns a list of all the <code>MatchingWorkflows</code> that have been created for an AWS account."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution CreateMatchingWorkflow",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Creates a <code>MatchingWorkflow</code> object which stores the configuration of the data processing job to be run. It is important to note that there should not be a pre-existing <code>MatchingWorkflow</code> with the same name. To modify an existing workflow, utilize the <code>UpdateMatchingWorkflow</code> API."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution ListSchemaMappings",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/schemas",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query",
+            "description": "The maximum number of objects returned per page."
+          },
+          {
+            "name": "nextToken",
+            "value": "",
+            "type": "query",
+            "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call."
+          }
+        ]
+      },
+      "docs": "Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution CreateSchemaMapping",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://entityresolution.{region}.amazonaws.com/schemas",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Creates a schema mapping, which defines the schema of the input customer records table. The <code>SchemaMapping</code> also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution GetMatchingWorkflow",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the workflow."
+          }
+        ]
+      },
+      "docs": "Returns the <code>MatchingWorkflow</code> with a given name, if it exists."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution UpdateMatchingWorkflow",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the workflow to be retrieved."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Updates an existing <code>MatchingWorkflow</code>. This method is identical to <code>CreateMatchingWorkflow</code>, except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request, and the <code>MatchingWorkflow</code> must already exist for the method to succeed."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution DeleteMatchingWorkflow",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the workflow to be retrieved."
+          }
+        ]
+      },
+      "docs": "Deletes the <code>MatchingWorkflow</code> with a given name. This operation will succeed even if a workflow with the given name does not exist."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution GetSchemaMapping",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/schemas/:schemaName",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "schemaName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the schema to be retrieved."
+          }
+        ]
+      },
+      "docs": "Returns the SchemaMapping of a given name."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution DeleteSchemaMapping",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://entityresolution.{region}.amazonaws.com/schemas/:schemaName",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "schemaName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the schema to delete."
+          }
+        ]
+      },
+      "docs": "Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution GetMatchId",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName/matches",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the workflow."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns the corresponding Match ID of a customer record if the record has been processed."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution GetMatchingJob",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName/jobs/:jobId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "jobId",
+            "value": "",
+            "type": "path",
+            "description": "The ID of the job."
+          },
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the workflow."
+          }
+        ]
+      },
+      "docs": "Gets the status, metrics, and errors (if there are any) that are associated with a job."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution ListMatchingJobs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName/jobs",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query",
+            "description": "The maximum number of objects returned per page."
+          },
+          {
+            "name": "nextToken",
+            "value": "",
+            "type": "query",
+            "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call."
+          },
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the workflow to be retrieved."
+          }
+        ]
+      },
+      "docs": "Lists all jobs for a given workflow."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution StartMatchingJob",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://entityresolution.{region}.amazonaws.com/matchingworkflows/:workflowName/jobs",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "workflowName",
+            "value": "",
+            "type": "path",
+            "description": "The name of the matching job to be retrieved."
+          }
+        ]
+      },
+      "docs": "Starts the <code>MatchingJob</code> of a workflow. The workflow must have previously been created using the <code>CreateMatchingWorkflow</code> endpoint."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution ListTagsForResource",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://entityresolution.{region}.amazonaws.com/tags/:resourceArn",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "resourceArn",
+            "value": "",
+            "type": "path",
+            "description": "The ARN of the resource for which you want to view tags."
+          }
+        ]
+      },
+      "docs": "Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged."
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution TagResource",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://entityresolution.{region}.amazonaws.com/tags/:resourceArn",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "resourceArn",
+            "value": "",
+            "type": "path",
+            "description": "The ARN of the resource for which you want to view tags."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters. You can use th"
+    },
+    {
+      "info": {
+        "name": "Amazon Entity Resolution UntagResource",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://entityresolution.{region}.amazonaws.com/tags/:resourceArn#tagKeys",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "resourceArn",
+            "value": "",
+            "type": "path",
+            "description": "The ARN of the resource for which you want to untag."
+          },
+          {
+            "name": "tagKeys",
+            "value": "",
+            "type": "query",
+            "description": "The list of tag keys to remove from the resource."
+          }
+        ]
+      },
+      "docs": "Removes one or more tags from the specified AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged."
+    }
+  ],
+  "bundled": true
+}
