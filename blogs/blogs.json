@@ -2,10 +2,10 @@
   "repo": "amazon-entity-resolution",
   "feeds": [
     {
-      "source": "https://aws.amazon.com/rss/",
-      "feed_url": "https://aws.amazon.com/rss/",
+      "source": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+      "feed_url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
       "title": "",
-      "saved": 44,
+      "saved": 41,
       "method": "feed"
     },
     {
@@ -13,6 +13,6 @@
       "error": "HTTPError"
     }
   ],
-  "post_count": 237,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 320,
+  "fetched": "2026-06-27T12:03:07Z"
 }

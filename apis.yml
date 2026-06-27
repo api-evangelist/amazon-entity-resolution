@@ -51,27 +51,24 @@ apis:
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-entity-resolution/overview
-  - type: ArazzoWorkflows
-    url: arazzo/
-    workflows:
-      - url: arazzo/amazon-entity-resolution-audit-latest-job-workflow.yml
-        name: Amazon Entity Resolution Audit Latest Matching Job
-        summary: List the jobs for a workflow and pull the full status and metrics of the most recent one.
-      - url: arazzo/amazon-entity-resolution-provision-workflow-workflow.yml
-        name: Amazon Entity Resolution Provision Matching Workflow
-        summary: Register a schema mapping and create a matching workflow that references it.
-      - url: arazzo/amazon-entity-resolution-resolve-record-match-id-workflow.yml
-        name: Amazon Entity Resolution Resolve Record Match ID
-        summary: Confirm a processed workflow exists, then look up the Match ID for a single customer record.
-      - url: arazzo/amazon-entity-resolution-run-matching-pipeline-workflow.yml
-        name: Amazon Entity Resolution Run Matching Pipeline
-        summary: Stand up a schema mapping and matching workflow, start a job, and poll it to completion.
-      - url: arazzo/amazon-entity-resolution-start-and-await-job-workflow.yml
-        name: Amazon Entity Resolution Start And Await Matching Job
-        summary: Start a matching job on an existing workflow and poll until it reaches a terminal status.
-      - url: arazzo/amazon-entity-resolution-update-and-rerun-workflow.yml
-        name: Amazon Entity Resolution Update And Rerun Matching Workflow
-        summary: Update an existing matching workflow's configuration, then start a fresh job and poll it.
+  - type: Arazzo
+    url: arazzo/amazon-entity-resolution-audit-latest-job-workflow.yml
+    name: Amazon Entity Resolution Audit Latest Matching Job
+  - type: Arazzo
+    url: arazzo/amazon-entity-resolution-provision-workflow-workflow.yml
+    name: Amazon Entity Resolution Provision Matching Workflow
+  - type: Arazzo
+    url: arazzo/amazon-entity-resolution-resolve-record-match-id-workflow.yml
+    name: Amazon Entity Resolution Resolve Record Match ID
+  - type: Arazzo
+    url: arazzo/amazon-entity-resolution-run-matching-pipeline-workflow.yml
+    name: Amazon Entity Resolution Run Matching Pipeline
+  - type: Arazzo
+    url: arazzo/amazon-entity-resolution-start-and-await-job-workflow.yml
+    name: Amazon Entity Resolution Start And Await Matching Job
+  - type: Arazzo
+    url: arazzo/amazon-entity-resolution-update-and-rerun-workflow.yml
+    name: Amazon Entity Resolution Update And Rerun Matching Workflow
   - type: Portal
     url: https://aws.amazon.com/
   - type: DeveloperPortal
@@ -84,7 +81,7 @@ common:
     url: https://github.com/aws
   - type: Console
     url: https://console.aws.amazon.com/entityresolution/
-  - type: SignUp
+  - type: Signup
     url: https://portal.aws.amazon.com/billing/signup
   - type: Login
     url: https://signin.aws.amazon.com/
