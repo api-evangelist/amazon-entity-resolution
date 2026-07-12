@@ -49,6 +49,14 @@ apis:
       - type: JSONLD
         url: json-ld/amazon-entity-resolution-context.jsonld
 common:
+  - type: TrustCenter
+    url: security/amazon-entity-resolution-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-entity-resolution-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-entity-resolution-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-entity-resolution-authentication.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-entity-resolution/overview
   - type: Arazzo
