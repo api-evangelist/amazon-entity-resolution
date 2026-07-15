@@ -49,6 +49,8 @@ apis:
       - type: JSONLD
         url: json-ld/amazon-entity-resolution-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-entity-resolution-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-entity-resolution-trust-center.yml
   - type: VulnerabilityDisclosure
