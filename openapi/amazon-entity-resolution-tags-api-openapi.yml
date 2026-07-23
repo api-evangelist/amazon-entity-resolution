@@ -1,0 +1,431 @@
+openapi: 3.0.0
+info:
+  version: '2018-05-10'
+  x-release: v4
+  title: AWS EntityResolution Matchingworkflows Tags API
+  description: <p>Welcome to the <i>AWS Entity Resolution API Reference</i>.</p> <p>AWS Entity Resolution is an AWS service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.</p> <p> With AWS Entity Resolution, you have the ability to match source records containing consumer identifiers, such as name, email address, and phone number. This holds true even when these records have incomplete or conflicting identifiers. For example, AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system, which includes account information like first name, last name, postal address, phone number, and email address, with a source record from a marketing system containing campaign information, such as username and email address.</p> <p>To learn more about AWS Entity Resolution concepts, procedures, and best practices, see the <a href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">AWS Entity Resolution User Guide</a>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: entityresolution
+  x-aws-signingName: entityresolution
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/entityresolution-2018-05-10.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://entityresolution.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWSEntityResolution multi-region endpoint
+- url: https://entityresolution.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWSEntityResolution multi-region endpoint
+- url: http://entityresolution.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWSEntityResolution endpoint for China (Beijing) and China (Ningxia)
+- url: https://entityresolution.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWSEntityResolution endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Tags
+paths:
+  /tags/{resourceArn}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListTagsForResource
+      description: Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTagsForResourceOutput'
+              examples:
+                ListTagsForResource200Example:
+                  summary: Default ListTagsForResource 200 response
+                  x-microcks-default: true
+                  value:
+                    tags: example
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                ListTagsForResource480Example:
+                  summary: Default ListTagsForResource 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListTagsForResource481Example:
+                  summary: Default ListTagsForResource 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListTagsForResource482Example:
+                  summary: Default ListTagsForResource 482 response
+                  x-microcks-default: true
+                  value: {}
+      parameters:
+      - name: resourceArn
+        in: path
+        required: true
+        description: The ARN of the resource for which you want to view tags.
+        schema:
+          type: string
+          pattern: ^arn:(aws|aws-us-gov|aws-cn):(entityresolution):.*:[0-9]+:((schemamapping|matchingworkflow)/[a-zA-Z0-9_-]+)$
+      summary: Amazon Entity Resolution ListTagsForResource
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Tags
+    post:
+      operationId: TagResource
+      description: Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters. You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagResourceOutput'
+              examples:
+                TagResource200Example:
+                  summary: Default TagResource 200 response
+                  x-microcks-default: true
+                  value: {}
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                TagResource480Example:
+                  summary: Default TagResource 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                TagResource481Example:
+                  summary: Default TagResource 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                TagResource482Example:
+                  summary: Default TagResource 482 response
+                  x-microcks-default: true
+                  value: {}
+      parameters:
+      - name: resourceArn
+        in: path
+        required: true
+        description: The ARN of the resource for which you want to view tags.
+        schema:
+          type: string
+          pattern: ^arn:(aws|aws-us-gov|aws-cn):(entityresolution):.*:[0-9]+:((schemamapping|matchingworkflow)/[a-zA-Z0-9_-]+)$
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - tags
+              properties:
+                tags:
+                  description: The tags used to organize, track, or control access for this resource.
+                  type: object
+                  minProperties: 0
+                  maxProperties: 200
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+            examples:
+              TagResourceRequestExample:
+                summary: Default TagResource request
+                x-microcks-default: true
+                value:
+                  tags: {}
+      summary: Amazon Entity Resolution TagResource
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Tags
+  /tags/{resourceArn}#tagKeys:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: UntagResource
+      description: Removes one or more tags from the specified AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UntagResourceOutput'
+              examples:
+                UntagResource200Example:
+                  summary: Default UntagResource 200 response
+                  x-microcks-default: true
+                  value: {}
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                UntagResource480Example:
+                  summary: Default UntagResource 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UntagResource481Example:
+                  summary: Default UntagResource 481 response
+                  x-microcks-default: true
+                  value: {}
+      parameters:
+      - name: resourceArn
+        in: path
+        required: true
+        description: The ARN of the resource for which you want to untag.
+        schema:
+          type: string
+          pattern: ^arn:(aws|aws-us-gov|aws-cn):(entityresolution):.*:[0-9]+:((schemamapping|matchingworkflow)/[a-zA-Z0-9_-]+)$
+      - name: tagKeys
+        in: query
+        required: true
+        description: The list of tag keys to remove from the resource.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagKey'
+          minItems: 0
+          maxItems: 200
+      summary: Amazon Entity Resolution UntagResource
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Tags
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ResourceNotFoundException: {}
+    InternalServerException: {}
+    UntagResourceOutput:
+      type: object
+      properties: {}
+    ValidationException: {}
+    TagMap:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    ListTagsForResourceOutput:
+      type: object
+      required:
+      - tags
+      properties:
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags used to organize, track, or control access for this resource.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    TagResourceOutput:
+      type: object
+      properties: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/entityresolution/
+x-hasEquivalentPaths: true
