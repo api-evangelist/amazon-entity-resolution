@@ -3,6 +3,19 @@ description: >-
   Amazon Entity Resolution is a service that helps you match and link related records across multiple applications,
   channels, and data stores using machine learning and configurable matching techniques to identify and consolidate
   records that refer to the same entity.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/entity-resolution/
 created: '2024-01-15'
@@ -16,38 +29,91 @@ tags:
   - Entity Resolution
   - Machine Learning
 apis:
-  - name: Amazon Entity Resolution API
-    description: >-
-      API for creating and managing matching workflows, schema mappings, and ID mapping tables for matching and linking
-      related records across data sources.
-    humanURL: https://aws.amazon.com/entity-resolution/
-    baseURL: https://entityresolution.amazonaws.com
-    tags:
-      - Data Integration
-      - Data Matching
-      - Entity Resolution
-      - Machine Learning
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/entityresolution/latest/userguide/
-      - type: OpenAPI
-        url: openapi/amazon-entity-resolution-openapi.yml
-      - type: APIReference
-        url: https://docs.aws.amazon.com/entityresolution/latest/apireference/
-      - type: GettingStarted
-        url: https://aws.amazon.com/entity-resolution/getting-started/
-      - type: Pricing
-        url: https://aws.amazon.com/entity-resolution/pricing/
-      - type: FAQ
-        url: https://aws.amazon.com/entity-resolution/faqs/
-      - type: JSONSchema
-        url: json-schema/amazon-entity-resolution-access-denied-exception-schema.json
-      - type: JSONSchema
-        url: json-schema/amazon-entity-resolution-attribute-matching-model-schema.json
-      - type: JSONSchema
-        url: json-schema/amazon-entity-resolution-attribute-name-schema.json
-      - type: JSONLD
-        url: json-ld/amazon-entity-resolution-context.jsonld
+- aid: amazon-entity-resolution:amazon-entity-resolution-matchingworkflows-api
+  name: Amazon Entity Resolution Matchingworkflows API
+  description: >-
+    The Matchingworkflows API from Amazon Entity Resolution — 5 operation(s) for matchingworkflows.
+  humanURL: https://aws.amazon.com/entity-resolution/
+  baseURL: https://entityresolution.amazonaws.com
+  tags:
+  - Matchingworkflows
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-entity-resolution-matchingworkflows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/entityresolution/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/entityresolution/latest/apireference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/entity-resolution/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/entity-resolution/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/entity-resolution/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-access-denied-exception-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-attribute-matching-model-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-attribute-name-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-entity-resolution-context.jsonld
+- aid: amazon-entity-resolution:amazon-entity-resolution-schemas-api
+  name: Amazon Entity Resolution Schemas API
+  description: The Schemas API from Amazon Entity Resolution — 2 operation(s) for schemas.
+  humanURL: https://aws.amazon.com/entity-resolution/
+  baseURL: https://entityresolution.amazonaws.com
+  tags:
+  - Schemas
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-entity-resolution-schemas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/entityresolution/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/entityresolution/latest/apireference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/entity-resolution/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/entity-resolution/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/entity-resolution/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-access-denied-exception-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-attribute-matching-model-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-attribute-name-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-entity-resolution-context.jsonld
+- aid: amazon-entity-resolution:amazon-entity-resolution-tags-api
+  name: Amazon Entity Resolution Tags API
+  description: The Tags API from Amazon Entity Resolution — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/entity-resolution/
+  baseURL: https://entityresolution.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-entity-resolution-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/entityresolution/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/entityresolution/latest/apireference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/entity-resolution/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/entity-resolution/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/entity-resolution/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-access-denied-exception-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-attribute-matching-model-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-attribute-name-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-entity-resolution-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/amazon-entity-resolution-agentic-access.yml
