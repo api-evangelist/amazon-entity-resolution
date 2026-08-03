@@ -1,0 +1,1273 @@
+{
+  "info": {
+    "_postman_id": "1bc143dd-684c-4856-914f-317c7e8d8682",
+    "name": "AWS EntityResolution Matchingworkflows Tags API",
+    "description": "<p>Welcome to the <i>AWS Entity Resolution API Reference</i>.</p> <p>AWS Entity Resolution is an AWS service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.</p> <p> With AWS Entity Resolution, you have the ability to match source records containing consumer identifiers, such as name, email address, and phone number. This holds true even when these records have incomplete or conflicting identifiers. For example, AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system, which includes account information like first name, last name, postal address, phone number, and email address, with a source record from a marketing system containing campaign information, such as username and email address.</p> <p>To learn more about AWS Entity Resolution concepts, procedures, and best practices, see the <a href=\"https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html\">AWS Entity Resolution User Guide</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:20:43.000Z",
+    "updatedAt": "2026-07-28T10:20:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1bc143dd-684c-4856-914f-317c7e8d8682"
+  },
+  "item": [
+    {
+      "name": "tags",
+      "item": [
+        {
+          "name": "{resourceArn}",
+          "item": [
+            {
+              "name": "Amazon Entity Resolution ListTagsForResource",
+              "id": "1c4684eb-0d4c-4fa6-95be-2329da585853",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/tags/:resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tags",
+                    ":resourceArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "4dedb0d9-5f27-4df1-b181-73429f3af0af",
+                      "key": "resourceArn",
+                      "value": "arn:aws-us-gov:entityresolution:1G:33:schemamapping/F0PBPxhgv",
+                      "description": "(Required) The ARN of the resource for which you want to view tags."
+                    }
+                  ]
+                },
+                "description": "Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged."
+              },
+              "response": [
+                {
+                  "id": "aece3124-07fb-492d-92fc-790dcfccb459",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"tags\": {\n    \"eu00\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"culpa49\": \"<string>\",\n    \"dolore4d\": \"<string>\",\n    \"nullac13\": \"<string>\",\n    \"sint_18\": \"<string>\",\n    \"Lorem_789\": \"<string>\",\n    \"reprehenderite5e\": \"<string>\",\n    \"dolore_f\": \"<string>\",\n    \"Ut_f\": \"<string>\",\n    \"qui_a8\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"inb\": \"<string>\",\n    \"laboris_7\": \"<string>\",\n    \"deserunta8\": \"<string>\",\n    \"labore__\": \"<string>\",\n    \"sed_8\": \"<string>\",\n    \"sed_9a3\": \"<string>\",\n    \"consecteturafb\": \"<string>\",\n    \"eac77\": \"<string>\",\n    \"qui_39\": \"<string>\",\n    \"exercitation_07\": \"<string>\",\n    \"cillum_14\": \"<string>\",\n    \"adipisicing_7dd\": \"<string>\",\n    \"in_d9\": \"<string>\",\n    \"nostrud9de\": \"<string>\",\n    \"dolor_9b5\": \"<string>\",\n    \"aute__\": \"<string>\",\n    \"ea26\": \"<string>\",\n    \"eu663\": \"<string>\",\n    \"in_17b\": \"<string>\",\n    \"consectetur173\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"mollit_a3\": \"<string>\",\n    \"autef74\": \"<string>\",\n    \"culpa_6b\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"labore_\": \"<string>\",\n    \"laborum_605\": \"<string>\",\n    \"ut_0\": \"<string>\",\n    \"in_84\": \"<string>\",\n    \"exercitation_d3\": \"<string>\",\n    \"tempor_0\": \"<string>\",\n    \"in_be8\": \"<string>\",\n    \"quif0\": \"<string>\",\n    \"Loremf7\": \"<string>\",\n    \"ametf\": \"<string>\",\n    \"anim_fd\": \"<string>\",\n    \"deserunt2\": \"<string>\",\n    \"cillum_0e\": \"<string>\",\n    \"dolore81\": \"<string>\",\n    \"dolore13\": \"<string>\",\n    \"Duisf\": \"<string>\",\n    \"nullac0\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"nulla_dff\": \"<string>\",\n    \"voluptate_b3\": \"<string>\",\n    \"aliqua_2\": \"<string>\",\n    \"deserunt_25e\": \"<string>\",\n    \"proident_073\": \"<string>\",\n    \"sedd61\": \"<string>\",\n    \"aute_6\": \"<string>\",\n    \"aliqua4\": \"<string>\",\n    \"commodof78\": \"<string>\",\n    \"irure__a9\": \"<string>\",\n    \"elit_f\": \"<string>\",\n    \"Duisa\": \"<string>\",\n    \"ut96\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"quis4b6\": \"<string>\",\n    \"voluptate_af8\": \"<string>\",\n    \"labore_ebc\": \"<string>\",\n    \"aliqua_7d\": \"<string>\",\n    \"Duis_ea\": \"<string>\",\n    \"eu_4\": \"<string>\",\n    \"do35\": \"<string>\",\n    \"consequat_9b\": \"<string>\",\n    \"sunt_9\": \"<string>\",\n    \"ad9de\": \"<string>\",\n    \"cupidatate\": \"<string>\",\n    \"eu_cb\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cupidatat_8\": \"<string>\",\n    \"in_5b\": \"<string>\",\n    \"consectetur1\": \"<string>\",\n    \"esse_8eb\": \"<string>\",\n    \"id190\": \"<string>\",\n    \"non_5_\": \"<string>\",\n    \"laborum_624\": \"<string>\",\n    \"consequat_5d\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-aece3124-07fb-492d-92fc-790dcfccb459"
+                },
+                {
+                  "id": "7554c8ca-fbd9-4592-a5a1-70ae2fb21e63",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-7554c8ca-fbd9-4592-a5a1-70ae2fb21e63"
+                },
+                {
+                  "id": "829b7453-94a5-4c46-836e-683272e6933b",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-829b7453-94a5-4c46-836e-683272e6933b"
+                },
+                {
+                  "id": "ea6a4f33-ab9a-4c80-ad76-d173f85bec4c",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-ea6a4f33-ab9a-4c80-ad76-d173f85bec4c"
+                }
+              ],
+              "createdAt": "2026-07-28T10:20:44.000Z",
+              "updatedAt": "2026-07-28T10:20:44.000Z",
+              "uid": "35240-1c4684eb-0d4c-4fa6-95be-2329da585853"
+            },
+            {
+              "name": "Amazon Entity Resolution TagResource",
+              "id": "148327ee-ff8f-497a-952f-5b00b188c3f4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {\n    \"consequat_e6\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"temporaea\": \"<string>\",\n    \"irure_570\": \"<string>\",\n    \"dolore_10e\": \"<string>\",\n    \"consectetur_6\": \"<string>\",\n    \"ind9\": \"<string>\",\n    \"amet_a1c\": \"<string>\",\n    \"commodo6\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"id_ff\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"magnaee\": \"<string>\",\n    \"cillum_ec7\": \"<string>\",\n    \"non4ff\": \"<string>\",\n    \"minim605\": \"<string>\",\n    \"sunta1f\": \"<string>\",\n    \"consectetur_9a4\": \"<string>\",\n    \"cillumf5\": \"<string>\",\n    \"Duis6d\": \"<string>\",\n    \"nisif7\": \"<string>\",\n    \"aliquip_464\": \"<string>\",\n    \"dolor1f\": \"<string>\",\n    \"aute4\": \"<string>\",\n    \"consequatc2\": \"<string>\",\n    \"tempor4\": \"<string>\",\n    \"sit0e\": \"<string>\",\n    \"nisi_03\": \"<string>\",\n    \"ut7_\": \"<string>\",\n    \"incididunt_d74\": \"<string>\",\n    \"aute__c2\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"nonc\": \"<string>\",\n    \"consectetur_c\": \"<string>\",\n    \"commodo_2bc\": \"<string>\",\n    \"occaecat_67\": \"<string>\",\n    \"Duis76_\": \"<string>\",\n    \"Excepteur_f45\": \"<string>\",\n    \"velit6\": \"<string>\",\n    \"dolor428\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"Duis_0f\": \"<string>\",\n    \"adipisicing_6b_\": \"<string>\",\n    \"cupidatat_6e\": \"<string>\",\n    \"ipsum31\": \"<string>\",\n    \"Lorem_6c\": \"<string>\",\n    \"anim_5\": \"<string>\",\n    \"mollit_b\": \"<string>\",\n    \"laboree5e\": \"<string>\",\n    \"pariatur_29\": \"<string>\",\n    \"laborisa\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"labore__52\": \"<string>\",\n    \"sit_ca\": \"<string>\",\n    \"irure805\": \"<string>\",\n    \"est_0_6\": \"<string>\",\n    \"nullaff\": \"<string>\",\n    \"dolor_1d\": \"<string>\",\n    \"magna__c0\": \"<string>\",\n    \"eiusmod_c4\": \"<string>\",\n    \"ut286\": \"<string>\",\n    \"in50\": \"<string>\",\n    \"laborumc\": \"<string>\",\n    \"estef\": \"<string>\",\n    \"laboris_0\": \"<string>\",\n    \"iruredb\": \"<string>\",\n    \"nostrud2\": \"<string>\",\n    \"Excepteur_22\": \"<string>\",\n    \"ullamco_beb\": \"<string>\",\n    \"pariatur7d8\": \"<string>\",\n    \"id_34f\": \"<string>\",\n    \"est_30\": \"<string>\",\n    \"nisi_4\": \"<string>\",\n    \"et_\": \"<string>\",\n    \"quis53\": \"<string>\",\n    \"est9_\": \"<string>\",\n    \"dolor5ca\": \"<string>\",\n    \"proident_c73\": \"<string>\",\n    \"veniam_9\": \"<string>\",\n    \"temporbc5\": \"<string>\",\n    \"ullamcoda\": \"<string>\",\n    \"occaecat_5_\": \"<string>\",\n    \"amet_74\": \"<string>\",\n    \"dolor_e49\": \"<string>\",\n    \"culpa_dc\": \"<string>\",\n    \"adipisicing_8\": \"<string>\",\n    \"veniam578\": \"<string>\",\n    \"reprehenderit_97\": \"<string>\",\n    \"velit_4d6\": \"<string>\",\n    \"sitdc7\": \"<string>\",\n    \"in_0d5\": \"<string>\",\n    \"magna_6\": \"<string>\",\n    \"dolore_a\": \"<string>\",\n    \"fugiat_58\": \"<string>\",\n    \"dolor7f\": \"<string>\",\n    \"labore_b\": \"<string>\",\n    \"sed2\": \"<string>\",\n    \"quis_6b\": \"<string>\",\n    \"exercitation_457\": \"<string>\",\n    \"do86\": \"<string>\",\n    \"utd5_\": \"<string>\",\n    \"reprehenderit_bc1\": \"<string>\",\n    \"irurec8\": \"<string>\",\n    \"proident_b5\": \"<string>\",\n    \"proident_f\": \"<string>\",\n    \"ea_fd2\": \"<string>\",\n    \"nulla_c8\": \"<string>\",\n    \"aute6\": \"<string>\",\n    \"pariatur_2_4\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"mollit_56\": \"<string>\",\n    \"adipisicing730\": \"<string>\",\n    \"cupidatat_e\": \"<string>\",\n    \"mollit3b0\": \"<string>\",\n    \"sit_4\": \"<string>\",\n    \"adipisicing__3\": \"<string>\",\n    \"mollitc1\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"Ut_25\": \"<string>\",\n    \"dolored1\": \"<string>\",\n    \"Lorem_c5d\": \"<string>\",\n    \"in_97\": \"<string>\",\n    \"voluptate7a1\": \"<string>\",\n    \"aute961\": \"<string>\",\n    \"esse_4\": \"<string>\",\n    \"consequat_8_d\": \"<string>\",\n    \"cillumf11\": \"<string>\",\n    \"non4\": \"<string>\",\n    \"tempore4\": \"<string>\",\n    \"ullamco65\": \"<string>\",\n    \"proident_2_\": \"<string>\",\n    \"dolor87\": \"<string>\",\n    \"eiusmod1\": \"<string>\",\n    \"esse11\": \"<string>\",\n    \"fugiat_1d\": \"<string>\",\n    \"eu566\": \"<string>\",\n    \"ad3\": \"<string>\",\n    \"fugiat2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/tags/:resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tags",
+                    ":resourceArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "cff7531f-3cbe-4fb5-af1e-e4bcbb9a87c4",
+                      "key": "resourceArn",
+                      "value": "arn:aws-us-gov:entityresolution:1G:33:schemamapping/F0PBPxhgv",
+                      "description": "(Required) The ARN of the resource for which you want to view tags."
+                    }
+                  ]
+                },
+                "description": "Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters. You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag."
+              },
+              "response": [
+                {
+                  "id": "64de9845-cbf6-432c-9fc8-c653e348ed88",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"tags\": {\n    \"consequat_e6\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"temporaea\": \"<string>\",\n    \"irure_570\": \"<string>\",\n    \"dolore_10e\": \"<string>\",\n    \"consectetur_6\": \"<string>\",\n    \"ind9\": \"<string>\",\n    \"amet_a1c\": \"<string>\",\n    \"commodo6\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"id_ff\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"magnaee\": \"<string>\",\n    \"cillum_ec7\": \"<string>\",\n    \"non4ff\": \"<string>\",\n    \"minim605\": \"<string>\",\n    \"sunta1f\": \"<string>\",\n    \"consectetur_9a4\": \"<string>\",\n    \"cillumf5\": \"<string>\",\n    \"Duis6d\": \"<string>\",\n    \"nisif7\": \"<string>\",\n    \"aliquip_464\": \"<string>\",\n    \"dolor1f\": \"<string>\",\n    \"aute4\": \"<string>\",\n    \"consequatc2\": \"<string>\",\n    \"tempor4\": \"<string>\",\n    \"sit0e\": \"<string>\",\n    \"nisi_03\": \"<string>\",\n    \"ut7_\": \"<string>\",\n    \"incididunt_d74\": \"<string>\",\n    \"aute__c2\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"nonc\": \"<string>\",\n    \"consectetur_c\": \"<string>\",\n    \"commodo_2bc\": \"<string>\",\n    \"occaecat_67\": \"<string>\",\n    \"Duis76_\": \"<string>\",\n    \"Excepteur_f45\": \"<string>\",\n    \"velit6\": \"<string>\",\n    \"dolor428\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"Duis_0f\": \"<string>\",\n    \"adipisicing_6b_\": \"<string>\",\n    \"cupidatat_6e\": \"<string>\",\n    \"ipsum31\": \"<string>\",\n    \"Lorem_6c\": \"<string>\",\n    \"anim_5\": \"<string>\",\n    \"mollit_b\": \"<string>\",\n    \"laboree5e\": \"<string>\",\n    \"pariatur_29\": \"<string>\",\n    \"laborisa\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"labore__52\": \"<string>\",\n    \"sit_ca\": \"<string>\",\n    \"irure805\": \"<string>\",\n    \"est_0_6\": \"<string>\",\n    \"nullaff\": \"<string>\",\n    \"dolor_1d\": \"<string>\",\n    \"magna__c0\": \"<string>\",\n    \"eiusmod_c4\": \"<string>\",\n    \"ut286\": \"<string>\",\n    \"in50\": \"<string>\",\n    \"laborumc\": \"<string>\",\n    \"estef\": \"<string>\",\n    \"laboris_0\": \"<string>\",\n    \"iruredb\": \"<string>\",\n    \"nostrud2\": \"<string>\",\n    \"Excepteur_22\": \"<string>\",\n    \"ullamco_beb\": \"<string>\",\n    \"pariatur7d8\": \"<string>\",\n    \"id_34f\": \"<string>\",\n    \"est_30\": \"<string>\",\n    \"nisi_4\": \"<string>\",\n    \"et_\": \"<string>\",\n    \"quis53\": \"<string>\",\n    \"est9_\": \"<string>\",\n    \"dolor5ca\": \"<string>\",\n    \"proident_c73\": \"<string>\",\n    \"veniam_9\": \"<string>\",\n    \"temporbc5\": \"<string>\",\n    \"ullamcoda\": \"<string>\",\n    \"occaecat_5_\": \"<string>\",\n    \"amet_74\": \"<string>\",\n    \"dolor_e49\": \"<string>\",\n    \"culpa_dc\": \"<string>\",\n    \"adipisicing_8\": \"<string>\",\n    \"veniam578\": \"<string>\",\n    \"reprehenderit_97\": \"<string>\",\n    \"velit_4d6\": \"<string>\",\n    \"sitdc7\": \"<string>\",\n    \"in_0d5\": \"<string>\",\n    \"magna_6\": \"<string>\",\n    \"dolore_a\": \"<string>\",\n    \"fugiat_58\": \"<string>\",\n    \"dolor7f\": \"<string>\",\n    \"labore_b\": \"<string>\",\n    \"sed2\": \"<string>\",\n    \"quis_6b\": \"<string>\",\n    \"exercitation_457\": \"<string>\",\n    \"do86\": \"<string>\",\n    \"utd5_\": \"<string>\",\n    \"reprehenderit_bc1\": \"<string>\",\n    \"irurec8\": \"<string>\",\n    \"proident_b5\": \"<string>\",\n    \"proident_f\": \"<string>\",\n    \"ea_fd2\": \"<string>\",\n    \"nulla_c8\": \"<string>\",\n    \"aute6\": \"<string>\",\n    \"pariatur_2_4\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"mollit_56\": \"<string>\",\n    \"adipisicing730\": \"<string>\",\n    \"cupidatat_e\": \"<string>\",\n    \"mollit3b0\": \"<string>\",\n    \"sit_4\": \"<string>\",\n    \"adipisicing__3\": \"<string>\",\n    \"mollitc1\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"Ut_25\": \"<string>\",\n    \"dolored1\": \"<string>\",\n    \"Lorem_c5d\": \"<string>\",\n    \"in_97\": \"<string>\",\n    \"voluptate7a1\": \"<string>\",\n    \"aute961\": \"<string>\",\n    \"esse_4\": \"<string>\",\n    \"consequat_8_d\": \"<string>\",\n    \"cillumf11\": \"<string>\",\n    \"non4\": \"<string>\",\n    \"tempore4\": \"<string>\",\n    \"ullamco65\": \"<string>\",\n    \"proident_2_\": \"<string>\",\n    \"dolor87\": \"<string>\",\n    \"eiusmod1\": \"<string>\",\n    \"esse11\": \"<string>\",\n    \"fugiat_1d\": \"<string>\",\n    \"eu566\": \"<string>\",\n    \"ad3\": \"<string>\",\n    \"fugiat2\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-64de9845-cbf6-432c-9fc8-c653e348ed88"
+                },
+                {
+                  "id": "157d1d24-b7dd-486a-89c9-da435e519352",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"tags\": {\n    \"consequat_e6\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"temporaea\": \"<string>\",\n    \"irure_570\": \"<string>\",\n    \"dolore_10e\": \"<string>\",\n    \"consectetur_6\": \"<string>\",\n    \"ind9\": \"<string>\",\n    \"amet_a1c\": \"<string>\",\n    \"commodo6\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"id_ff\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"magnaee\": \"<string>\",\n    \"cillum_ec7\": \"<string>\",\n    \"non4ff\": \"<string>\",\n    \"minim605\": \"<string>\",\n    \"sunta1f\": \"<string>\",\n    \"consectetur_9a4\": \"<string>\",\n    \"cillumf5\": \"<string>\",\n    \"Duis6d\": \"<string>\",\n    \"nisif7\": \"<string>\",\n    \"aliquip_464\": \"<string>\",\n    \"dolor1f\": \"<string>\",\n    \"aute4\": \"<string>\",\n    \"consequatc2\": \"<string>\",\n    \"tempor4\": \"<string>\",\n    \"sit0e\": \"<string>\",\n    \"nisi_03\": \"<string>\",\n    \"ut7_\": \"<string>\",\n    \"incididunt_d74\": \"<string>\",\n    \"aute__c2\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"nonc\": \"<string>\",\n    \"consectetur_c\": \"<string>\",\n    \"commodo_2bc\": \"<string>\",\n    \"occaecat_67\": \"<string>\",\n    \"Duis76_\": \"<string>\",\n    \"Excepteur_f45\": \"<string>\",\n    \"velit6\": \"<string>\",\n    \"dolor428\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"Duis_0f\": \"<string>\",\n    \"adipisicing_6b_\": \"<string>\",\n    \"cupidatat_6e\": \"<string>\",\n    \"ipsum31\": \"<string>\",\n    \"Lorem_6c\": \"<string>\",\n    \"anim_5\": \"<string>\",\n    \"mollit_b\": \"<string>\",\n    \"laboree5e\": \"<string>\",\n    \"pariatur_29\": \"<string>\",\n    \"laborisa\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"labore__52\": \"<string>\",\n    \"sit_ca\": \"<string>\",\n    \"irure805\": \"<string>\",\n    \"est_0_6\": \"<string>\",\n    \"nullaff\": \"<string>\",\n    \"dolor_1d\": \"<string>\",\n    \"magna__c0\": \"<string>\",\n    \"eiusmod_c4\": \"<string>\",\n    \"ut286\": \"<string>\",\n    \"in50\": \"<string>\",\n    \"laborumc\": \"<string>\",\n    \"estef\": \"<string>\",\n    \"laboris_0\": \"<string>\",\n    \"iruredb\": \"<string>\",\n    \"nostrud2\": \"<string>\",\n    \"Excepteur_22\": \"<string>\",\n    \"ullamco_beb\": \"<string>\",\n    \"pariatur7d8\": \"<string>\",\n    \"id_34f\": \"<string>\",\n    \"est_30\": \"<string>\",\n    \"nisi_4\": \"<string>\",\n    \"et_\": \"<string>\",\n    \"quis53\": \"<string>\",\n    \"est9_\": \"<string>\",\n    \"dolor5ca\": \"<string>\",\n    \"proident_c73\": \"<string>\",\n    \"veniam_9\": \"<string>\",\n    \"temporbc5\": \"<string>\",\n    \"ullamcoda\": \"<string>\",\n    \"occaecat_5_\": \"<string>\",\n    \"amet_74\": \"<string>\",\n    \"dolor_e49\": \"<string>\",\n    \"culpa_dc\": \"<string>\",\n    \"adipisicing_8\": \"<string>\",\n    \"veniam578\": \"<string>\",\n    \"reprehenderit_97\": \"<string>\",\n    \"velit_4d6\": \"<string>\",\n    \"sitdc7\": \"<string>\",\n    \"in_0d5\": \"<string>\",\n    \"magna_6\": \"<string>\",\n    \"dolore_a\": \"<string>\",\n    \"fugiat_58\": \"<string>\",\n    \"dolor7f\": \"<string>\",\n    \"labore_b\": \"<string>\",\n    \"sed2\": \"<string>\",\n    \"quis_6b\": \"<string>\",\n    \"exercitation_457\": \"<string>\",\n    \"do86\": \"<string>\",\n    \"utd5_\": \"<string>\",\n    \"reprehenderit_bc1\": \"<string>\",\n    \"irurec8\": \"<string>\",\n    \"proident_b5\": \"<string>\",\n    \"proident_f\": \"<string>\",\n    \"ea_fd2\": \"<string>\",\n    \"nulla_c8\": \"<string>\",\n    \"aute6\": \"<string>\",\n    \"pariatur_2_4\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"mollit_56\": \"<string>\",\n    \"adipisicing730\": \"<string>\",\n    \"cupidatat_e\": \"<string>\",\n    \"mollit3b0\": \"<string>\",\n    \"sit_4\": \"<string>\",\n    \"adipisicing__3\": \"<string>\",\n    \"mollitc1\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"Ut_25\": \"<string>\",\n    \"dolored1\": \"<string>\",\n    \"Lorem_c5d\": \"<string>\",\n    \"in_97\": \"<string>\",\n    \"voluptate7a1\": \"<string>\",\n    \"aute961\": \"<string>\",\n    \"esse_4\": \"<string>\",\n    \"consequat_8_d\": \"<string>\",\n    \"cillumf11\": \"<string>\",\n    \"non4\": \"<string>\",\n    \"tempore4\": \"<string>\",\n    \"ullamco65\": \"<string>\",\n    \"proident_2_\": \"<string>\",\n    \"dolor87\": \"<string>\",\n    \"eiusmod1\": \"<string>\",\n    \"esse11\": \"<string>\",\n    \"fugiat_1d\": \"<string>\",\n    \"eu566\": \"<string>\",\n    \"ad3\": \"<string>\",\n    \"fugiat2\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-157d1d24-b7dd-486a-89c9-da435e519352"
+                },
+                {
+                  "id": "4e314708-5542-43e8-9590-9d185187692c",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"tags\": {\n    \"consequat_e6\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"temporaea\": \"<string>\",\n    \"irure_570\": \"<string>\",\n    \"dolore_10e\": \"<string>\",\n    \"consectetur_6\": \"<string>\",\n    \"ind9\": \"<string>\",\n    \"amet_a1c\": \"<string>\",\n    \"commodo6\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"id_ff\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"magnaee\": \"<string>\",\n    \"cillum_ec7\": \"<string>\",\n    \"non4ff\": \"<string>\",\n    \"minim605\": \"<string>\",\n    \"sunta1f\": \"<string>\",\n    \"consectetur_9a4\": \"<string>\",\n    \"cillumf5\": \"<string>\",\n    \"Duis6d\": \"<string>\",\n    \"nisif7\": \"<string>\",\n    \"aliquip_464\": \"<string>\",\n    \"dolor1f\": \"<string>\",\n    \"aute4\": \"<string>\",\n    \"consequatc2\": \"<string>\",\n    \"tempor4\": \"<string>\",\n    \"sit0e\": \"<string>\",\n    \"nisi_03\": \"<string>\",\n    \"ut7_\": \"<string>\",\n    \"incididunt_d74\": \"<string>\",\n    \"aute__c2\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"nonc\": \"<string>\",\n    \"consectetur_c\": \"<string>\",\n    \"commodo_2bc\": \"<string>\",\n    \"occaecat_67\": \"<string>\",\n    \"Duis76_\": \"<string>\",\n    \"Excepteur_f45\": \"<string>\",\n    \"velit6\": \"<string>\",\n    \"dolor428\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"Duis_0f\": \"<string>\",\n    \"adipisicing_6b_\": \"<string>\",\n    \"cupidatat_6e\": \"<string>\",\n    \"ipsum31\": \"<string>\",\n    \"Lorem_6c\": \"<string>\",\n    \"anim_5\": \"<string>\",\n    \"mollit_b\": \"<string>\",\n    \"laboree5e\": \"<string>\",\n    \"pariatur_29\": \"<string>\",\n    \"laborisa\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"labore__52\": \"<string>\",\n    \"sit_ca\": \"<string>\",\n    \"irure805\": \"<string>\",\n    \"est_0_6\": \"<string>\",\n    \"nullaff\": \"<string>\",\n    \"dolor_1d\": \"<string>\",\n    \"magna__c0\": \"<string>\",\n    \"eiusmod_c4\": \"<string>\",\n    \"ut286\": \"<string>\",\n    \"in50\": \"<string>\",\n    \"laborumc\": \"<string>\",\n    \"estef\": \"<string>\",\n    \"laboris_0\": \"<string>\",\n    \"iruredb\": \"<string>\",\n    \"nostrud2\": \"<string>\",\n    \"Excepteur_22\": \"<string>\",\n    \"ullamco_beb\": \"<string>\",\n    \"pariatur7d8\": \"<string>\",\n    \"id_34f\": \"<string>\",\n    \"est_30\": \"<string>\",\n    \"nisi_4\": \"<string>\",\n    \"et_\": \"<string>\",\n    \"quis53\": \"<string>\",\n    \"est9_\": \"<string>\",\n    \"dolor5ca\": \"<string>\",\n    \"proident_c73\": \"<string>\",\n    \"veniam_9\": \"<string>\",\n    \"temporbc5\": \"<string>\",\n    \"ullamcoda\": \"<string>\",\n    \"occaecat_5_\": \"<string>\",\n    \"amet_74\": \"<string>\",\n    \"dolor_e49\": \"<string>\",\n    \"culpa_dc\": \"<string>\",\n    \"adipisicing_8\": \"<string>\",\n    \"veniam578\": \"<string>\",\n    \"reprehenderit_97\": \"<string>\",\n    \"velit_4d6\": \"<string>\",\n    \"sitdc7\": \"<string>\",\n    \"in_0d5\": \"<string>\",\n    \"magna_6\": \"<string>\",\n    \"dolore_a\": \"<string>\",\n    \"fugiat_58\": \"<string>\",\n    \"dolor7f\": \"<string>\",\n    \"labore_b\": \"<string>\",\n    \"sed2\": \"<string>\",\n    \"quis_6b\": \"<string>\",\n    \"exercitation_457\": \"<string>\",\n    \"do86\": \"<string>\",\n    \"utd5_\": \"<string>\",\n    \"reprehenderit_bc1\": \"<string>\",\n    \"irurec8\": \"<string>\",\n    \"proident_b5\": \"<string>\",\n    \"proident_f\": \"<string>\",\n    \"ea_fd2\": \"<string>\",\n    \"nulla_c8\": \"<string>\",\n    \"aute6\": \"<string>\",\n    \"pariatur_2_4\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"mollit_56\": \"<string>\",\n    \"adipisicing730\": \"<string>\",\n    \"cupidatat_e\": \"<string>\",\n    \"mollit3b0\": \"<string>\",\n    \"sit_4\": \"<string>\",\n    \"adipisicing__3\": \"<string>\",\n    \"mollitc1\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"Ut_25\": \"<string>\",\n    \"dolored1\": \"<string>\",\n    \"Lorem_c5d\": \"<string>\",\n    \"in_97\": \"<string>\",\n    \"voluptate7a1\": \"<string>\",\n    \"aute961\": \"<string>\",\n    \"esse_4\": \"<string>\",\n    \"consequat_8_d\": \"<string>\",\n    \"cillumf11\": \"<string>\",\n    \"non4\": \"<string>\",\n    \"tempore4\": \"<string>\",\n    \"ullamco65\": \"<string>\",\n    \"proident_2_\": \"<string>\",\n    \"dolor87\": \"<string>\",\n    \"eiusmod1\": \"<string>\",\n    \"esse11\": \"<string>\",\n    \"fugiat_1d\": \"<string>\",\n    \"eu566\": \"<string>\",\n    \"ad3\": \"<string>\",\n    \"fugiat2\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-4e314708-5542-43e8-9590-9d185187692c"
+                },
+                {
+                  "id": "3bd5bf56-2360-4b45-9d62-f3963752161f",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"tags\": {\n    \"consequat_e6\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"temporaea\": \"<string>\",\n    \"irure_570\": \"<string>\",\n    \"dolore_10e\": \"<string>\",\n    \"consectetur_6\": \"<string>\",\n    \"ind9\": \"<string>\",\n    \"amet_a1c\": \"<string>\",\n    \"commodo6\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"id_ff\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"magnaee\": \"<string>\",\n    \"cillum_ec7\": \"<string>\",\n    \"non4ff\": \"<string>\",\n    \"minim605\": \"<string>\",\n    \"sunta1f\": \"<string>\",\n    \"consectetur_9a4\": \"<string>\",\n    \"cillumf5\": \"<string>\",\n    \"Duis6d\": \"<string>\",\n    \"nisif7\": \"<string>\",\n    \"aliquip_464\": \"<string>\",\n    \"dolor1f\": \"<string>\",\n    \"aute4\": \"<string>\",\n    \"consequatc2\": \"<string>\",\n    \"tempor4\": \"<string>\",\n    \"sit0e\": \"<string>\",\n    \"nisi_03\": \"<string>\",\n    \"ut7_\": \"<string>\",\n    \"incididunt_d74\": \"<string>\",\n    \"aute__c2\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"nonc\": \"<string>\",\n    \"consectetur_c\": \"<string>\",\n    \"commodo_2bc\": \"<string>\",\n    \"occaecat_67\": \"<string>\",\n    \"Duis76_\": \"<string>\",\n    \"Excepteur_f45\": \"<string>\",\n    \"velit6\": \"<string>\",\n    \"dolor428\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"Duis_0f\": \"<string>\",\n    \"adipisicing_6b_\": \"<string>\",\n    \"cupidatat_6e\": \"<string>\",\n    \"ipsum31\": \"<string>\",\n    \"Lorem_6c\": \"<string>\",\n    \"anim_5\": \"<string>\",\n    \"mollit_b\": \"<string>\",\n    \"laboree5e\": \"<string>\",\n    \"pariatur_29\": \"<string>\",\n    \"laborisa\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"labore__52\": \"<string>\",\n    \"sit_ca\": \"<string>\",\n    \"irure805\": \"<string>\",\n    \"est_0_6\": \"<string>\",\n    \"nullaff\": \"<string>\",\n    \"dolor_1d\": \"<string>\",\n    \"magna__c0\": \"<string>\",\n    \"eiusmod_c4\": \"<string>\",\n    \"ut286\": \"<string>\",\n    \"in50\": \"<string>\",\n    \"laborumc\": \"<string>\",\n    \"estef\": \"<string>\",\n    \"laboris_0\": \"<string>\",\n    \"iruredb\": \"<string>\",\n    \"nostrud2\": \"<string>\",\n    \"Excepteur_22\": \"<string>\",\n    \"ullamco_beb\": \"<string>\",\n    \"pariatur7d8\": \"<string>\",\n    \"id_34f\": \"<string>\",\n    \"est_30\": \"<string>\",\n    \"nisi_4\": \"<string>\",\n    \"et_\": \"<string>\",\n    \"quis53\": \"<string>\",\n    \"est9_\": \"<string>\",\n    \"dolor5ca\": \"<string>\",\n    \"proident_c73\": \"<string>\",\n    \"veniam_9\": \"<string>\",\n    \"temporbc5\": \"<string>\",\n    \"ullamcoda\": \"<string>\",\n    \"occaecat_5_\": \"<string>\",\n    \"amet_74\": \"<string>\",\n    \"dolor_e49\": \"<string>\",\n    \"culpa_dc\": \"<string>\",\n    \"adipisicing_8\": \"<string>\",\n    \"veniam578\": \"<string>\",\n    \"reprehenderit_97\": \"<string>\",\n    \"velit_4d6\": \"<string>\",\n    \"sitdc7\": \"<string>\",\n    \"in_0d5\": \"<string>\",\n    \"magna_6\": \"<string>\",\n    \"dolore_a\": \"<string>\",\n    \"fugiat_58\": \"<string>\",\n    \"dolor7f\": \"<string>\",\n    \"labore_b\": \"<string>\",\n    \"sed2\": \"<string>\",\n    \"quis_6b\": \"<string>\",\n    \"exercitation_457\": \"<string>\",\n    \"do86\": \"<string>\",\n    \"utd5_\": \"<string>\",\n    \"reprehenderit_bc1\": \"<string>\",\n    \"irurec8\": \"<string>\",\n    \"proident_b5\": \"<string>\",\n    \"proident_f\": \"<string>\",\n    \"ea_fd2\": \"<string>\",\n    \"nulla_c8\": \"<string>\",\n    \"aute6\": \"<string>\",\n    \"pariatur_2_4\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"mollit_56\": \"<string>\",\n    \"adipisicing730\": \"<string>\",\n    \"cupidatat_e\": \"<string>\",\n    \"mollit3b0\": \"<string>\",\n    \"sit_4\": \"<string>\",\n    \"adipisicing__3\": \"<string>\",\n    \"mollitc1\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"Ut_25\": \"<string>\",\n    \"dolored1\": \"<string>\",\n    \"Lorem_c5d\": \"<string>\",\n    \"in_97\": \"<string>\",\n    \"voluptate7a1\": \"<string>\",\n    \"aute961\": \"<string>\",\n    \"esse_4\": \"<string>\",\n    \"consequat_8_d\": \"<string>\",\n    \"cillumf11\": \"<string>\",\n    \"non4\": \"<string>\",\n    \"tempore4\": \"<string>\",\n    \"ullamco65\": \"<string>\",\n    \"proident_2_\": \"<string>\",\n    \"dolor87\": \"<string>\",\n    \"eiusmod1\": \"<string>\",\n    \"esse11\": \"<string>\",\n    \"fugiat_1d\": \"<string>\",\n    \"eu566\": \"<string>\",\n    \"ad3\": \"<string>\",\n    \"fugiat2\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-3bd5bf56-2360-4b45-9d62-f3963752161f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:20:44.000Z",
+              "updatedAt": "2026-07-28T10:20:44.000Z",
+              "uid": "35240-148327ee-ff8f-497a-952f-5b00b188c3f4"
+            }
+          ],
+          "id": "a57a04c9-a869-4a2a-ac5c-d811db5790c4",
+          "createdAt": "2026-07-28T10:20:44.000Z",
+          "updatedAt": "2026-07-28T10:20:44.000Z",
+          "uid": "35240-a57a04c9-a869-4a2a-ac5c-d811db5790c4"
+        },
+        {
+          "name": "{resourceArn}#tagKeys",
+          "item": [
+            {
+              "name": "Amazon Entity Resolution UntagResource",
+              "id": "f717890e-1177-4cdb-9b1f-758963cb148c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/tags/{{resourceArn}}?tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>&tagKeys=<string>#tagKeys",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tags",
+                    "{{resourceArn}}"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The list of tag keys to remove from the resource.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "tagKeys"
+                },
+                "description": "Removes one or more tags from the specified AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged."
+              },
+              "response": [
+                {
+                  "id": "4ca302bc-bfff-44bc-bbb1-30a4b4d0d3d1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/{{resourceArn}}?tagKeys=<string>#tagKeys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        "{{resourceArn}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The list of tag keys to remove from the resource.",
+                          "key": "tagKeys",
+                          "value": "<string>"
+                        }
+                      ],
+                      "hash": "tagKeys"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-4ca302bc-bfff-44bc-bbb1-30a4b4d0d3d1"
+                },
+                {
+                  "id": "f9e4a9d0-a81e-4791-bfeb-a6425e5bc57e",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/{{resourceArn}}?tagKeys=<string>#tagKeys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        "{{resourceArn}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The list of tag keys to remove from the resource.",
+                          "key": "tagKeys",
+                          "value": "<string>"
+                        }
+                      ],
+                      "hash": "tagKeys"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-f9e4a9d0-a81e-4791-bfeb-a6425e5bc57e"
+                },
+                {
+                  "id": "efaca5a8-55a1-4898-bdae-4949e23cce6e",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/{{resourceArn}}?tagKeys=<string>#tagKeys",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        "{{resourceArn}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The list of tag keys to remove from the resource.",
+                          "key": "tagKeys",
+                          "value": "<string>"
+                        }
+                      ],
+                      "hash": "tagKeys"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:44.000Z",
+                  "updatedAt": "2026-07-28T10:20:44.000Z",
+                  "uid": "35240-efaca5a8-55a1-4898-bdae-4949e23cce6e"
+                }
+              ],
+              "createdAt": "2026-07-28T10:20:44.000Z",
+              "updatedAt": "2026-07-28T10:20:44.000Z",
+              "uid": "35240-f717890e-1177-4cdb-9b1f-758963cb148c"
+            }
+          ],
+          "id": "328bbe12-4682-43ab-87f6-86dd82797922",
+          "createdAt": "2026-07-28T10:20:44.000Z",
+          "updatedAt": "2026-07-28T10:20:44.000Z",
+          "uid": "35240-328bbe12-4682-43ab-87f6-86dd82797922"
+        }
+      ],
+      "id": "b267b3ff-6b72-44fa-91ad-537039caa7de",
+      "createdAt": "2026-07-28T10:20:44.000Z",
+      "updatedAt": "2026-07-28T10:20:44.000Z",
+      "uid": "35240-b267b3ff-6b72-44fa-91ad-537039caa7de"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://entityresolution.{{region}}.amazonaws.com"
+    },
+    {
+      "key": "resourceArn",
+      "value": "arn:aws-us-gov:entityresolution:1G:33:schemamapping/F0PBPxhgv"
+    }
+  ]
+}

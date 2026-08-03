@@ -1,0 +1,2212 @@
+{
+  "info": {
+    "_postman_id": "eb560316-ea3c-4471-abc5-42ad83fa9a2e",
+    "name": "AWS EntityResolution Matchingworkflows Schemas API",
+    "description": "<p>Welcome to the <i>AWS Entity Resolution API Reference</i>.</p> <p>AWS Entity Resolution is an AWS service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.</p> <p> With AWS Entity Resolution, you have the ability to match source records containing consumer identifiers, such as name, email address, and phone number. This holds true even when these records have incomplete or conflicting identifiers. For example, AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system, which includes account information like first name, last name, postal address, phone number, and email address, with a source record from a marketing system containing campaign information, such as username and email address.</p> <p>To learn more about AWS Entity Resolution concepts, procedures, and best practices, see the <a href=\"https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html\">AWS Entity Resolution User Guide</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:20:42.000Z",
+    "updatedAt": "2026-07-28T10:20:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-eb560316-ea3c-4471-abc5-42ad83fa9a2e"
+  },
+  "item": [
+    {
+      "name": "schemas",
+      "item": [
+        {
+          "name": "{schemaName}",
+          "item": [
+            {
+              "name": "Amazon Entity Resolution DeleteSchemaMapping",
+              "id": "3155b783-3e4b-4e9c-a94b-04dff36d1c0b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas/:schemaName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas",
+                    ":schemaName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "16082bf9-8d2f-4e80-806a-fb2ceda5cf30",
+                      "key": "schemaName",
+                      "value": "5Pzbt",
+                      "description": "(Required) The name of the schema to delete."
+                    }
+                  ]
+                },
+                "description": "Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>."
+              },
+              "response": [
+                {
+                  "id": "6d5559da-0d9e-440c-8e96-0c35f79f2769",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-6d5559da-0d9e-440c-8e96-0c35f79f2769"
+                },
+                {
+                  "id": "88cd0521-9456-488f-9487-bd1dc7036397",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-88cd0521-9456-488f-9487-bd1dc7036397"
+                },
+                {
+                  "id": "7f5b7ecb-a7d5-4501-acda-4452fb39132e",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-7f5b7ecb-a7d5-4501-acda-4452fb39132e"
+                },
+                {
+                  "id": "e732eecd-59ba-4c02-9da8-b291ec8149f6",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-e732eecd-59ba-4c02-9da8-b291ec8149f6"
+                },
+                {
+                  "id": "4450542d-300c-45d3-8472-f2ab94eaceef",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-4450542d-300c-45d3-8472-f2ab94eaceef"
+                },
+                {
+                  "id": "e86f9664-897e-453b-a92a-93dd6f7c4ccb",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-e86f9664-897e-453b-a92a-93dd6f7c4ccb"
+                }
+              ],
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-3155b783-3e4b-4e9c-a94b-04dff36d1c0b"
+            },
+            {
+              "name": "Amazon Entity Resolution GetSchemaMapping",
+              "id": "85e386cf-0f77-459d-96a0-556be98de139",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas/:schemaName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas",
+                    ":schemaName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "495d591b-0c1d-4f60-8a15-7356cd890866",
+                      "key": "schemaName",
+                      "value": "5Pzbt",
+                      "description": "(Required) The name of the schema to be retrieved."
+                    }
+                  ]
+                },
+                "description": "Returns the SchemaMapping of a given name."
+              },
+              "response": [
+                {
+                  "id": "cb1953b3-bfd0-4d35-9b1e-ea0ed708402b",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"createdAt\": \"<dateTime>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \" mLi\",\n      \"type\": \"ADDRESS_STATE\",\n      \"groupName\": \"Sz3JD\",\n      \"matchKey\": \"hzSjj\"\n    },\n    {\n      \"fieldName\": \"\",\n      \"type\": \"ADDRESS_STREET2\",\n      \"groupName\": \"iuuWvAS\",\n      \"matchKey\": \"fjW2Fuir\"\n    }\n  ],\n  \"schemaArn\": \"arn:aws-cn:entityresolution:~AkE[:9085611407:schemamapping/UNRnAy*t\",\n  \"schemaName\": \"OSYHjpXG\",\n  \"updatedAt\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"tags\": {\n    \"sit_\": \"<string>\",\n    \"nostrud_a0\": \"<string>\",\n    \"culpa_bf\": \"<string>\",\n    \"cupidatat2f\": \"<string>\",\n    \"voluptate8\": \"<string>\",\n    \"fugiat_4a\": \"<string>\",\n    \"reprehenderit_4\": \"<string>\",\n    \"quis475\": \"<string>\",\n    \"sit74\": \"<string>\",\n    \"dolore8\": \"<string>\",\n    \"incididunt_19\": \"<string>\",\n    \"eaa_\": \"<string>\",\n    \"proident1\": \"<string>\",\n    \"sint6b\": \"<string>\",\n    \"laboris_\": \"<string>\",\n    \"incididunt__2e\": \"<string>\",\n    \"aute_b6\": \"<string>\",\n    \"culpad2\": \"<string>\",\n    \"nonea\": \"<string>\",\n    \"fugiat_119\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"Excepteurcef\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-cb1953b3-bfd0-4d35-9b1e-ea0ed708402b"
+                },
+                {
+                  "id": "b76c25b8-f001-47f9-b584-5e906297336c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-b76c25b8-f001-47f9-b584-5e906297336c"
+                },
+                {
+                  "id": "e1b3c91f-4301-4c1c-9a9e-3e33b6893cc2",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-e1b3c91f-4301-4c1c-9a9e-3e33b6893cc2"
+                },
+                {
+                  "id": "8f794ac9-0eb1-40b9-909f-164b96001977",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-8f794ac9-0eb1-40b9-909f-164b96001977"
+                },
+                {
+                  "id": "77236676-ee59-408d-9492-e83260c71178",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-77236676-ee59-408d-9492-e83260c71178"
+                },
+                {
+                  "id": "1efa2697-8e7d-4934-9c80-513bacb58a97",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schemas/:schemaName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schemas",
+                        ":schemaName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "schemaName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:20:43.000Z",
+                  "updatedAt": "2026-07-28T10:20:43.000Z",
+                  "uid": "35240-1efa2697-8e7d-4934-9c80-513bacb58a97"
+                }
+              ],
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-85e386cf-0f77-459d-96a0-556be98de139"
+            }
+          ],
+          "id": "d9ba6837-8ab8-4aa4-8cb9-de555de1a3ab",
+          "createdAt": "2026-07-28T10:20:43.000Z",
+          "updatedAt": "2026-07-28T10:20:43.000Z",
+          "uid": "35240-d9ba6837-8ab8-4aa4-8cb9-de555de1a3ab"
+        },
+        {
+          "name": "Amazon Entity Resolution CreateSchemaMapping",
+          "id": "df585cb8-38e8-45b2-a064-bd203b10a127",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/schemas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "schemas"
+              ]
+            },
+            "description": "Creates a schema mapping, which defines the schema of the input customer records table. The <code>SchemaMapping</code> also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on."
+          },
+          "response": [
+            {
+              "id": "cef8200b-b92c-4ce6-ab81-c2eafeaa0d10",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"Wd0\",\n      \"type\": \"EMAIL_ADDRESS\",\n      \"groupName\": \"\",\n      \"matchKey\": \"8\"\n    },\n    {\n      \"fieldName\": \"N1b9e 7\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"HH9aFiF\",\n      \"matchKey\": \"z\"\n    }\n  ],\n  \"schemaArn\": \"arn:aws-us-gov:entityresolution:flP,E:789:schemamapping/p(+P!\",\n  \"schemaName\": \"VXC\"\n}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-cef8200b-b92c-4ce6-ab81-c2eafeaa0d10"
+            },
+            {
+              "id": "f0218927-c0e1-4114-8801-31d1c1efa205",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-f0218927-c0e1-4114-8801-31d1c1efa205"
+            },
+            {
+              "id": "cd1c8d2f-8f78-4de4-9b75-133ee6cc5a31",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-cd1c8d2f-8f78-4de4-9b75-133ee6cc5a31"
+            },
+            {
+              "id": "f4e907da-a47a-4030-8bdc-7ab5bc393cec",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-f4e907da-a47a-4030-8bdc-7ab5bc393cec"
+            },
+            {
+              "id": "e150fbb5-ff8d-42b5-a1c5-1ecd6f515671",
+              "name": "ExceedsLimitException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-e150fbb5-ff8d-42b5-a1c5-1ecd6f515671"
+            },
+            {
+              "id": "3949ca82-a67d-49bb-9c0f-1eec24003744",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-3949ca82-a67d-49bb-9c0f-1eec24003744"
+            },
+            {
+              "id": "f1629622-778a-4528-b7ce-8b165f7c58b7",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"vXny_5KO\",\n  \"description\": \"<string>\",\n  \"mappedInputFields\": [\n    {\n      \"fieldName\": \"nUBA\",\n      \"type\": \"ADDRESS_POSTALCODE\",\n      \"groupName\": \"2166 \",\n      \"matchKey\": \"TT\\tI\"\n    },\n    {\n      \"fieldName\": \"Lr0Hu\",\n      \"type\": \"PHONE\",\n      \"groupName\": \"\",\n      \"matchKey\": \"COpqs1CP\"\n    }\n  ],\n  \"tags\": {\n    \"Duis_7_e\": \"<string>\",\n    \"Utb\": \"<string>\",\n    \"ut76\": \"<string>\",\n    \"do4\": \"<string>\",\n    \"dolore_0\": \"<string>\",\n    \"elit2ca\": \"<string>\",\n    \"exercitation_d5\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"utea9\": \"<string>\",\n    \"elit_\": \"<string>\",\n    \"magna_38\": \"<string>\",\n    \"inabc\": \"<string>\",\n    \"sed96\": \"<string>\",\n    \"labore78\": \"<string>\",\n    \"pariatur_784\": \"<string>\",\n    \"ullamco366\": \"<string>\",\n    \"deserunt__\": \"<string>\",\n    \"ea_75b\": \"<string>\",\n    \"est_fc\": \"<string>\",\n    \"in_53\": \"<string>\",\n    \"cillum_e\": \"<string>\",\n    \"commodofc\": \"<string>\",\n    \"nisi_2a\": \"<string>\",\n    \"elit_13\": \"<string>\",\n    \"sunt2\": \"<string>\",\n    \"eiusmod_6\": \"<string>\",\n    \"incididunt_464\": \"<string>\",\n    \"cupidatat_6a\": \"<string>\",\n    \"consectetur_5\": \"<string>\",\n    \"dolor8\": \"<string>\",\n    \"quis_8\": \"<string>\",\n    \"id2\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"quis35\": \"<string>\",\n    \"exe\": \"<string>\",\n    \"nulla_92\": \"<string>\",\n    \"est_e\": \"<string>\",\n    \"deserunt11a\": \"<string>\",\n    \"nulla9a\": \"<string>\",\n    \"officia_5d7\": \"<string>\",\n    \"commodoc\": \"<string>\",\n    \"culpa04\": \"<string>\",\n    \"fugiatdd\": \"<string>\",\n    \"in9c\": \"<string>\",\n    \"dolor_8df\": \"<string>\",\n    \"amet_0_\": \"<string>\",\n    \"ex_5\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"ipsum_b_\": \"<string>\",\n    \"sunt7c\": \"<string>\",\n    \"inf\": \"<string>\",\n    \"minim22c\": \"<string>\",\n    \"ipsum_d8d\": \"<string>\",\n    \"ullamcoaab\": \"<string>\",\n    \"ea_6e\": \"<string>\",\n    \"fugiat_a97\": \"<string>\",\n    \"nulla_6f2\": \"<string>\",\n    \"dolore9f\": \"<string>\",\n    \"commodo_df\": \"<string>\",\n    \"nostrud_f\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"eu_525\": \"<string>\",\n    \"sunt8\": \"<string>\",\n    \"reprehenderit334\": \"<string>\",\n    \"laboris_b50\": \"<string>\",\n    \"do_2\": \"<string>\",\n    \"dolor_\": \"<string>\",\n    \"eu_c3\": \"<string>\",\n    \"laborisa7e\": \"<string>\",\n    \"Duisb23\": \"<string>\",\n    \"officia_44b\": \"<string>\",\n    \"cillumc\": \"<string>\",\n    \"sit4e\": \"<string>\",\n    \"ex_4e2\": \"<string>\",\n    \"eiusmod_e\": \"<string>\",\n    \"qui58\": \"<string>\",\n    \"sint7e6\": \"<string>\",\n    \"deserunt_9\": \"<string>\",\n    \"labore5d\": \"<string>\",\n    \"nisi_c0\": \"<string>\",\n    \"veniame0\": \"<string>\",\n    \"amet_5\": \"<string>\",\n    \"consectetur576\": \"<string>\",\n    \"ipsum2f\": \"<string>\",\n    \"enim872\": \"<string>\",\n    \"dolore1e\": \"<string>\",\n    \"Excepteur_834\": \"<string>\",\n    \"Excepteur9c\": \"<string>\",\n    \"do_4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"ipsum716\": \"<string>\",\n    \"mollite2\": \"<string>\",\n    \"officiade3\": \"<string>\",\n    \"ea__9e\": \"<string>\",\n    \"est_16\": \"<string>\",\n    \"Lorem_1_\": \"<string>\",\n    \"et_94\": \"<string>\",\n    \"sint_84\": \"<string>\",\n    \"eiusmod4e1\": \"<string>\",\n    \"Lorem_b89\": \"<string>\",\n    \"qui_1\": \"<string>\",\n    \"autec91\": \"<string>\",\n    \"magna2f\": \"<string>\",\n    \"aute_831\": \"<string>\",\n    \"enim_f8\": \"<string>\",\n    \"veniamf\": \"<string>\",\n    \"eaca\": \"<string>\",\n    \"Utd9\": \"<string>\",\n    \"do_e8d\": \"<string>\",\n    \"pariatur_485\": \"<string>\",\n    \"minim__\": \"<string>\",\n    \"Duis0\": \"<string>\",\n    \"officia7\": \"<string>\",\n    \"dolor_1\": \"<string>\",\n    \"dolore_3\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"commodo_4b8\": \"<string>\",\n    \"Excepteur__0\": \"<string>\",\n    \"Duis3f4\": \"<string>\",\n    \"aliquip_1\": \"<string>\",\n    \"anim734\": \"<string>\",\n    \"incididunt73\": \"<string>\",\n    \"laborum_8d0\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"sunt5\": \"<string>\",\n    \"mollite\": \"<string>\",\n    \"ea8\": \"<string>\",\n    \"dolore_f9\": \"<string>\",\n    \"nisi_fe\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"utdb9\": \"<string>\",\n    \"nullab73\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"cillum1_d\": \"<string>\",\n    \"dolor_128\": \"<string>\",\n    \"veniam_135\": \"<string>\",\n    \"adipisicinge8\": \"<string>\",\n    \"qui_183\": \"<string>\",\n    \"aliquip_d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"esse_16\": \"<string>\",\n    \"cupidatat_5\": \"<string>\",\n    \"pariatur_5\": \"<string>\",\n    \"deserunt17\": \"<string>\",\n    \"officia3c\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"laborum_9\": \"<string>\",\n    \"ametca\": \"<string>\",\n    \"dolor57\": \"<string>\",\n    \"pariatur76e\": \"<string>\",\n    \"est3f\": \"<string>\",\n    \"ullamco54\": \"<string>\",\n    \"minim_fb\": \"<string>\",\n    \"officia_0d\": \"<string>\",\n    \"mollit_a\": \"<string>\",\n    \"quis_a9\": \"<string>\",\n    \"aute6f5\": \"<string>\",\n    \"est_70\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"veniama\": \"<string>\",\n    \"commodo_9\": \"<string>\",\n    \"Duisc\": \"<string>\",\n    \"quis_251\": \"<string>\",\n    \"esse_2\": \"<string>\",\n    \"sitf06\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"consectetur_7d8\": \"<string>\",\n    \"officia9_\": \"<string>\",\n    \"fugiat_5c\": \"<string>\",\n    \"quis__aa\": \"<string>\",\n    \"esse_d\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"voluptatef1_\": \"<string>\",\n    \"occaecatb8\": \"<string>\",\n    \"tempor_828\": \"<string>\",\n    \"minime8\": \"<string>\",\n    \"Lorem_f\": \"<string>\",\n    \"enimb9\": \"<string>\",\n    \"officia_0_7\": \"<string>\",\n    \"velit67b\": \"<string>\",\n    \"consectetur_86\": \"<string>\",\n    \"fugiat3b9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schemas",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-f1629622-778a-4528-b7ce-8b165f7c58b7"
+            }
+          ],
+          "createdAt": "2026-07-28T10:20:43.000Z",
+          "updatedAt": "2026-07-28T10:20:43.000Z",
+          "uid": "35240-df585cb8-38e8-45b2-a064-bd203b10a127"
+        },
+        {
+          "name": "Amazon Entity Resolution ListSchemaMappings",
+          "id": "10136532-54dc-4bda-a0ab-0c1d152d3218",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/schemas?maxResults=<integer>&nextToken=0uaMk3dnpV",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "schemas"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of objects returned per page.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call.",
+                  "key": "nextToken",
+                  "value": "0uaMk3dnpV"
+                }
+              ]
+            },
+            "description": "Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account."
+          },
+          "response": [
+            {
+              "id": "0a704cc6-5b98-44f8-87ea-09b68dda2509",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas?maxResults=<integer>&nextToken=0uaMk3dnpV",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of objects returned per page.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call.",
+                      "key": "nextToken",
+                      "value": "0uaMk3dnpV"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"nextToken\": \"mHUJHlep1\",\n  \"schemaList\": [\n    {\n      \"createdAt\": \"<dateTime>\",\n      \"schemaArn\": \"arn:aws-us-gov:entityresolution::415987484:schemamapping/jG}hK\\\"T!\",\n      \"schemaName\": \"lwDb\",\n      \"updatedAt\": \"<dateTime>\"\n    },\n    {\n      \"createdAt\": \"<dateTime>\",\n      \"schemaArn\": \"arn:aws-cn:entityresolution:/;}>}F:0207708574:schemamapping/O\",\n      \"schemaName\": \"nMbmM\",\n      \"updatedAt\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-0a704cc6-5b98-44f8-87ea-09b68dda2509"
+            },
+            {
+              "id": "bf0c165e-4e02-40e5-b3c8-c73806917129",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas?maxResults=<integer>&nextToken=0uaMk3dnpV",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of objects returned per page.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call.",
+                      "key": "nextToken",
+                      "value": "0uaMk3dnpV"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-bf0c165e-4e02-40e5-b3c8-c73806917129"
+            },
+            {
+              "id": "99609123-651f-464d-a7fc-43aa00996082",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas?maxResults=<integer>&nextToken=0uaMk3dnpV",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of objects returned per page.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call.",
+                      "key": "nextToken",
+                      "value": "0uaMk3dnpV"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-99609123-651f-464d-a7fc-43aa00996082"
+            },
+            {
+              "id": "7aa2ab2a-4345-464f-84eb-496ab93f78f9",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas?maxResults=<integer>&nextToken=0uaMk3dnpV",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of objects returned per page.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call.",
+                      "key": "nextToken",
+                      "value": "0uaMk3dnpV"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-7aa2ab2a-4345-464f-84eb-496ab93f78f9"
+            },
+            {
+              "id": "346a9d08-b1af-44e2-8cb5-e597e3cc2f97",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schemas?maxResults=<integer>&nextToken=0uaMk3dnpV",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schemas"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of objects returned per page.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The pagination token from the previous <code>ListSchemaMappings</code> API call.",
+                      "key": "nextToken",
+                      "value": "0uaMk3dnpV"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:43.000Z",
+              "updatedAt": "2026-07-28T10:20:43.000Z",
+              "uid": "35240-346a9d08-b1af-44e2-8cb5-e597e3cc2f97"
+            }
+          ],
+          "createdAt": "2026-07-28T10:20:43.000Z",
+          "updatedAt": "2026-07-28T10:20:43.000Z",
+          "uid": "35240-10136532-54dc-4bda-a0ab-0c1d152d3218"
+        }
+      ],
+      "id": "c40204a4-2405-427e-b7d3-52bc89de278a",
+      "createdAt": "2026-07-28T10:20:43.000Z",
+      "updatedAt": "2026-07-28T10:20:43.000Z",
+      "uid": "35240-c40204a4-2405-427e-b7d3-52bc89de278a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://entityresolution.{{region}}.amazonaws.com"
+    }
+  ]
+}

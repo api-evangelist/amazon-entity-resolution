@@ -5,7 +5,7 @@
       "source": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
       "feed_url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -13,6 +13,6 @@
       "error": "HTTPError"
     }
   ],
-  "post_count": 413,
-  "fetched": "2026-07-11T11:50:51Z"
+  "post_count": 563,
+  "fetched": "2026-08-01T15:49:00Z"
 }

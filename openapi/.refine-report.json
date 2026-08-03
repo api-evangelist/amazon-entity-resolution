@@ -1,0 +1,18 @@
+{
+  "provider": "amazon-entity-resolution",
+  "sources": [
+    "amazon-entity-resolution-matchingworkflows-api-openapi.yml",
+    "amazon-entity-resolution-schemas-api-openapi.yml",
+    "amazon-entity-resolution-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-entity-resolution-matchingworkflows-api-openapi.yml",
+    "amazon-entity-resolution-schemas-api-openapi.yml",
+    "amazon-entity-resolution-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
