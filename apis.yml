@@ -20,7 +20,7 @@ image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.p
 url: https://aws.amazon.com/entity-resolution/
 created: '2024-01-15'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 tags:
   - Amazon Web Services
   - AWS
