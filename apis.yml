@@ -27,6 +27,13 @@ tags:
   - Data Integration
   - Data Matching
   - Entity Resolution
+  - Machine-Learning
+tags_raw:
+  - Amazon Web Services
+  - AWS
+  - Data Integration
+  - Data Matching
+  - Entity Resolution
   - Machine Learning
 apis:
 - aid: amazon-entity-resolution:amazon-entity-resolution-matchingworkflows-api
