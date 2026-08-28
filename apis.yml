@@ -3,6 +3,18 @@ description: >-
   Amazon Entity Resolution is a service that helps you match and link related records across multiple applications,
   channels, and data stores using machine learning and configurable matching techniques to identify and consolidate
   records that refer to the same entity.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
