@@ -10,8 +10,8 @@ info:
     and executed without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: entityResolutionApi
-  url: ../openapi/amazon-entity-resolution-openapi.yml
+- name: matchingworkflowsApi
+  url: ../openapi/amazon-entity-resolution-matchingworkflows-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: audit-latest-job

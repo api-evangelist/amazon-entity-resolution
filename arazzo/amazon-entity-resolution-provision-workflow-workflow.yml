@@ -12,8 +12,11 @@ info:
     OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: entityResolutionApi
-  url: ../openapi/amazon-entity-resolution-openapi.yml
+- name: matchingworkflowsApi
+  url: ../openapi/amazon-entity-resolution-matchingworkflows-api-openapi.yml
+  type: openapi
+- name: schemasApi
+  url: ../openapi/amazon-entity-resolution-schemas-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: provision-matching-workflow
