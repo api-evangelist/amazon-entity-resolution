@@ -82,6 +82,8 @@ apis:
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
+  - Schema
+  tags_raw:
   - Schemas
   properties:
   - type: OpenAPI
