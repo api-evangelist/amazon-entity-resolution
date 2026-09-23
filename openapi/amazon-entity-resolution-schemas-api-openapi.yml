@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2018-05-10'
   x-release: v4
-  title: AWS EntityResolution Matchingworkflows Schemas API
-  description: <p>Welcome to the <i>AWS Entity Resolution API Reference</i>.</p> <p>AWS Entity Resolution is an AWS service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.</p> <p> With AWS Entity Resolution, you have the ability to match source records containing consumer identifiers, such as name, email address, and phone number. This holds true even when these records have incomplete or conflicting identifiers. For example, AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system, which includes account information like first name, last name, postal address, phone number, and email address, with a source record from a marketing system containing campaign information, such as username and email address.</p> <p>To learn more about AWS Entity Resolution concepts, procedures, and best practices, see the <a href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">AWS Entity Resolution User Guide</a>.</p>
+  title: AWS EntityResolution Schemas API
+  description: Welcome to the AWS Entity Resolution API Reference.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/entityresolution-2018-05-10.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateSchemaMapping
-      description: Creates a schema mapping, which defines the schema of the input customer records table. The <code>SchemaMapping</code> also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on.
+      description: Creates a schema mapping, which defines the schema of the input customer records table. The SchemaMapping also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on.
       responses:
         '200':
           description: Success
@@ -260,7 +261,7 @@ paths:
       - Schemas
     get:
       operationId: ListSchemaMappings
-      description: Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account.
+      description: Returns a list of all the SchemaMappings that have been created for an AWS account.
       responses:
         '200':
           description: Success
@@ -353,7 +354,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     delete:
       operationId: DeleteSchemaMapping
-      description: Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>.
+      description: Deletes the SchemaMapping with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a DataIntegrationWorkflow object that references the SchemaMapping in the workflow's InputSourceConfig.
       responses:
         '200':
           description: Success
@@ -530,23 +531,63 @@ paths:
       tags:
       - Schemas
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    CreateSchemaMappingOutput:
+    ValidationException: {}
+    SchemaMappingSummary:
       type: object
       required:
-      - description
-      - mappedInputFields
+      - createdAt
       - schemaArn
       - schemaName
+      - updatedAt
       properties:
-        description:
+        createdAt:
           allOf:
-          - $ref: '#/components/schemas/Description'
-          - description: A description of the schema.
-        mappedInputFields:
-          allOf:
-          - $ref: '#/components/schemas/SchemaInputAttributes'
-          - description: A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The timestamp of when the <code>SchemaMapping</code> was created.
         schemaArn:
           allOf:
           - $ref: '#/components/schemas/SchemaMappingArn'
@@ -555,10 +596,35 @@ components:
           allOf:
           - $ref: '#/components/schemas/EntityName'
           - description: The name of the schema.
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The timestamp of when the <code>SchemaMapping</code> was last updated.
+      description: An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.
+    ResourceNotFoundException: {}
+    String:
+      type: string
     SchemaMappingArn:
       type: string
       pattern: ^arn:(aws|aws-us-gov|aws-cn):entityresolution:.*:[0-9]+:(schemamapping/.*)$
-    ValidationException: {}
+    NextToken:
+      type: string
+      pattern: ^[a-zA-Z_0-9-=+/]*$
+      minLength: 1
+      maxLength: 1024
+    ConflictException: {}
+    ListSchemaMappingsOutput:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token from the previous <code>ListDomains</code> API call.
+        schemaList:
+          allOf:
+          - $ref: '#/components/schemas/SchemaMappingList'
+          - description: A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
+    ThrottlingException: {}
     GetSchemaMappingOutput:
       type: object
       required:
@@ -596,36 +662,53 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The timestamp of when the <code>SchemaMapping</code> was last updated.
-    SchemaMappingList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SchemaMappingSummary'
+    ExceedsLimitException: {}
     Description:
       type: string
       minLength: 0
       maxLength: 255
-    SchemaInputAttributes:
+    Timestamp:
+      type: string
+      format: date-time
+    AttributeName:
+      type: string
+      pattern: ^[a-zA-Z_0-9- \t]*$
+      minLength: 0
+      maxLength: 255
+    TagMap:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    SchemaMappingList:
       type: array
       items:
-        $ref: '#/components/schemas/SchemaInputAttribute'
-      minItems: 2
-      maxItems: 25
-    String:
-      type: string
-    InternalServerException: {}
-    ConflictException: {}
-    ExceedsLimitException: {}
-    ListSchemaMappingsOutput:
+        $ref: '#/components/schemas/SchemaMappingSummary'
+    CreateSchemaMappingOutput:
       type: object
+      required:
+      - description
+      - mappedInputFields
+      - schemaArn
+      - schemaName
       properties:
-        nextToken:
+        description:
           allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token from the previous <code>ListDomains</code> API call.
-        schemaList:
+          - $ref: '#/components/schemas/Description'
+          - description: A description of the schema.
+        mappedInputFields:
           allOf:
-          - $ref: '#/components/schemas/SchemaMappingList'
-          - description: A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
+          - $ref: '#/components/schemas/SchemaInputAttributes'
+          - description: A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.
+        schemaArn:
+          allOf:
+          - $ref: '#/components/schemas/SchemaMappingArn'
+          - description: The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.
+        schemaName:
+          allOf:
+          - $ref: '#/components/schemas/EntityName'
+          - description: The name of the schema.
     EntityName:
       type: string
       pattern: ^[a-zA-Z_0-9-]*$
@@ -654,23 +737,16 @@ components:
           - $ref: '#/components/schemas/SchemaAttributeType'
           - description: The type of the attribute, selected from a list of values.
       description: An object containing <code>FieldField</code>, <code>Type</code>, <code>GroupName</code>, and <code>MatchKey</code>.
-    ThrottlingException: {}
-    AccessDeniedException: {}
-    TagMap:
-      type: object
-      minProperties: 0
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    DeleteSchemaMappingOutput:
-      type: object
-      required:
-      - message
-      properties:
-        message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A successful operation message.
+    SchemaInputAttributes:
+      type: array
+      items:
+        $ref: '#/components/schemas/SchemaInputAttribute'
+      minItems: 2
+      maxItems: 25
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     SchemaAttributeType:
       type: string
       enum:
@@ -693,92 +769,17 @@ components:
       - UNIQUE_ID
       - DATE
       - STRING
-    AttributeName:
-      type: string
-      pattern: ^[a-zA-Z_0-9- \t]*$
-      minLength: 0
-      maxLength: 255
-    ResourceNotFoundException: {}
-    NextToken:
-      type: string
-      pattern: ^[a-zA-Z_0-9-=+/]*$
-      minLength: 1
-      maxLength: 1024
-    SchemaMappingSummary:
+    AccessDeniedException: {}
+    DeleteSchemaMappingOutput:
       type: object
       required:
-      - createdAt
-      - schemaArn
-      - schemaName
-      - updatedAt
+      - message
       properties:
-        createdAt:
+        message:
           allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The timestamp of when the <code>SchemaMapping</code> was created.
-        schemaArn:
-          allOf:
-          - $ref: '#/components/schemas/SchemaMappingArn'
-          - description: The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.
-        schemaName:
-          allOf:
-          - $ref: '#/components/schemas/EntityName'
-          - description: The name of the schema.
-        updatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The timestamp of when the <code>SchemaMapping</code> was last updated.
-      description: An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    Timestamp:
-      type: string
-      format: date-time
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+          - $ref: '#/components/schemas/String'
+          - description: A successful operation message.
+    InternalServerException: {}
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,9 +1,7 @@
 {
   "provider": "amazon-entity-resolution",
   "sources": [
-    "amazon-entity-resolution-matchingworkflows-api-openapi.yml",
-    "amazon-entity-resolution-schemas-api-openapi.yml",
-    "amazon-entity-resolution-tags-api-openapi.yml"
+    "_original/amazon-entity-resolution-openapi.yml"
   ],
   "outputs": [
     "amazon-entity-resolution-matchingworkflows-api-openapi.yml",
@@ -14,7 +12,32 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-entity-resolution-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-entity-resolution-openapi.yml: tagged paths POST /matchingworkflows -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /matchingworkflows -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths POST /schemas -> Schemas",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /schemas -> Schemas",
+    "amazon-entity-resolution-openapi.yml: tagged paths DELETE /matchingworkflows/{workflowName} -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /matchingworkflows/{workflowName} -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths PUT /matchingworkflows/{workflowName} -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths DELETE /schemas/{schemaName} -> Schemas",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /schemas/{schemaName} -> Schemas",
+    "amazon-entity-resolution-openapi.yml: tagged paths POST /matchingworkflows/{workflowName}/matches -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /matchingworkflows/{workflowName}/jobs/{jobId} -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /matchingworkflows/{workflowName}/jobs -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths POST /matchingworkflows/{workflowName}/jobs -> Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: tagged paths GET /tags/{resourceArn} -> Tags",
+    "amazon-entity-resolution-openapi.yml: tagged paths POST /tags/{resourceArn} -> Tags",
+    "amazon-entity-resolution-openapi.yml: tagged paths DELETE /tags/{resourceArn}#tagKeys -> Tags",
+    "amazon-entity-resolution-openapi.yml: declared missing tag: Matchingworkflows",
+    "amazon-entity-resolution-openapi.yml: declared missing tag: Schemas",
+    "amazon-entity-resolution-openapi.yml: declared missing tag: Tags",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-entity-resolution-matchingworkflows-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-entity-resolution-schemas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-entity-resolution-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
