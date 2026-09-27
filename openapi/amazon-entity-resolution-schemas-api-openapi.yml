@@ -531,51 +531,11 @@ paths:
       tags:
       - Schemas
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ValidationException: {}
+    Description:
+      type: string
+      minLength: 0
+      maxLength: 255
     SchemaMappingSummary:
       type: object
       required:
@@ -601,30 +561,6 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The timestamp of when the <code>SchemaMapping</code> was last updated.
       description: An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.
-    ResourceNotFoundException: {}
-    String:
-      type: string
-    SchemaMappingArn:
-      type: string
-      pattern: ^arn:(aws|aws-us-gov|aws-cn):entityresolution:.*:[0-9]+:(schemamapping/.*)$
-    NextToken:
-      type: string
-      pattern: ^[a-zA-Z_0-9-=+/]*$
-      minLength: 1
-      maxLength: 1024
-    ConflictException: {}
-    ListSchemaMappingsOutput:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token from the previous <code>ListDomains</code> API call.
-        schemaList:
-          allOf:
-          - $ref: '#/components/schemas/SchemaMappingList'
-          - description: A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
-    ThrottlingException: {}
     GetSchemaMappingOutput:
       type: object
       required:
@@ -662,29 +598,61 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The timestamp of when the <code>SchemaMapping</code> was last updated.
-    ExceedsLimitException: {}
-    Description:
-      type: string
-      minLength: 0
-      maxLength: 255
-    Timestamp:
-      type: string
-      format: date-time
     AttributeName:
       type: string
       pattern: ^[a-zA-Z_0-9- \t]*$
       minLength: 0
       maxLength: 255
-    TagMap:
+    ListSchemaMappingsOutput:
       type: object
-      minProperties: 0
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    SchemaMappingList:
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token from the previous <code>ListDomains</code> API call.
+        schemaList:
+          allOf:
+          - $ref: '#/components/schemas/SchemaMappingList'
+          - description: A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
+    ConflictException: {}
+    SchemaAttributeType:
+      type: string
+      enum:
+      - NAME
+      - NAME_FIRST
+      - NAME_MIDDLE
+      - NAME_LAST
+      - ADDRESS
+      - ADDRESS_STREET1
+      - ADDRESS_STREET2
+      - ADDRESS_STREET3
+      - ADDRESS_CITY
+      - ADDRESS_STATE
+      - ADDRESS_COUNTRY
+      - ADDRESS_POSTALCODE
+      - PHONE
+      - PHONE_NUMBER
+      - PHONE_COUNTRYCODE
+      - EMAIL_ADDRESS
+      - UNIQUE_ID
+      - DATE
+      - STRING
+    SchemaInputAttributes:
       type: array
       items:
-        $ref: '#/components/schemas/SchemaMappingSummary'
+        $ref: '#/components/schemas/SchemaInputAttribute'
+      minItems: 2
+      maxItems: 25
+    NextToken:
+      type: string
+      pattern: ^[a-zA-Z_0-9-=+/]*$
+      minLength: 1
+      maxLength: 1024
+    EntityName:
+      type: string
+      pattern: ^[a-zA-Z_0-9-]*$
+      minLength: 0
+      maxLength: 255
     CreateSchemaMappingOutput:
       type: object
       required:
@@ -709,11 +677,31 @@ components:
           allOf:
           - $ref: '#/components/schemas/EntityName'
           - description: The name of the schema.
-    EntityName:
+    DeleteSchemaMappingOutput:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A successful operation message.
+    ThrottlingException: {}
+    TagValue:
       type: string
-      pattern: ^[a-zA-Z_0-9-]*$
       minLength: 0
-      maxLength: 255
+      maxLength: 256
+    ResourceNotFoundException: {}
+    TagMap:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    Timestamp:
+      type: string
+      format: date-time
+    ExceedsLimitException: {}
     SchemaInputAttribute:
       type: object
       required:
@@ -737,49 +725,61 @@ components:
           - $ref: '#/components/schemas/SchemaAttributeType'
           - description: The type of the attribute, selected from a list of values.
       description: An object containing <code>FieldField</code>, <code>Type</code>, <code>GroupName</code>, and <code>MatchKey</code>.
-    SchemaInputAttributes:
+    SchemaMappingList:
       type: array
       items:
-        $ref: '#/components/schemas/SchemaInputAttribute'
-      minItems: 2
-      maxItems: 25
-    TagValue:
+        $ref: '#/components/schemas/SchemaMappingSummary'
+    SchemaMappingArn:
       type: string
-      minLength: 0
-      maxLength: 256
-    SchemaAttributeType:
-      type: string
-      enum:
-      - NAME
-      - NAME_FIRST
-      - NAME_MIDDLE
-      - NAME_LAST
-      - ADDRESS
-      - ADDRESS_STREET1
-      - ADDRESS_STREET2
-      - ADDRESS_STREET3
-      - ADDRESS_CITY
-      - ADDRESS_STATE
-      - ADDRESS_COUNTRY
-      - ADDRESS_POSTALCODE
-      - PHONE
-      - PHONE_NUMBER
-      - PHONE_COUNTRYCODE
-      - EMAIL_ADDRESS
-      - UNIQUE_ID
-      - DATE
-      - STRING
+      pattern: ^arn:(aws|aws-us-gov|aws-cn):entityresolution:.*:[0-9]+:(schemamapping/.*)$
+    ValidationException: {}
     AccessDeniedException: {}
-    DeleteSchemaMappingOutput:
-      type: object
-      required:
-      - message
-      properties:
-        message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A successful operation message.
+    String:
+      type: string
     InternalServerException: {}
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

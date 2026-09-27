@@ -1158,26 +1158,162 @@ paths:
       - Matchingworkflows
 components:
   schemas:
-    GetMatchIdOutput:
-      type: object
-      properties:
-        matchId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The unique identifiers for this group of match records.
-    JobId:
+    OutputSourceOutputList:
+      type: array
+      items:
+        $ref: '#/components/schemas/OutputAttribute'
+      minItems: 0
+      maxItems: 750
+    JobList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobSummary'
+    Description:
       type: string
-      pattern: ^[a-f0-9]{32}$
-    ValidationException: {}
+      minLength: 0
+      maxLength: 255
     RuleBasedPropertiesRulesList:
       type: array
       items:
         $ref: '#/components/schemas/Rule'
       minItems: 1
       maxItems: 15
+    MatchingWorkflowSummary:
+      type: object
+      required:
+      - createdAt
+      - updatedAt
+      - workflowArn
+      - workflowName
+      properties:
+        createdAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The timestamp of when the workflow was created.
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The timestamp of when the workflow was last updated.
+        workflowArn:
+          allOf:
+          - $ref: '#/components/schemas/MatchingWorkflowArn'
+          - description: The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.
+        workflowName:
+          allOf:
+          - $ref: '#/components/schemas/EntityName'
+          - description: The name of the workflow.
+      description: A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
+    RecordAttributeMapValueString:
+      type: string
+      pattern: ^[a-zA-Z_0-9-.@ ()+\t]*$
+      minLength: 0
+      maxLength: 255
+    OutputAttribute:
+      type: object
+      required:
+      - name
+      properties:
+        hashed:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Enables the ability to hash the column values in the output.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/AttributeName'
+          - description: A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.
+      description: A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
+    Boolean:
+      type: boolean
+    ListMatchingWorkflowsOutput:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+        workflowSummaries:
+          allOf:
+          - $ref: '#/components/schemas/MatchingWorkflowList'
+          - description: A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.
+    Integer:
+      type: integer
+    AttributeName:
+      type: string
+      pattern: ^[a-zA-Z_0-9- \t]*$
+      minLength: 0
+      maxLength: 255
+    RuleMatchingKeysList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AttributeName'
+      minItems: 1
+      maxItems: 15
+    ConflictException: {}
+    InputSourceConfig:
+      type: array
+      items:
+        $ref: '#/components/schemas/InputSource'
+      minItems: 1
+      maxItems: 20
+    JobMetrics:
+      type: object
+      properties:
+        inputRecords:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The total number of input records.
+        matchIDs:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The total number of <code>matchID</code>s generated.
+        recordsNotProcessed:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The total number of records that did not get processed,
+        totalRecordsProcessed:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The total number of records processed.
+      description: An object containing <code>InputRecords</code>, <code>TotalRecordsProcessed</code>, <code>MatchIDs</code>, and <code>RecordsNotProcessed</code>.
+    NextToken:
+      type: string
+      pattern: ^[a-zA-Z_0-9-=+/]*$
+      minLength: 1
+      maxLength: 1024
     MatchingWorkflowArn:
       type: string
       pattern: ^arn:(aws|aws-us-gov|aws-cn):entityresolution:.*:[0-9]+:(matchingworkflow/.*)$
+    GetMatchingJobOutput:
+      type: object
+      required:
+      - jobId
+      - startTime
+      - status
+      properties:
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the job has finished.
+        errorDetails:
+          allOf:
+          - $ref: '#/components/schemas/ErrorDetails'
+          - description: An object containing an error message, if there was an error.
+        jobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID of the job.
+        metrics:
+          allOf:
+          - $ref: '#/components/schemas/JobMetrics'
+          - description: Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.
+        startTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the job was started.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.
     GetMatchingWorkflowOutput:
       type: object
       required:
@@ -1234,271 +1370,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/EntityName'
           - description: The name of the workflow.
-    RecordAttributeMapValueString:
-      type: string
-      pattern: ^[a-zA-Z_0-9-.@ ()+\t]*$
-      minLength: 0
-      maxLength: 255
-    UpdateMatchingWorkflowOutput:
-      type: object
-      required:
-      - inputSourceConfig
-      - outputSourceConfig
-      - resolutionTechniques
-      - roleArn
-      - workflowName
-      properties:
-        description:
-          allOf:
-          - $ref: '#/components/schemas/Description'
-          - description: A description of the workflow.
-        incrementalRunConfig:
-          allOf:
-          - $ref: '#/components/schemas/IncrementalRunConfig'
-          - description: An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.
-        inputSourceConfig:
-          allOf:
-          - $ref: '#/components/schemas/InputSourceConfig'
-          - description: A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.
-        outputSourceConfig:
-          allOf:
-          - $ref: '#/components/schemas/OutputSourceConfig'
-          - description: A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.
-        resolutionTechniques:
-          allOf:
-          - $ref: '#/components/schemas/ResolutionTechniques'
-          - description: 'An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> '
-        roleArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.
-        workflowName:
-          allOf:
-          - $ref: '#/components/schemas/EntityName'
-          - description: The name of the workflow.
-    ResourceNotFoundException: {}
-    Boolean:
-      type: boolean
-    RuleBasedProperties:
-      type: object
-      required:
-      - attributeMatchingModel
-      - rules
-      properties:
-        attributeMatchingModel:
-          allOf:
-          - $ref: '#/components/schemas/AttributeMatchingModel'
-          - description: You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.
-        rules:
-          allOf:
-          - $ref: '#/components/schemas/RuleBasedPropertiesRulesList'
-          - description: A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.
-      description: An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.
     KMSArn:
       type: string
       pattern: ^arn:aws:kms:.*:[0-9]+:.*$
-    JobSummary:
-      type: object
-      required:
-      - jobId
-      - startTime
-      - status
-      properties:
-        endTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time at which the job has finished.
-        jobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID of the job.
-        startTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time at which the job was started.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/JobStatus'
-          - description: The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.
-      description: An object containing the <code>JobId</code>, <code>Status</code>, <code>StartTime</code>, and <code>EndTime</code> of a job.
-    OutputSourceOutputList:
-      type: array
-      items:
-        $ref: '#/components/schemas/OutputAttribute'
-      minItems: 0
-      maxItems: 750
-    StartMatchingJobOutput:
-      type: object
-      required:
-      - jobId
-      properties:
-        jobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID of the job.
-    String:
+    EntityName:
       type: string
-    NextToken:
-      type: string
-      pattern: ^[a-zA-Z_0-9-=+/]*$
-      minLength: 1
-      maxLength: 1024
-    JobStatus:
-      type: string
-      enum:
-      - RUNNING
-      - SUCCEEDED
-      - FAILED
-      - QUEUED
-    OutputAttribute:
-      type: object
-      required:
-      - name
-      properties:
-        hashed:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Enables the ability to hash the column values in the output.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/AttributeName'
-          - description: A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.
-      description: A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
-    ConflictException: {}
-    RuleRuleNameString:
-      type: string
-      pattern: ^[a-zA-Z_0-9- \t]*$
+      pattern: ^[a-zA-Z_0-9-]*$
       minLength: 0
       maxLength: 255
-    InputSourceInputSourceARNString:
-      type: string
-      pattern: ^arn:aws:.*:.*:[0-9]+:.*$
-    ThrottlingException: {}
-    RuleMatchingKeysList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AttributeName'
-      minItems: 1
-      maxItems: 15
-    JobMetrics:
-      type: object
-      properties:
-        inputRecords:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The total number of input records.
-        matchIDs:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The total number of <code>matchID</code>s generated.
-        recordsNotProcessed:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The total number of records that did not get processed,
-        totalRecordsProcessed:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The total number of records processed.
-      description: An object containing <code>InputRecords</code>, <code>TotalRecordsProcessed</code>, <code>MatchIDs</code>, and <code>RecordsNotProcessed</code>.
-    AttributeMatchingModel:
-      type: string
-      enum:
-      - ONE_TO_ONE
-      - MANY_TO_MANY
-    ResolutionType:
-      type: string
-      enum:
-      - RULE_MATCHING
-      - ML_MATCHING
-    AccessDeniedException: {}
-    IncrementalRunConfig:
-      type: object
-      properties:
-        incrementalRunType:
-          allOf:
-          - $ref: '#/components/schemas/IncrementalRunType'
-          - description: 'The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.'
-      description: An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.
-    InputSource:
-      type: object
-      required:
-      - inputSourceARN
-      - schemaName
-      properties:
-        applyNormalization:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.
-        inputSourceARN:
-          allOf:
-          - $ref: '#/components/schemas/InputSourceInputSourceARNString'
-          - description: An Glue table ARN for the input source table.
-        schemaName:
-          allOf:
-          - $ref: '#/components/schemas/EntityName'
-          - description: The name of the schema to be retrieved.
-      description: An object containing <code>InputSourceARN</code>, <code>SchemaName</code>, and <code>ApplyNormalization</code>.
-    Description:
-      type: string
-      minLength: 0
-      maxLength: 255
-    OutputSource:
-      type: object
-      required:
-      - output
-      - outputS3Path
-      properties:
-        KMSArn:
-          allOf:
-          - $ref: '#/components/schemas/KMSArn'
-          - description: Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.
-        applyNormalization:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.
-        output:
-          allOf:
-          - $ref: '#/components/schemas/OutputSourceOutputList'
-          - description: A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
-        outputS3Path:
-          allOf:
-          - $ref: '#/components/schemas/OutputSourceOutputS3PathString'
-          - description: The S3 path to which Entity Resolution will write the output table.
-      description: A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
-    Timestamp:
-      type: string
-      format: date-time
-    GetMatchingJobOutput:
-      type: object
-      required:
-      - jobId
-      - startTime
-      - status
-      properties:
-        endTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time at which the job has finished.
-        errorDetails:
-          allOf:
-          - $ref: '#/components/schemas/ErrorDetails'
-          - description: An object containing an error message, if there was an error.
-        jobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID of the job.
-        metrics:
-          allOf:
-          - $ref: '#/components/schemas/JobMetrics'
-          - description: Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.
-        startTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time at which the job was started.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/JobStatus'
-          - description: The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.
     ErrorDetails:
       type: object
       properties:
@@ -1507,143 +1386,6 @@ components:
           - $ref: '#/components/schemas/ErrorMessage'
           - description: The error message from the job, if there is one.
       description: An object containing an error message, if there was an error.
-    AttributeName:
-      type: string
-      pattern: ^[a-zA-Z_0-9- \t]*$
-      minLength: 0
-      maxLength: 255
-    ErrorMessage:
-      type: string
-      minLength: 1
-      maxLength: 2048
-    ListMatchingWorkflowsOutput:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
-        workflowSummaries:
-          allOf:
-          - $ref: '#/components/schemas/MatchingWorkflowList'
-          - description: A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.
-    MatchingWorkflowList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MatchingWorkflowSummary'
-    TagMap:
-      type: object
-      minProperties: 0
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    JobList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobSummary'
-    EntityName:
-      type: string
-      pattern: ^[a-zA-Z_0-9-]*$
-      minLength: 0
-      maxLength: 255
-    OutputSourceConfig:
-      type: array
-      items:
-        $ref: '#/components/schemas/OutputSource'
-      minItems: 1
-      maxItems: 1
-    DeleteMatchingWorkflowOutput:
-      type: object
-      required:
-      - message
-      properties:
-        message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A successful operation message.
-    IncrementalRunType:
-      type: string
-      enum:
-      - IMMEDIATE
-    Rule:
-      type: object
-      required:
-      - matchingKeys
-      - ruleName
-      properties:
-        matchingKeys:
-          allOf:
-          - $ref: '#/components/schemas/RuleMatchingKeysList'
-          - description: A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.
-        ruleName:
-          allOf:
-          - $ref: '#/components/schemas/RuleRuleNameString'
-          - description: A name for the matching rule.
-      description: An object containing <code>RuleName</code>, and <code>MatchingKeys</code>.
-    OutputSourceOutputS3PathString:
-      type: string
-      pattern: ^s3://([^/]+)/?(.*?([^/]+)/?)$
-    InternalServerException: {}
-    Integer:
-      type: integer
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    MatchingWorkflowSummary:
-      type: object
-      required:
-      - createdAt
-      - updatedAt
-      - workflowArn
-      - workflowName
-      properties:
-        createdAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The timestamp of when the workflow was created.
-        updatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The timestamp of when the workflow was last updated.
-        workflowArn:
-          allOf:
-          - $ref: '#/components/schemas/MatchingWorkflowArn'
-          - description: The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.
-        workflowName:
-          allOf:
-          - $ref: '#/components/schemas/EntityName'
-          - description: The name of the workflow.
-      description: A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
-    ResolutionTechniques:
-      type: object
-      properties:
-        resolutionType:
-          allOf:
-          - $ref: '#/components/schemas/ResolutionType'
-          - description: 'There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code> '
-        ruleBasedProperties:
-          allOf:
-          - $ref: '#/components/schemas/RuleBasedProperties'
-          - description: An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.
-      description: 'An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> '
-    InputSourceConfig:
-      type: array
-      items:
-        $ref: '#/components/schemas/InputSource'
-      minItems: 1
-      maxItems: 20
-    ListMatchingJobsOutput:
-      type: object
-      properties:
-        jobs:
-          allOf:
-          - $ref: '#/components/schemas/JobList'
-          - description: A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
     CreateMatchingWorkflowOutput:
       type: object
       required:
@@ -1686,34 +1428,274 @@ components:
           allOf:
           - $ref: '#/components/schemas/EntityName'
           - description: The name of the workflow.
+    OutputSource:
+      type: object
+      required:
+      - output
+      - outputS3Path
+      properties:
+        KMSArn:
+          allOf:
+          - $ref: '#/components/schemas/KMSArn'
+          - description: Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.
+        applyNormalization:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.
+        output:
+          allOf:
+          - $ref: '#/components/schemas/OutputSourceOutputList'
+          - description: A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
+        outputS3Path:
+          allOf:
+          - $ref: '#/components/schemas/OutputSourceOutputS3PathString'
+          - description: The S3 path to which Entity Resolution will write the output table.
+      description: A list of <code>OutputAttribute</code> objects, each of which have the fields Name and Hashed. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.
+    MatchingWorkflowList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MatchingWorkflowSummary'
+    OutputSourceConfig:
+      type: array
+      items:
+        $ref: '#/components/schemas/OutputSource'
+      minItems: 1
+      maxItems: 1
+    ThrottlingException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    JobStatus:
+      type: string
+      enum:
+      - RUNNING
+      - SUCCEEDED
+      - FAILED
+      - QUEUED
+    StartMatchingJobOutput:
+      type: object
+      required:
+      - jobId
+      properties:
+        jobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID of the job.
+    ResourceNotFoundException: {}
+    ResolutionType:
+      type: string
+      enum:
+      - RULE_MATCHING
+      - ML_MATCHING
+    JobSummary:
+      type: object
+      required:
+      - jobId
+      - startTime
+      - status
+      properties:
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the job has finished.
+        jobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID of the job.
+        startTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the job was started.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/JobStatus'
+          - description: The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.
+      description: An object containing the <code>JobId</code>, <code>Status</code>, <code>StartTime</code>, and <code>EndTime</code> of a job.
+    UpdateMatchingWorkflowOutput:
+      type: object
+      required:
+      - inputSourceConfig
+      - outputSourceConfig
+      - resolutionTechniques
+      - roleArn
+      - workflowName
+      properties:
+        description:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: A description of the workflow.
+        incrementalRunConfig:
+          allOf:
+          - $ref: '#/components/schemas/IncrementalRunConfig'
+          - description: An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.
+        inputSourceConfig:
+          allOf:
+          - $ref: '#/components/schemas/InputSourceConfig'
+          - description: A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.
+        outputSourceConfig:
+          allOf:
+          - $ref: '#/components/schemas/OutputSourceConfig'
+          - description: A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.
+        resolutionTechniques:
+          allOf:
+          - $ref: '#/components/schemas/ResolutionTechniques'
+          - description: 'An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> '
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.
+        workflowName:
+          allOf:
+          - $ref: '#/components/schemas/EntityName'
+          - description: The name of the workflow.
+    DeleteMatchingWorkflowOutput:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A successful operation message.
+    IncrementalRunConfig:
+      type: object
+      properties:
+        incrementalRunType:
+          allOf:
+          - $ref: '#/components/schemas/IncrementalRunType'
+          - description: 'The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.'
+      description: An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.
+    TagMap:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    AttributeMatchingModel:
+      type: string
+      enum:
+      - ONE_TO_ONE
+      - MANY_TO_MANY
+    IncrementalRunType:
+      type: string
+      enum:
+      - IMMEDIATE
+    GetMatchIdOutput:
+      type: object
+      properties:
+        matchId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifiers for this group of match records.
+    RuleRuleNameString:
+      type: string
+      pattern: ^[a-zA-Z_0-9- \t]*$
+      minLength: 0
+      maxLength: 255
+    Timestamp:
+      type: string
+      format: date-time
+    InputSource:
+      type: object
+      required:
+      - inputSourceARN
+      - schemaName
+      properties:
+        applyNormalization:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.
+        inputSourceARN:
+          allOf:
+          - $ref: '#/components/schemas/InputSourceInputSourceARNString'
+          - description: An Glue table ARN for the input source table.
+        schemaName:
+          allOf:
+          - $ref: '#/components/schemas/EntityName'
+          - description: The name of the schema to be retrieved.
+      description: An object containing <code>InputSourceARN</code>, <code>SchemaName</code>, and <code>ApplyNormalization</code>.
     ExceedsLimitException: {}
+    OutputSourceOutputS3PathString:
+      type: string
+      pattern: ^s3://([^/]+)/?(.*?([^/]+)/?)$
+    RuleBasedProperties:
+      type: object
+      required:
+      - attributeMatchingModel
+      - rules
+      properties:
+        attributeMatchingModel:
+          allOf:
+          - $ref: '#/components/schemas/AttributeMatchingModel'
+          - description: You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.
+        rules:
+          allOf:
+          - $ref: '#/components/schemas/RuleBasedPropertiesRulesList'
+          - description: A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.
+      description: An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.
+    InputSourceInputSourceARNString:
+      type: string
+      pattern: ^arn:aws:.*:.*:[0-9]+:.*$
+    ListMatchingJobsOutput:
+      type: object
+      properties:
+        jobs:
+          allOf:
+          - $ref: '#/components/schemas/JobList'
+          - description: A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token from the previous <code>ListSchemaMappings</code> API call.
+    ValidationException: {}
+    AccessDeniedException: {}
+    JobId:
+      type: string
+      pattern: ^[a-f0-9]{32}$
+    Rule:
+      type: object
+      required:
+      - matchingKeys
+      - ruleName
+      properties:
+        matchingKeys:
+          allOf:
+          - $ref: '#/components/schemas/RuleMatchingKeysList'
+          - description: A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.
+        ruleName:
+          allOf:
+          - $ref: '#/components/schemas/RuleRuleNameString'
+          - description: A name for the matching rule.
+      description: An object containing <code>RuleName</code>, and <code>MatchingKeys</code>.
+    String:
+      type: string
+    InternalServerException: {}
+    ErrorMessage:
+      type: string
+      minLength: 1
+      maxLength: 2048
+    ResolutionTechniques:
+      type: object
+      properties:
+        resolutionType:
+          allOf:
+          - $ref: '#/components/schemas/ResolutionType'
+          - description: 'There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code> '
+        ruleBasedProperties:
+          allOf:
+          - $ref: '#/components/schemas/RuleBasedProperties'
+          - description: An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.
+      description: 'An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> '
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -1724,8 +1706,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

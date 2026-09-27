@@ -39,7 +39,7 @@ tags:
 - Data Integration
 - Data Matching
 - Entity Resolution
-- Machine-Learning
+- Machine Learning
 tags_raw:
 - Amazon Web Services
 - AWS
@@ -47,6 +47,7 @@ tags_raw:
 - Data Matching
 - Entity Resolution
 - Machine Learning
+- Machine-Learning
 apis:
 - aid: amazon-entity-resolution:amazon-entity-resolution-matchingworkflows-api
   name: Amazon Entity Resolution Matchingworkflows API
@@ -136,7 +137,7 @@ apis:
     url: json-ld/amazon-entity-resolution-context.jsonld
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/entity-resolution/
 - type: AgenticAccess
   url: agentic-access/amazon-entity-resolution-agentic-access.yml
 - type: TrustCenter
@@ -257,5 +258,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
