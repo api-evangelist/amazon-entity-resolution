@@ -136,6 +136,9 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-entity-resolution-context.jsonld
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-entity-resolution-capability-edges.yml
+  name: Amazon Entity Resolution Business Capability Map
 - type: Website
   url: https://aws.amazon.com/entity-resolution/
 - type: AgenticAccess
