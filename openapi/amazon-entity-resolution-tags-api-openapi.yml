@@ -342,42 +342,15 @@ paths:
       tags:
       - Tags
 components:
-  schemas:
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    TagMap:
-      type: object
-      minProperties: 0
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    UntagResourceOutput:
-      type: object
-      properties: {}
-    ListTagsForResourceOutput:
-      type: object
-      required:
-      - tags
-      properties:
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: The tags used to organize, track, or control access for this resource.
-    InternalServerException: {}
-    ValidationException: {}
-    ResourceNotFoundException: {}
-    TagResourceOutput:
-      type: object
-      properties: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -400,24 +373,51 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ValidationException: {}
+    TagMap:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    UntagResourceOutput:
+      type: object
+      properties: {}
+    ListTagsForResourceOutput:
+      type: object
+      required:
+      - tags
+      properties:
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags used to organize, track, or control access for this resource.
+    InternalServerException: {}
+    TagResourceOutput:
+      type: object
+      properties: {}
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ResourceNotFoundException: {}
   securitySchemes:
     hmac:
       type: apiKey
