@@ -136,6 +136,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-entity-resolution-context.jsonld
 common:
+- type: Plans
+  url: plans/amazon-entity-resolution-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/amazon-entity-resolution-capability-edges.yml
   name: Amazon Entity Resolution Business Capability Map
