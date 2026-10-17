@@ -532,42 +532,18 @@ paths:
       - Schemas
 components:
   schemas:
+    ThrottlingException: {}
     TagMap:
       type: object
       minProperties: 0
       maxProperties: 200
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    SchemaAttributeType:
-      type: string
-      enum:
-      - NAME
-      - NAME_FIRST
-      - NAME_MIDDLE
-      - NAME_LAST
-      - ADDRESS
-      - ADDRESS_STREET1
-      - ADDRESS_STREET2
-      - ADDRESS_STREET3
-      - ADDRESS_CITY
-      - ADDRESS_STATE
-      - ADDRESS_COUNTRY
-      - ADDRESS_POSTALCODE
-      - PHONE
-      - PHONE_NUMBER
-      - PHONE_COUNTRYCODE
-      - EMAIL_ADDRESS
-      - UNIQUE_ID
-      - DATE
-      - STRING
     EntityName:
       type: string
       pattern: ^[a-zA-Z_0-9-]*$
       minLength: 0
       maxLength: 255
-    SchemaMappingArn:
-      type: string
-      pattern: ^arn:(aws|aws-us-gov|aws-cn):entityresolution:.*:[0-9]+:(schemamapping/.*)$
     ListSchemaMappingsOutput:
       type: object
       properties:
@@ -579,20 +555,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/SchemaMappingList'
           - description: A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
-    Description:
+    ValidationException: {}
+    NextToken:
       type: string
-      minLength: 0
-      maxLength: 255
-    SchemaInputAttributes:
-      type: array
-      items:
-        $ref: '#/components/schemas/SchemaInputAttribute'
-      minItems: 2
-      maxItems: 25
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
+      pattern: ^[a-zA-Z_0-9-=+/]*$
+      minLength: 1
+      maxLength: 1024
     CreateSchemaMappingOutput:
       type: object
       required:
@@ -617,30 +585,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/EntityName'
           - description: The name of the schema.
-    AttributeName:
+    Timestamp:
       type: string
-      pattern: ^[a-zA-Z_0-9- \t]*$
-      minLength: 0
-      maxLength: 255
-    ExceedsLimitException: {}
-    DeleteSchemaMappingOutput:
-      type: object
-      required:
-      - message
-      properties:
-        message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A successful operation message.
-    ValidationException: {}
-    AccessDeniedException: {}
-    NextToken:
-      type: string
-      pattern: ^[a-zA-Z_0-9-=+/]*$
-      minLength: 1
-      maxLength: 1024
-    InternalServerException: {}
-    ConflictException: {}
+      format: date-time
+    ResourceNotFoundException: {}
     SchemaMappingSummary:
       type: object
       required:
@@ -666,12 +614,41 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The timestamp of when the <code>SchemaMapping</code> was last updated.
       description: An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, and<code>UpdatedAt</code>.
-    ResourceNotFoundException: {}
-    Timestamp:
+    DeleteSchemaMappingOutput:
+      type: object
+      required:
+      - message
+      properties:
+        message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A successful operation message.
+    SchemaMappingArn:
       type: string
-      format: date-time
-    String:
+      pattern: ^arn:(aws|aws-us-gov|aws-cn):entityresolution:.*:[0-9]+:(schemamapping/.*)$
+    SchemaAttributeType:
       type: string
+      enum:
+      - NAME
+      - NAME_FIRST
+      - NAME_MIDDLE
+      - NAME_LAST
+      - ADDRESS
+      - ADDRESS_STREET1
+      - ADDRESS_STREET2
+      - ADDRESS_STREET3
+      - ADDRESS_CITY
+      - ADDRESS_STATE
+      - ADDRESS_COUNTRY
+      - ADDRESS_POSTALCODE
+      - PHONE
+      - PHONE_NUMBER
+      - PHONE_COUNTRYCODE
+      - EMAIL_ADDRESS
+      - UNIQUE_ID
+      - DATE
+      - STRING
+    InternalServerException: {}
     GetSchemaMappingOutput:
       type: object
       required:
@@ -713,6 +690,17 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/SchemaMappingSummary'
+    String:
+      type: string
+    ExceedsLimitException: {}
+    Description:
+      type: string
+      minLength: 0
+      maxLength: 255
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     SchemaInputAttribute:
       type: object
       required:
@@ -736,26 +724,20 @@ components:
           - $ref: '#/components/schemas/SchemaAttributeType'
           - description: The type of the attribute, selected from a list of values.
       description: An object containing <code>FieldField</code>, <code>Type</code>, <code>GroupName</code>, and <code>MatchKey</code>.
-    ThrottlingException: {}
+    AttributeName:
+      type: string
+      pattern: ^[a-zA-Z_0-9- \t]*$
+      minLength: 0
+      maxLength: 255
+    ConflictException: {}
+    AccessDeniedException: {}
+    SchemaInputAttributes:
+      type: array
+      items:
+        $ref: '#/components/schemas/SchemaInputAttribute'
+      minItems: 2
+      maxItems: 25
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
@@ -768,14 +750,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
