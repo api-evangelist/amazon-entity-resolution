@@ -1,4 +1,4 @@
-# Amazon Entity Resolution (amazon-entity-resolution)
+# Amazon Entity Resolution
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,83 +66,263 @@
 
 Amazon Entity Resolution is a service that helps you match and link related records across multiple applications, channels, and data stores using machine learning and configurable matching techniques to identify and consolidate records that refer to the same entity.
 
-**APIs.json:** [https://aws.amazon.com/entity-resolution/](https://aws.amazon.com/entity-resolution/)
+**Areas:** Amazon Web Services · AWS · Data Integration · Data Matching · Entity Resolution · Machine Learning
 
-## Tags
+## Amazon Entity Resolution on APIs.io
 
-- Amazon Web Services
-- AWS
-- Data Integration
-- Data Matching
-- Entity Resolution
-- Machine Learning
+Everything profiled for Amazon Entity Resolution is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-entity-resolution/](https://apis.io/providers/amazon-entity-resolution/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+- [Amazon Entity Resolution Matchingworkflows API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-matchingworkflows-api/) — The Matchingworkflows API from Amazon Entity Resolution — 5 operation(s) for matchingworkflows.
+- [Amazon Entity Resolution Schemas API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-schemas-api/) — The Schemas API from Amazon Entity Resolution — 2 operation(s) for schemas.
+- [Amazon Entity Resolution Tags API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-tags-api/) — The Tags API from Amazon Entity Resolution — 2 operation(s) for tags.
+- [Amazon Entity Resolution Entity Resolution Idmappingworkflows API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-idmappingworkflows-api/) — The Entity Resolution Idmappingworkflows API from Amazon Entity Resolution — 2 operation(s) for entity resolution idmappingworkflows.
+- [Amazon Entity Resolution Entity Resolution Idnamespaces API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-idnamespaces-api/) — The Entity Resolution Idnamespaces API from Amazon Entity Resolution — 2 operation(s) for entity resolution idnamespaces.
+- [Amazon Entity Resolution Entity Resolution Jobs API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-jobs-api/) — The Entity Resolution Jobs API from Amazon Entity Resolution — 4 operation(s) for entity resolution jobs.
+- [Amazon Entity Resolution Entity Resolution Operations API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-operations-api/) — The Entity Resolution Operations API from Amazon Entity Resolution — 5 operation(s) for entity resolution operations.
+- [Amazon Entity Resolution Entity Resolution Policies API](https://apis.io/apis/amazon-entity-resolution/amazon-entity-resolution-policies-api/) — The Entity Resolution Policies API from Amazon Entity Resolution — 2 operation(s) for entity resolution policies.
 
-## APIs
+### Published properties
 
-### Amazon Entity Resolution API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-API for creating and managing matching workflows, schema mappings, and ID mapping tables for matching and linking related records across data sources.
+#### Arazzo workflows (6)
 
-- **Human URL:** [https://aws.amazon.com/entity-resolution/](https://aws.amazon.com/entity-resolution/)
-- **Base URL:** `https://entityresolution.amazonaws.com`
+Multi-step workflows that chain operations into a business task.
 
-#### Tags
+- [Amazon Entity Resolution Audit Latest Matching Job](https://apis.io/arazzos/amazon-entity-resolution/amazon-entity-resolution-audit-latest-job-workflow/)
+- [Amazon Entity Resolution Provision Matching Workflow](https://apis.io/arazzos/amazon-entity-resolution/amazon-entity-resolution-provision-workflow-workflow/)
+- [Amazon Entity Resolution Resolve Record Match ID](https://apis.io/arazzos/amazon-entity-resolution/amazon-entity-resolution-resolve-record-match-id-workflow/)
+- [Amazon Entity Resolution Run Matching Pipeline](https://apis.io/arazzos/amazon-entity-resolution/amazon-entity-resolution-run-matching-pipeline-workflow/)
+- [Amazon Entity Resolution Start And Await Matching Job](https://apis.io/arazzos/amazon-entity-resolution/amazon-entity-resolution-start-and-await-job-workflow/)
+- [Amazon Entity Resolution Update And Rerun Matching Workflow](https://apis.io/arazzos/amazon-entity-resolution/amazon-entity-resolution-update-and-rerun-workflow/)
 
-- Data Integration
-- Data Matching
-- Entity Resolution
-- Machine Learning
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.aws.amazon.com/entityresolution/latest/userguide/)
-- [OpenAPI](openapi/amazon-entity-resolution-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/amazon-entity-resolution.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amazon-entity-resolution.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [API Reference](https://docs.aws.amazon.com/entityresolution/latest/apireference/)
-- [Getting Started](https://aws.amazon.com/entity-resolution/getting-started/)
-- [Pricing](https://aws.amazon.com/entity-resolution/pricing/)
-- [F A Q](https://aws.amazon.com/entity-resolution/faqs/)
-- [JSON Schema](json-schema/amazon-entity-resolution-access-denied-exception-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-entity-resolution-attribute-matching-model-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-entity-resolution-attribute-name-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/amazon-entity-resolution-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Amazon Entity Resolution Agentic Access](https://apis.io/agentic-access/amazon-entity-resolution/amazon-entity-resolution-agentic-access/)
 
-## Common Properties
+#### JSON Schema (92)
 
-- [Arazzo Workflows](arazzo/) — [Arazzo Specification](https://spec.openapis.org/arazzo/latest.html)
-- [Portal](https://aws.amazon.com/)
-- [Developer Portal](https://aws.amazon.com/entity-resolution/)
+The data models the API reads and writes.
+
+- [AccessDeniedException](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-access-denied-exception/)
+- [AttributeMatchingModel](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-attribute-matching-model/)
+- [AttributeName](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-attribute-name/)
+- [Boolean](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-boolean/)
+- [ConflictException](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-conflict-exception/)
+- [CreateMatchingWorkflowInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-create-matching-workflow-input/)
+- [CreateMatchingWorkflowOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-create-matching-workflow-output/)
+- [CreateSchemaMappingInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-create-schema-mapping-input/)
+- [CreateSchemaMappingOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-create-schema-mapping-output/)
+- [DeleteMatchingWorkflowInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-delete-matching-workflow-input/)
+- [DeleteMatchingWorkflowOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-delete-matching-workflow-output/)
+- [DeleteSchemaMappingInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-delete-schema-mapping-input/)
+- [DeleteSchemaMappingOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-delete-schema-mapping-output/)
+- [Description](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-description/)
+- [EntityName](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-entity-name/)
+- [ErrorDetails](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-error-details/)
+- [ExceedsLimitException](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-exceeds-limit-exception/)
+- [GetMatchIdInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-match-id-input/)
+- [GetMatchIdOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-match-id-output/)
+- [GetMatchingJobInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-matching-job-input/)
+- [GetMatchingJobOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-matching-job-output/)
+- [GetMatchingWorkflowInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-matching-workflow-input/)
+- [GetMatchingWorkflowOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-matching-workflow-output/)
+- [GetSchemaMappingInput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-schema-mapping-input/)
+- [GetSchemaMappingOutput](https://apis.io/schemas/amazon-entity-resolution/amazon-entity-resolution-get-schema-mapping-output/)
+- …and 67 more published on APIs.io
+
+#### JSON Structure (92)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Entity Resolution Access Denied Exception Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-access-denied-exception-structure/)
+- [Amazon Entity Resolution Attribute Matching Model Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-attribute-matching-model-structure/)
+- [Amazon Entity Resolution Attribute Name Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-attribute-name-structure/)
+- [Amazon Entity Resolution Boolean Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-boolean-structure/)
+- [Amazon Entity Resolution Conflict Exception Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-conflict-exception-structure/)
+- [Amazon Entity Resolution Create Matching Workflow Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-create-matching-workflow-input-structure/)
+- [Amazon Entity Resolution Create Matching Workflow Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-create-matching-workflow-output-structure/)
+- [Amazon Entity Resolution Create Schema Mapping Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-create-schema-mapping-input-structure/)
+- [Amazon Entity Resolution Create Schema Mapping Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-create-schema-mapping-output-structure/)
+- [Amazon Entity Resolution Delete Matching Workflow Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-delete-matching-workflow-input-structure/)
+- [Amazon Entity Resolution Delete Matching Workflow Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-delete-matching-workflow-output-structure/)
+- [Amazon Entity Resolution Delete Schema Mapping Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-delete-schema-mapping-input-structure/)
+- [Amazon Entity Resolution Delete Schema Mapping Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-delete-schema-mapping-output-structure/)
+- [Amazon Entity Resolution Description Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-description-structure/)
+- [Amazon Entity Resolution Entity Name Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-entity-name-structure/)
+- [Amazon Entity Resolution Error Details Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-error-details-structure/)
+- [Amazon Entity Resolution Exceeds Limit Exception Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-exceeds-limit-exception-structure/)
+- [Amazon Entity Resolution Get Match Id Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-match-id-input-structure/)
+- [Amazon Entity Resolution Get Match Id Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-match-id-output-structure/)
+- [Amazon Entity Resolution Get Matching Job Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-matching-job-input-structure/)
+- [Amazon Entity Resolution Get Matching Job Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-matching-job-output-structure/)
+- [Amazon Entity Resolution Get Matching Workflow Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-matching-workflow-input-structure/)
+- [Amazon Entity Resolution Get Matching Workflow Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-matching-workflow-output-structure/)
+- [Amazon Entity Resolution Get Schema Mapping Input Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-schema-mapping-input-structure/)
+- [Amazon Entity Resolution Get Schema Mapping Output Structure](https://apis.io/json-structure/amazon-entity-resolution/amazon-entity-resolution-get-schema-mapping-output-structure/)
+- …and 67 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Entity Resolution Context](https://apis.io/jsonld/amazon-entity-resolution/amazon-entity-resolution-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Entity Resolution Vocabulary](https://apis.io/vocabularies/amazon-entity-resolution/amazon-entity-resolution-vocabulary/)
+
+#### Examples (54)
+
+Example requests and responses.
+
+- [Amazon Entity Resolution Access Denied Exception Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-access-denied-exception-example/)
+- [Amazon Entity Resolution Conflict Exception Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-conflict-exception-example/)
+- [Amazon Entity Resolution Create Matching Workflow Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-create-matching-workflow-input-example/)
+- [Amazon Entity Resolution Create Matching Workflow Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-create-matching-workflow-output-example/)
+- [Amazon Entity Resolution Create Schema Mapping Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-create-schema-mapping-input-example/)
+- [Amazon Entity Resolution Create Schema Mapping Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-create-schema-mapping-output-example/)
+- [Amazon Entity Resolution Delete Matching Workflow Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-delete-matching-workflow-input-example/)
+- [Amazon Entity Resolution Delete Matching Workflow Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-delete-matching-workflow-output-example/)
+- [Amazon Entity Resolution Delete Schema Mapping Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-delete-schema-mapping-input-example/)
+- [Amazon Entity Resolution Delete Schema Mapping Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-delete-schema-mapping-output-example/)
+- [Amazon Entity Resolution Error Details Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-error-details-example/)
+- [Amazon Entity Resolution Exceeds Limit Exception Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-exceeds-limit-exception-example/)
+- [Amazon Entity Resolution Get Match Id Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-match-id-input-example/)
+- [Amazon Entity Resolution Get Match Id Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-match-id-output-example/)
+- [Amazon Entity Resolution Get Matching Job Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-matching-job-input-example/)
+- [Amazon Entity Resolution Get Matching Job Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-matching-job-output-example/)
+- [Amazon Entity Resolution Get Matching Workflow Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-matching-workflow-input-example/)
+- [Amazon Entity Resolution Get Matching Workflow Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-matching-workflow-output-example/)
+- [Amazon Entity Resolution Get Schema Mapping Input Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-schema-mapping-input-example/)
+- [Amazon Entity Resolution Get Schema Mapping Output Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-get-schema-mapping-output-example/)
+- [Amazon Entity Resolution Incremental Run Config Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-incremental-run-config-example/)
+- [Amazon Entity Resolution Input Source Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-input-source-example/)
+- [Amazon Entity Resolution Internal Server Exception Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-internal-server-exception-example/)
+- [Amazon Entity Resolution Job Metrics Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-job-metrics-example/)
+- [Amazon Entity Resolution Job Summary Example](https://apis.io/examples/amazon-entity-resolution/amazon-entity-resolution-job-summary-example/)
+- …and 29 more published on APIs.io
+
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [AWS EntityResolution](https://apis.io/collections/amazon-entity-resolution/open-amazon-entity-resolution/)
+- [AWS EntityResolution Matchingworkflows API](https://apis.io/collections/amazon-entity-resolution/open-amazon-entity-resolution-matchingworkflows-api/)
+- [AWS EntityResolution Matchingworkflows Schemas API](https://apis.io/collections/amazon-entity-resolution/open-amazon-entity-resolution-schemas-api/)
+- [AWS EntityResolution Matchingworkflows Tags API](https://apis.io/collections/amazon-entity-resolution/open-amazon-entity-resolution-tags-api/)
+- [AWS EntityResolution](https://apis.io/collections/amazon-entity-resolution/postman-amazon-entity-resolution/)
+- [AWS EntityResolution Matchingworkflows API](https://apis.io/collections/amazon-entity-resolution/postman-amazon-entity-resolution-matchingworkflows-api/)
+- [AWS EntityResolution Matchingworkflows Schemas API](https://apis.io/collections/amazon-entity-resolution/postman-amazon-entity-resolution-schemas-api/)
+- [AWS EntityResolution Matchingworkflows Tags API](https://apis.io/collections/amazon-entity-resolution/postman-amazon-entity-resolution-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Entity Resolution — jsonschema rules](https://apis.io/rules/amazon-entity-resolution/amazon-entity-resolution-jsonschema-spectral-rules/)
+- [Amazon Entity Resolution API Rules](https://apis.io/rules/amazon-entity-resolution/amazon-entity-resolution-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Entity Resolution Authentication](https://apis.io/security/amazon-entity-resolution/amazon-entity-resolution-authentication/)
+- [Amazon Entity Resolution Domain Security](https://apis.io/security/amazon-entity-resolution/amazon-entity-resolution-domain-security/)
+- [Amazon Entity Resolution Trust Center](https://apis.io/security/amazon-entity-resolution/amazon-entity-resolution-trust-center/)
+- [Amazon Entity Resolution Vulnerability Disclosure](https://apis.io/security/amazon-entity-resolution/amazon-entity-resolution-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Entity Resolution Plans Pricing](https://apis.io/plans/amazon-entity-resolution/amazon-entity-resolution-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Entity Resolution Rate Limits](https://apis.io/rate-limits/amazon-entity-resolution/amazon-entity-resolution-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Entity Resolution Finops](https://apis.io/finops/amazon-entity-resolution/amazon-entity-resolution-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/entity-resolution/)
 - [Documentation](https://docs.aws.amazon.com/entity-resolution/)
-- [Blog](https://aws.amazon.com/blogs/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/entityresolution/)
-- [Sign Up](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [Status Page](https://health.aws.amazon.com/health/status)
+- [Pricing](https://aws.amazon.com/entity-resolution/pricing/)
 - [Support](https://aws.amazon.com/support/)
-- [F A Q](https://aws.amazon.com/entity-resolution/faqs/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
-- [Compliance](https://aws.amazon.com/compliance/)
+- [Blog](https://aws.amazon.com/blogs/)
 - [Security](https://aws.amazon.com/security/)
-- [YouTube](https://www.youtube.com/user/AmazonWebServices)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/entity-resolution)
-- [Knowledge Center](https://repost.aws/knowledge-center)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [Spectral Rules](rules/amazon-entity-resolution-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-entity-resolution-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Integrations](https://aws.amazon.com/marketplace)
+- [Compliance](https://aws.amazon.com/compliance/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 62.0** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 71.5 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 53.6 |
+| Access clarity | 75.0 |
+
+**Agent readiness 30.2** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-entity-resolution/](https://apis.io/providers/amazon-entity-resolution/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Entity Resolution: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-entity-resolution/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
