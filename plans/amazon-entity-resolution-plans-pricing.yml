@@ -1,0 +1,57 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://aws.amazon.com/entity-resolution/pricing/
+sources:
+- https://aws.amazon.com/entity-resolution/pricing/
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Pricing does not vary per AWS Region; AWS Free Tier not available. Data service provider workflow
+  also requires an ADX subscription. Separate pricing for AWS Entity Resolution on AWS Clean Rooms.
+plan_count: 2
+currency: USD
+plans:
+- name: Rule-based or ML-powered matching
+  price_text: $0.25 per 1,000 records processed
+  price: 0.25
+  currency: USD
+  period: per-use
+  unit: 1,000 records processed
+- name: Data service provider (requires a provider license)
+  price_text: $0.10 per 1,000 records processed
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: 1,000 records processed
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Rule-based or ML-powered matching
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Data service provider (requires a provider license)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
