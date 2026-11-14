@@ -5,6 +5,9 @@ artifacts:
   agentic-access/amazon-entity-resolution-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-entity-resolution-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   arazzo/amazon-entity-resolution-audit-latest-job-workflow.yml:
     method: derived
     evidence: Arazzo whose sourceDescriptions are our split specs (../openapi/)
@@ -29,6 +32,15 @@ artifacts:
   capabilities/amazon-entity-resolution-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  cli/amazon-entity-resolution-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-entity-resolution-matchingworkflows-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-entity-resolution-matchingworkflows-api
@@ -53,6 +65,21 @@ artifacts:
   collections/amazon-entity-resolution.postman_collection.json:
     method: derived
     evidence: openapi/amazon-entity-resolution
+  conformance/amazon-entity-resolution-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-entity-resolution-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-entity-resolution-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/amazon-entity-resolution-error-codes.yml:
+    method: searched
+    evidence: declared in the artifact
+  errors/amazon-entity-resolution-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/amazon-entity-resolution-access-denied-exception-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -335,6 +362,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-entity-resolution-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -347,16 +377,40 @@ artifacts:
   json-schema/amazon-entity-resolution-access-denied-exception-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-add-policy-statement-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-add-policy-statement-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-entity-resolution-attribute-matching-model-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-attribute-name-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-batch-delete-unique-id-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-batch-delete-unique-id-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-entity-resolution-boolean-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-conflict-exception-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-create-id-mapping-workflow-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-create-id-mapping-workflow-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-create-id-namespace-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-create-id-namespace-output-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-create-matching-workflow-input-schema.json:
@@ -377,6 +431,9 @@ artifacts:
   json-schema/amazon-entity-resolution-delete-matching-workflow-output-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-delete-policy-statement-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-entity-resolution-delete-schema-mapping-input-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -395,6 +452,21 @@ artifacts:
   json-schema/amazon-entity-resolution-exceeds-limit-exception-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-generate-match-id-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-generate-match-id-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-get-id-mapping-job-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-get-id-mapping-workflow-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-get-id-namespace-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-entity-resolution-get-match-id-input-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -411,6 +483,12 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-get-matching-workflow-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-get-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-get-provider-service-output-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-get-schema-mapping-input-schema.json:
@@ -456,6 +534,15 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-kms-arn-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-list-id-mapping-jobs-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-list-id-mapping-workflows-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-list-id-namespaces-output-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-list-matching-jobs-input-max-results-integer-schema.json:
@@ -518,6 +605,12 @@ artifacts:
   json-schema/amazon-entity-resolution-output-source-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-put-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-put-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-entity-resolution-record-attribute-map-key-string-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -569,6 +662,12 @@ artifacts:
   json-schema/amazon-entity-resolution-schema-mapping-summary-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-start-id-mapping-job-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-start-id-mapping-job-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-entity-resolution-start-matching-job-input-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -606,6 +705,18 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-untag-resource-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-update-id-mapping-workflow-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-update-id-mapping-workflow-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-update-id-namespace-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-entity-resolution-update-id-namespace-output-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-entity-resolution-update-matching-workflow-input-schema.json:
@@ -899,7 +1010,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -968,10 +1079,18 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-entity-resolution-openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  llms/amazon-entity-resolution-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-entity-resolution-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-entity-resolution-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-entity-resolution-idmappingworkflows-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -982,8 +1101,8 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-entity-resolution-matchingworkflows-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-entity-resolution-operations-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -991,11 +1110,17 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-entity-resolution-schemas-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-entity-resolution-tags-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  packages/amazon-entity-resolution-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-entity-resolution-patterns.yml:
     method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    evidence: declared in the artifact
   plans/amazon-entity-resolution-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -1011,10 +1136,16 @@ artifacts:
   postman/amazon-entity-resolution.postman_collection.json:
     method: derived
     evidence: openapi/amazon-entity-resolution
+  privacy/amazon-entity-resolution-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-entity-resolution-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-entity-resolution-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-entity-resolution-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-entity-resolution-spectral-rules.yml:
@@ -1029,12 +1160,40 @@ artifacts:
   security/amazon-entity-resolution-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
+  skills/_index.yml:
+    method: generated
+    evidence: declared in the artifact
+  skills/amazon-entity-resolution-lookup-match-id.md:
+    method: generated
+    evidence: declared in the artifact
+  skills/amazon-entity-resolution-run-matching-job.md:
+    method: generated
+    evidence: declared in the artifact
   sla/amazon-entity-resolution-sla.yml:
     method: generated
     evidence: declared in the artifact
   smithy/entityresolution-2018-05-10.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/entityresolution/service/2018-05-10/entityresolution-2018-05-10.json
+      (sha256 dd59315e6bb7, fetched 2026-11-11T21:09:36+00:00)
+  terms/amazon-entity-resolution-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-entity-resolution-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-entity-resolution-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-entity-resolution-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-entity-resolution-repost-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-entity-resolution-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-entity-resolution-well-known.yml:
     method: unknown
     evidence: no authorship recorded

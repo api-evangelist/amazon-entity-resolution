@@ -1,7 +1,8 @@
 name: Amazon Entity Resolution
-description: Amazon Entity Resolution is a service that helps you match and link related records across
-  multiple applications, channels, and data stores using machine learning and configurable matching techniques
-  to identify and consolidate records that refer to the same entity.
+
+description: Amazon Entity Resolution is a service that helps you match and link related records across multiple applications, channels, and data
+  stores using machine learning and configurable matching techniques to identify and consolidate records that refer to the same entity.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -14,6 +15,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: paid
   onboarding: unknown
@@ -26,13 +28,18 @@ accessModel:
   - plans
   - authentication
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+
 url: https://aws.amazon.com/entity-resolution/
+
 created: '2024-01-15'
+
 modified: '2026-09-16'
+
 specificationVersion: '0.23'
+
 tags:
 - Amazon Web Services
 - Data Integration
@@ -46,12 +53,193 @@ tags_raw:
 - Data Matching
 - Entity Resolution
 - Machine Learning
+
+tags_raw:
+- Amazon Web Services
+- AWS
+- Data Integration
+- Data Matching
+- Entity Resolution
+- Machine Learning
 - Machine-Learning
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: Documentation
+  url: https://developer.amazon.com/
+- type: Spectral
+  url: rules/amazon-entity-resolution-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-entity-resolution-rules.yml
+- type: Spectral
+  url: rules/amazon-entity-resolution-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-entity-resolution-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/amazon-entity-resolution-data-model.yml
+- type: CLI
+  url: cli/amazon-entity-resolution-cli.yml
+- type: Conventions
+  url: conventions/amazon-entity-resolution-conventions.yml
+- type: ErrorCatalog
+  url: errors/amazon-entity-resolution-error-codes.yml
+- type: ErrorCatalog
+  url: errors/amazon-entity-resolution-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-entity-resolution-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-entity-resolution-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-entity-resolution-security.txt
+- type: SecurityTxt
+  url: well-known/amazon-entity-resolution-repost-security.txt
+- type: WellKnown
+  url: well-known/amazon-entity-resolution-well-known.yml
+- type: Hosts
+  url: hosts/amazon-entity-resolution-hosts.yml
+- type: Vendors
+  url: vendors/amazon-entity-resolution-vendors.yml
+- type: SDKs
+  url: packages/amazon-entity-resolution-packages.yml
+- type: Packages
+  url: packages/amazon-entity-resolution-packages.yml
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
+- type: Pricing
+  url: https://aws.amazon.com/entity-resolution/pricing/
+- type: RateLimits
+  url: rate-limits/amazon-entity-resolution-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-entity-resolution-finops.yml
+- type: Plans
+  url: plans/amazon-entity-resolution-plans-pricing.yml
+- type: CapabilityMap
+  url: capabilities/amazon-entity-resolution-capability-edges.yml
+  name: Amazon Entity Resolution Business Capability Map
+- type: Website
+  url: https://aws.amazon.com/entity-resolution/
+- type: AgenticAccess
+  url: agentic-access/amazon-entity-resolution-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-entity-resolution-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-entity-resolution-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-entity-resolution-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-entity-resolution-authentication.yml
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-entity-resolution/overview
+- type: Arazzo
+  url: arazzo/amazon-entity-resolution-audit-latest-job-workflow.yml
+  name: Amazon Entity Resolution Audit Latest Matching Job
+- type: Arazzo
+  url: arazzo/amazon-entity-resolution-provision-workflow-workflow.yml
+  name: Amazon Entity Resolution Provision Matching Workflow
+- type: Arazzo
+  url: arazzo/amazon-entity-resolution-resolve-record-match-id-workflow.yml
+  name: Amazon Entity Resolution Resolve Record Match ID
+- type: Arazzo
+  url: arazzo/amazon-entity-resolution-run-matching-pipeline-workflow.yml
+  name: Amazon Entity Resolution Run Matching Pipeline
+- type: Arazzo
+  url: arazzo/amazon-entity-resolution-start-and-await-job-workflow.yml
+  name: Amazon Entity Resolution Start And Await Matching Job
+- type: Arazzo
+  url: arazzo/amazon-entity-resolution-update-and-rerun-workflow.yml
+  name: Amazon Entity Resolution Update And Rerun Matching Workflow
+- type: Portal
+  url: https://aws.amazon.com/
+- type: DeveloperPortal
+  url: https://aws.amazon.com/entity-resolution/
+- type: Blog
+  url: https://aws.amazon.com/blogs/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/entityresolution/
+- type: Signup
+  url: https://portal.aws.amazon.com/billing/signup
+- type: Login
+  url: https://signin.aws.amazon.com/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Support
+  url: https://aws.amazon.com/support/
+- type: FAQ
+  url: https://aws.amazon.com/entity-resolution/faqs/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Security
+  url: https://aws.amazon.com/security/
+- type: YouTube
+  url: https://www.youtube.com/user/AmazonWebServices
+- type: StackOverflow
+  url: https://stackoverflow.com/questions/tagged/entity-resolution
+- type: KnowledgeCenter
+  url: https://repost.aws/knowledge-center
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: SpectralRules
+  url: rules/amazon-entity-resolution-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-entity-resolution-vocabulary.yaml
+- type: Features
+  data:
+  - name: ML-Based Matching
+    description: Use machine learning models to match records across disparate datasets
+  - name: Rule-Based Matching
+    description: Configure deterministic matching rules for exact and fuzzy matching
+  - name: ID Mapping
+    description: Create and manage identity graphs linking records across data sources
+  - name: Schema Mapping
+    description: Map input data schemas to standardized formats for consistent matching
+  - name: Third-Party Data Providers
+    description: Enrich records with data from LiveRamp, Unified ID 2.0, and others
+- type: UseCases
+  data:
+  - name: Customer Data Unification
+    description: Create a single customer view by matching records across CRM, marketing, and transaction systems
+  - name: Data Deduplication
+    description: Identify and remove duplicate records from databases and data lakes
+  - name: Identity Resolution for Advertising
+    description: Link user identities across devices and channels for targeted advertising
+  - name: Healthcare Record Matching
+    description: Match patient records across different healthcare providers and systems
+- type: Integrations
+  data:
+  - name: AWS Glue
+    description: Use Glue Data Catalog to discover and access input data sources
+  - name: Amazon S3
+    description: Store matching job input and output data in S3
+  - name: Amazon Athena
+    description: Query matching results using Athena SQL
+  - name: LiveRamp
+    description: Access LiveRamp identity data through the third-party provider integration
+- type: Integrations
+  url: https://aws.amazon.com/marketplace
+- type: UsageTerms
+  url: terms/amazon-entity-resolution-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-entity-resolution-privacy-policy.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-entity-resolution-ai-preferences.yml
+
 apis:
 - aid: amazon-entity-resolution:amazon-entity-resolution-matchingworkflows-api
   name: Amazon Entity Resolution Matchingworkflows API
-  description: >-
-    The Matchingworkflows API from Amazon Entity Resolution — 5 operation(s) for matchingworkflows.
+  description: The Matchingworkflows API from Amazon Entity Resolution — 5 operation(s) for matchingworkflows.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -128,8 +316,6 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/entity-resolution/faqs/
   - type: JSONSchema
-    url: json-schema/amazon-entity-resolution-access-denied-exception-schema.json
-  - type: JSONSchema
     url: json-schema/amazon-entity-resolution-attribute-matching-model-schema.json
   - type: JSONSchema
     url: json-schema/amazon-entity-resolution-attribute-name-schema.json
@@ -137,9 +323,7 @@ apis:
     url: json-ld/amazon-entity-resolution-context.jsonld
 - aid: amazon-entity-resolution:amazon-entity-resolution-idmappingworkflows-api
   name: Amazon Entity Resolution Entity Resolution Idmappingworkflows API
-  description: >-
-    The Entity Resolution Idmappingworkflows API from Amazon Entity Resolution — 2 operation(s) for entity
-    resolution idmappingworkflows.
+  description: The Entity Resolution Idmappingworkflows API from Amazon Entity Resolution — 2 operation(s) for entity resolution idmappingworkflows.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -147,11 +331,21 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-entity-resolution-idmappingworkflows-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-id-mapping-workflow-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-create-id-mapping-workflow-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-update-id-mapping-workflow-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-create-id-mapping-workflow-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-update-id-mapping-workflow-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-list-id-mapping-workflows-output-schema.json
 - aid: amazon-entity-resolution:amazon-entity-resolution-idnamespaces-api
   name: Amazon Entity Resolution Entity Resolution Idnamespaces API
-  description: >-
-    The Entity Resolution Idnamespaces API from Amazon Entity Resolution — 2 operation(s) for entity resolution
-    idnamespaces.
+  description: The Entity Resolution Idnamespaces API from Amazon Entity Resolution — 2 operation(s) for entity resolution idnamespaces.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -159,11 +353,21 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-entity-resolution-idnamespaces-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-create-id-namespace-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-id-namespace-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-update-id-namespace-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-create-id-namespace-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-update-id-namespace-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-list-id-namespaces-output-schema.json
 - aid: amazon-entity-resolution:amazon-entity-resolution-jobs-api
   name: Amazon Entity Resolution Entity Resolution Jobs API
-  description: >-
-    The Entity Resolution Jobs API from Amazon Entity Resolution — 4 operation(s) for entity resolution
-    jobs.
+  description: The Entity Resolution Jobs API from Amazon Entity Resolution — 4 operation(s) for entity resolution jobs.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -171,11 +375,21 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-entity-resolution-jobs-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-id-mapping-job-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-start-id-mapping-job-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-start-id-mapping-job-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-matching-job-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-list-id-mapping-jobs-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-list-matching-jobs-input-schema.json
 - aid: amazon-entity-resolution:amazon-entity-resolution-operations-api
   name: Amazon Entity Resolution Entity Resolution Operations API
-  description: >-
-    The Entity Resolution Operations API from Amazon Entity Resolution — 5 operation(s) for entity resolution
-    operations.
+  description: The Entity Resolution Operations API from Amazon Entity Resolution — 5 operation(s) for entity resolution operations.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -183,11 +397,21 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-entity-resolution-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-provider-service-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-generate-match-id-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-batch-delete-unique-id-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-match-id-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-generate-match-id-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-batch-delete-unique-id-input-schema.json
 - aid: amazon-entity-resolution:amazon-entity-resolution-policies-api
   name: Amazon Entity Resolution Entity Resolution Policies API
-  description: >-
-    The Entity Resolution Policies API from Amazon Entity Resolution — 2 operation(s) for entity resolution
-    policies.
+  description: The Entity Resolution Policies API from Amazon Entity Resolution — 2 operation(s) for entity resolution policies.
   humanURL: https://aws.amazon.com/entity-resolution/
   baseURL: https://entityresolution.amazonaws.com
   tags:
@@ -195,127 +419,19 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-entity-resolution-policies-api-openapi.yml
-common:
-- type: Pricing
-  url: https://aws.amazon.com/entity-resolution/pricing/
-- type: RateLimits
-  url: rate-limits/amazon-entity-resolution-rate-limits.yml
-- type: FinOps
-  url: finops/amazon-entity-resolution-finops.yml
-- type: Plans
-  url: plans/amazon-entity-resolution-plans-pricing.yml
-- type: CapabilityMap
-  url: capabilities/amazon-entity-resolution-capability-edges.yml
-  name: Amazon Entity Resolution Business Capability Map
-- type: Website
-  url: https://aws.amazon.com/entity-resolution/
-- type: AgenticAccess
-  url: agentic-access/amazon-entity-resolution-agentic-access.yml
-- type: TrustCenter
-  url: security/amazon-entity-resolution-trust-center.yml
-- type: VulnerabilityDisclosure
-  url: security/amazon-entity-resolution-vulnerability-disclosure.yml
-- type: DomainSecurity
-  url: security/amazon-entity-resolution-domain-security.yml
-- type: Authentication
-  url: authentication/amazon-entity-resolution-authentication.yml
-- type: PostmanWorkspace
-  url: https://www.postman.com/kinlaneapi/amazon-entity-resolution/overview
-- type: Arazzo
-  url: arazzo/amazon-entity-resolution-audit-latest-job-workflow.yml
-  name: Amazon Entity Resolution Audit Latest Matching Job
-- type: Arazzo
-  url: arazzo/amazon-entity-resolution-provision-workflow-workflow.yml
-  name: Amazon Entity Resolution Provision Matching Workflow
-- type: Arazzo
-  url: arazzo/amazon-entity-resolution-resolve-record-match-id-workflow.yml
-  name: Amazon Entity Resolution Resolve Record Match ID
-- type: Arazzo
-  url: arazzo/amazon-entity-resolution-run-matching-pipeline-workflow.yml
-  name: Amazon Entity Resolution Run Matching Pipeline
-- type: Arazzo
-  url: arazzo/amazon-entity-resolution-start-and-await-job-workflow.yml
-  name: Amazon Entity Resolution Start And Await Matching Job
-- type: Arazzo
-  url: arazzo/amazon-entity-resolution-update-and-rerun-workflow.yml
-  name: Amazon Entity Resolution Update And Rerun Matching Workflow
-- type: Portal
-  url: https://aws.amazon.com/
-- type: DeveloperPortal
-  url: https://aws.amazon.com/entity-resolution/
-- type: Documentation
-  url: https://docs.aws.amazon.com/entity-resolution/
-- type: Blog
-  url: https://aws.amazon.com/blogs/
-- type: GitHubOrganization
-  url: https://github.com/aws
-- type: Console
-  url: https://console.aws.amazon.com/entityresolution/
-- type: Signup
-  url: https://portal.aws.amazon.com/billing/signup
-- type: Login
-  url: https://signin.aws.amazon.com/
-- type: StatusPage
-  url: https://health.aws.amazon.com/health/status
-- type: Support
-  url: https://aws.amazon.com/support/
-- type: FAQ
-  url: https://aws.amazon.com/entity-resolution/faqs/
-- type: TermsOfService
-  url: https://aws.amazon.com/service-terms/
-- type: PrivacyPolicy
-  url: https://aws.amazon.com/privacy/
-- type: Compliance
-  url: https://aws.amazon.com/compliance/
-- type: Security
-  url: https://aws.amazon.com/security/
-- type: YouTube
-  url: https://www.youtube.com/user/AmazonWebServices
-- type: StackOverflow
-  url: https://stackoverflow.com/questions/tagged/entity-resolution
-- type: KnowledgeCenter
-  url: https://repost.aws/knowledge-center
-- type: Contact
-  url: https://aws.amazon.com/contact-us/
-- type: SpectralRules
-  url: rules/amazon-entity-resolution-spectral-rules.yml
-- type: Vocabulary
-  url: vocabulary/amazon-entity-resolution-vocabulary.yaml
-- type: Features
-  data:
-  - name: ML-Based Matching
-    description: Use machine learning models to match records across disparate datasets
-  - name: Rule-Based Matching
-    description: Configure deterministic matching rules for exact and fuzzy matching
-  - name: ID Mapping
-    description: Create and manage identity graphs linking records across data sources
-  - name: Schema Mapping
-    description: Map input data schemas to standardized formats for consistent matching
-  - name: Third-Party Data Providers
-    description: Enrich records with data from LiveRamp, Unified ID 2.0, and others
-- type: UseCases
-  data:
-  - name: Customer Data Unification
-    description: Create a single customer view by matching records across CRM, marketing, and transaction
-      systems
-  - name: Data Deduplication
-    description: Identify and remove duplicate records from databases and data lakes
-  - name: Identity Resolution for Advertising
-    description: Link user identities across devices and channels for targeted advertising
-  - name: Healthcare Record Matching
-    description: Match patient records across different healthcare providers and systems
-- type: Integrations
-  data:
-  - name: AWS Glue
-    description: Use Glue Data Catalog to discover and access input data sources
-  - name: Amazon S3
-    description: Store matching job input and output data in S3
-  - name: Amazon Athena
-    description: Query matching results using Athena SQL
-  - name: LiveRamp
-    description: Access LiveRamp identity data through the third-party provider integration
-- type: Integrations
-  url: https://aws.amazon.com/marketplace
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-add-policy-statement-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-put-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-add-policy-statement-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-delete-policy-statement-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-get-policy-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-entity-resolution-put-policy-output-schema.json
+
 integrations:
 - name: Sign in
 - name: Agent Mode
@@ -326,8 +442,12 @@ integrations:
 - name: Become a Channel Partner
 - name: Sell in AWS Marketplace
 - name: Manage Your Account
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v6
