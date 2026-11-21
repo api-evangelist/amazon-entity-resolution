@@ -1,3 +1,4 @@
+aid: amazon-entity-resolution
 name: Amazon Entity Resolution
 
 description: Amazon Entity Resolution is a service that helps you match and link related records across multiple applications, channels, and data
@@ -28,7 +29,7 @@ accessModel:
   - plans
   - authentication
   - security
-  generated: '2026-11-13'
+  generated: '2026-11-20'
   method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 
